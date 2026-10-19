@@ -1,0 +1,20 @@
+{
+  "id": "A00741_7_Matmul_with_small_K_dimension_",
+  "collection": "kernelbench-audit",
+  "path": "extensions/kernelbench-audit/cases/A00741_7_Matmul_with_small_K_dimension_",
+  "status": "original_pass_and_verified_adversarial_test_available",
+  "candidate": "extensions/kernelbench-audit/cases/A00741_7_Matmul_with_small_K_dimension_/candidate.cu",
+  "reference": "extensions/kernelbench-audit/cases/A00741_7_Matmul_with_small_K_dimension_/reference.py",
+  "candidate_sha256": "12aca5422db02cc46a37ffb316b0857ae94646aeaec534e52f7456f60b4a82ed",
+  "reference_sha256": "0a7d4ff759d3d7c03fd183535555c235bc89818c14179ff62ba0fbc3d48b7b60",
+  "dataset_row": 741,
+  "task_id": 7,
+  "original_correct": true,
+  "candidate_matches_abc_bytes": true,
+  "reported_individual_adversarial_outcome": "not_available",
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/uiuc-kang-lab/agentic-benchmarks/blob/ae1124758098876db04336e1d8c6e419a139c6e3/benchmarks/kernel-bench/tests_verified/level_1/7_Matmul_with_small_K_dimension_/test_741.py",
+    "https://huggingface.co/datasets/SakanaAI/AI-CUDA-Engineer-Archive/tree/4edbe8d6d0b417e05aaf8ec7e23f78aecdc5516b"
+  ]
+}

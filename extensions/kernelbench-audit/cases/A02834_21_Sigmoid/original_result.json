@@ -1,0 +1,14 @@
+{
+  "Op_Name": "21_Sigmoid",
+  "Level_ID": 1,
+  "Task_ID": 21,
+  "Kernel_Name": "fast_vectorized_sigmoid_edit_1",
+  "Correct": true,
+  "Max_Diff": 0.0,
+  "Error": null,
+  "CUDA_Runtime": 0.006,
+  "CUDA_Speedup_Native": 1.1092462421705325,
+  "__index_level_0__": 16,
+  "dataset_row_position": 2834,
+  "join_rule": "pandas positional row ID assigned before Correct filtering, exactly as ABC preprocess_data.py"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "A06560_49_Max_reduction_over_a_dimension",
+  "collection": "kernelbench-audit",
+  "path": "extensions/kernelbench-audit/cases/A06560_49_Max_reduction_over_a_dimension",
+  "status": "original_pass_and_verified_adversarial_test_available",
+  "candidate": "extensions/kernelbench-audit/cases/A06560_49_Max_reduction_over_a_dimension/candidate.cu",
+  "reference": "extensions/kernelbench-audit/cases/A06560_49_Max_reduction_over_a_dimension/reference.py",
+  "candidate_sha256": "fb4f5c40d4263d515b39a0e36de37b11389f1e062f66f630afeee8a184a89684",
+  "reference_sha256": "87ab7c3dae731d861de892419ac084773f247bae3329a4d9e4ea86d9cdfc2213",
+  "dataset_row": 6560,
+  "task_id": 49,
+  "original_correct": true,
+  "candidate_matches_abc_bytes": true,
+  "reported_individual_adversarial_outcome": "not_available",
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/uiuc-kang-lab/agentic-benchmarks/blob/ae1124758098876db04336e1d8c6e419a139c6e3/benchmarks/kernel-bench/tests_verified/level_1/49_Max_reduction_over_a_dimension/test_6560.py",
+    "https://huggingface.co/datasets/SakanaAI/AI-CUDA-Engineer-Archive/tree/4edbe8d6d0b417e05aaf8ec7e23f78aecdc5516b"
+  ]
+}

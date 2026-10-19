@@ -1,0 +1,20 @@
+{
+  "id": "A02027_15_Matmul_for_lower_triangular_matrices",
+  "collection": "kernelbench-audit",
+  "path": "extensions/kernelbench-audit/cases/A02027_15_Matmul_for_lower_triangular_matrices",
+  "status": "original_pass_and_verified_adversarial_test_available",
+  "candidate": "extensions/kernelbench-audit/cases/A02027_15_Matmul_for_lower_triangular_matrices/candidate.cu",
+  "reference": "extensions/kernelbench-audit/cases/A02027_15_Matmul_for_lower_triangular_matrices/reference.py",
+  "candidate_sha256": "daf6d65ad58f40120b6a4e2ddbefd9b90174b975b85d93afb6491825b0b0f0d1",
+  "reference_sha256": "4a22a0b53ffcb14c3b702d03b3593e5f597e0d368a86b180a5eb42739418fa2a",
+  "dataset_row": 2027,
+  "task_id": 15,
+  "original_correct": true,
+  "candidate_matches_abc_bytes": true,
+  "reported_individual_adversarial_outcome": "not_available",
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/uiuc-kang-lab/agentic-benchmarks/blob/ae1124758098876db04336e1d8c6e419a139c6e3/benchmarks/kernel-bench/tests_verified/level_1/15_Matmul_for_lower_triangular_matrices/test_2027.py",
+    "https://huggingface.co/datasets/SakanaAI/AI-CUDA-Engineer-Archive/tree/4edbe8d6d0b417e05aaf8ec7e23f78aecdc5516b"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "status": "reduced_rounding_witness_pass",
+  "case": "S_L1_087_embedding_with_initial_layernorm_backward",
+  "contributions": 512,
+  "each_contribution": 1.0,
+  "bf16_round_after_each_add": 256.0,
+  "fp32_accumulation_then_bf16": 512.0,
+  "scope": "accumulation mechanism only; not an execution of the original GPU kernel or a reproduction of the training experiment"
+}

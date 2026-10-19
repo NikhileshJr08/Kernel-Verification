@@ -1,0 +1,23 @@
+{
+  "id": "F_ff78ea4123a2",
+  "collection": "flashattention",
+  "path": "extensions/flashattention/F_ff78ea4123a2",
+  "status": "original_parent_fix_tests_recovered_compiler_pin_unresolved",
+  "title": "Fix race condition in Triton bwd when there's bias",
+  "pre_revision": "86862cfd7bab1fe0279d1cdcdf370268792339cb",
+  "fixed_revision": "ff78ea4123a29e10dccade3d73b7c4869f383b6a",
+  "candidate": "extensions/flashattention/F_ff78ea4123a2/pre/flash_attn/flash_attn_triton.py",
+  "reference": "extensions/flashattention/F_ff78ea4123a2/post/flash_attn/flash_attn_triton.py",
+  "candidate_sha256": "340954ff3797152edb7f6dc9a46449e7c53e6a8cd9286f47a1cd388c22183200",
+  "reference_sha256": "7e471837e0a26a42953f667b6ea952f4f8056b6f5f6414e36c90f9e5bf70d96a",
+  "compiler_version": null,
+  "later_tested_version_note": {
+    "revision": "5d079fdd7a20bbd354080a80b20b5c36c93898d4",
+    "triton": "2.0.0.dev20221202",
+    "applies_to_this_fix": false
+  },
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/Dao-AILab/flash-attention/commit/ff78ea4123a29e10dccade3d73b7c4869f383b6a"
+  ]
+}

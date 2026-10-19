@@ -1,0 +1,14 @@
+{
+  "Op_Name": "93_masked_cumsum",
+  "Level_ID": 1,
+  "Task_ID": 93,
+  "Kernel_Name": "93_masked_cumsum_optimized_thread_block_indexing_base",
+  "Correct": true,
+  "Max_Diff": 0.0,
+  "Error": null,
+  "CUDA_Runtime": 0.072,
+  "CUDA_Speedup_Native": 0.4434765626986822,
+  "__index_level_0__": 33,
+  "dataset_row_position": 10862,
+  "join_rule": "pandas positional row ID assigned before Correct filtering, exactly as ABC preprocess_data.py"
+}

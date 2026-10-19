@@ -1,0 +1,14 @@
+{
+  "Op_Name": "33_BatchNorm",
+  "Level_ID": 1,
+  "Task_ID": 33,
+  "Kernel_Name": "coalesced_batchnorm_optimized_edit_1",
+  "Correct": true,
+  "Max_Diff": 0.0,
+  "Error": null,
+  "CUDA_Runtime": 0.945,
+  "CUDA_Speedup_Native": 0.5904021717253186,
+  "__index_level_0__": 21,
+  "dataset_row_position": 4331,
+  "join_rule": "pandas positional row ID assigned before Correct filtering, exactly as ABC preprocess_data.py"
+}

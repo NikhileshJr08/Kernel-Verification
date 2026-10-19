@@ -1,0 +1,20 @@
+{
+  "id": "A02710_20_LeakyReLU",
+  "collection": "kernelbench-audit",
+  "path": "extensions/kernelbench-audit/cases/A02710_20_LeakyReLU",
+  "status": "original_pass_and_verified_adversarial_test_available",
+  "candidate": "extensions/kernelbench-audit/cases/A02710_20_LeakyReLU/candidate.cu",
+  "reference": "extensions/kernelbench-audit/cases/A02710_20_LeakyReLU/reference.py",
+  "candidate_sha256": "7b4e67a48b6d7cca924722fbf5320b6bbe5add1a630b759717d852f937986c87",
+  "reference_sha256": "2e85a39fb823fe4b5d174727d817fdc64134274b67d3eb2ead2bc9ccf2797f03",
+  "dataset_row": 2710,
+  "task_id": 20,
+  "original_correct": true,
+  "candidate_matches_abc_bytes": true,
+  "reported_individual_adversarial_outcome": "not_available",
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/uiuc-kang-lab/agentic-benchmarks/blob/ae1124758098876db04336e1d8c6e419a139c6e3/benchmarks/kernel-bench/tests_verified/level_1/20_LeakyReLU/test_2710.py",
+    "https://huggingface.co/datasets/SakanaAI/AI-CUDA-Engineer-Archive/tree/4edbe8d6d0b417e05aaf8ec7e23f78aecdc5516b"
+  ]
+}

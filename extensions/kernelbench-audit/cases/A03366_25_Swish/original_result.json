@@ -1,0 +1,14 @@
+{
+  "Op_Name": "25_Swish",
+  "Level_ID": 1,
+  "Task_ID": 25,
+  "Kernel_Name": "25_swish_grid_stride_edit_1",
+  "Correct": true,
+  "Max_Diff": 0.0,
+  "Error": null,
+  "CUDA_Runtime": 0.007,
+  "CUDA_Speedup_Native": 1.3389524870685168,
+  "__index_level_0__": 24,
+  "dataset_row_position": 3366,
+  "join_rule": "pandas positional row ID assigned before Correct filtering, exactly as ABC preprocess_data.py"
+}

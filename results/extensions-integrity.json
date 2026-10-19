@@ -1,0 +1,16 @@
+{
+  "status": "extensions_integrity_pass",
+  "records": 162,
+  "collection_counts": {
+    "kernelbench-audit": 129,
+    "megatron": 2,
+    "flashattention": 8,
+    "sol-execbench": 19,
+    "gimlet": 3,
+    "volta-bounds": 1
+  },
+  "hashed_source_files_checked": 320,
+  "nvidia_reference_data_embedded": false,
+  "gpu_executed": false,
+  "source_revision_and_test_presence_validation_only": true
+}

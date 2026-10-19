@@ -1,0 +1,101 @@
+{
+  "sha": "731f154de32834c474ae28f0173f2a36f79f4667",
+  "node_id": "C_kwDOHXVlhNoAKDczMWYxNTRkZTMyODM0YzQ3NGFlMjhmMDE3M2YyYTM2Zjc5ZjQ2Njc",
+  "commit": {
+    "author": {
+      "name": "Tri Dao",
+      "email": "tridpq@gmail.com",
+      "date": "2022-11-01T21:09:22Z"
+    },
+    "committer": {
+      "name": "Tri Dao",
+      "email": "tridpq@gmail.com",
+      "date": "2022-11-01T22:05:55Z"
+    },
+    "message": "Fix race conditions in the Triton bwd for headdim=64",
+    "tree": {
+      "sha": "3f0e1fae341d742e156cf71dc3a1f155566dcc50",
+      "url": "https://api.github.com/repos/Dao-AILab/flash-attention/git/trees/3f0e1fae341d742e156cf71dc3a1f155566dcc50"
+    },
+    "url": "https://api.github.com/repos/Dao-AILab/flash-attention/git/commits/731f154de32834c474ae28f0173f2a36f79f4667",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/Dao-AILab/flash-attention/commits/731f154de32834c474ae28f0173f2a36f79f4667",
+  "html_url": "https://github.com/Dao-AILab/flash-attention/commit/731f154de32834c474ae28f0173f2a36f79f4667",
+  "comments_url": "https://api.github.com/repos/Dao-AILab/flash-attention/commits/731f154de32834c474ae28f0173f2a36f79f4667/comments",
+  "author": {
+    "login": "tridao",
+    "id": 5616128,
+    "node_id": "MDQ6VXNlcjU2MTYxMjg=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/5616128?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/tridao",
+    "html_url": "https://github.com/tridao",
+    "followers_url": "https://api.github.com/users/tridao/followers",
+    "following_url": "https://api.github.com/users/tridao/following{/other_user}",
+    "gists_url": "https://api.github.com/users/tridao/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/tridao/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/tridao/subscriptions",
+    "organizations_url": "https://api.github.com/users/tridao/orgs",
+    "repos_url": "https://api.github.com/users/tridao/repos",
+    "events_url": "https://api.github.com/users/tridao/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/tridao/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "tridao",
+    "id": 5616128,
+    "node_id": "MDQ6VXNlcjU2MTYxMjg=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/5616128?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/tridao",
+    "html_url": "https://github.com/tridao",
+    "followers_url": "https://api.github.com/users/tridao/followers",
+    "following_url": "https://api.github.com/users/tridao/following{/other_user}",
+    "gists_url": "https://api.github.com/users/tridao/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/tridao/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/tridao/subscriptions",
+    "organizations_url": "https://api.github.com/users/tridao/orgs",
+    "repos_url": "https://api.github.com/users/tridao/repos",
+    "events_url": "https://api.github.com/users/tridao/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/tridao/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "9b0bc978729d5470aaf5667b8f65df6fa2b3a007",
+      "url": "https://api.github.com/repos/Dao-AILab/flash-attention/commits/9b0bc978729d5470aaf5667b8f65df6fa2b3a007",
+      "html_url": "https://github.com/Dao-AILab/flash-attention/commit/9b0bc978729d5470aaf5667b8f65df6fa2b3a007"
+    }
+  ],
+  "stats": {
+    "total": 32,
+    "additions": 20,
+    "deletions": 12
+  },
+  "files": [
+    {
+      "sha": "54ccf7c8363c310b885cb8a5c50da57d30e7930a",
+      "filename": "flash_attn/flash_attn_triton.py",
+      "status": "modified",
+      "additions": 20,
+      "deletions": 12,
+      "changes": 32,
+      "blob_url": "https://github.com/Dao-AILab/flash-attention/blob/731f154de32834c474ae28f0173f2a36f79f4667/flash_attn%2Fflash_attn_triton.py",
+      "raw_url": "https://github.com/Dao-AILab/flash-attention/raw/731f154de32834c474ae28f0173f2a36f79f4667/flash_attn%2Fflash_attn_triton.py",
+      "contents_url": "https://api.github.com/repos/Dao-AILab/flash-attention/contents/flash_attn%2Fflash_attn_triton.py?ref=731f154de32834c474ae28f0173f2a36f79f4667",
+      "patch": "@@ -42,7 +42,6 @@\n     {\n         \"EVEN_M\": lambda args: args[\"seqlen_q\"] % args[\"BLOCK_M\"] == 0,\n         \"EVEN_N\": lambda args: args[\"seqlen_k\"] % args[\"BLOCK_N\"] == 0,\n-        # \"EVEN_N\": lambda args: False,\n         \"EVEN_HEADDIM\": lambda args: args[\"headdim\"] == args[\"BLOCK_HEADDIM\"],\n     }\n )\n@@ -86,8 +85,8 @@ def _fwd_kernel(\n     m_i = tl.zeros([BLOCK_M], dtype=tl.float32) - float(\"inf\")\n     acc_o = tl.zeros([BLOCK_M, BLOCK_HEADDIM], dtype=tl.float32)\n     # load q: it will stay in SRAM throughout\n-    # [2022-10-30] TD: Idk why but in the case of EVEN_M=True and EVEN_N=False, if we just call\n-    # tl.load(q_ptrs), we get the wrong output! Could be a bug in the compiler?\n+    # [2022-10-30] TD: Triton bug - in the case of EVEN_M=True and EVEN_N=False, if we just call\n+    # tl.load(q_ptrs), we get the wrong output!\n     if EVEN_M & EVEN_N:\n         if EVEN_HEADDIM:\n             q = tl.load(q_ptrs)\n@@ -238,7 +237,7 @@ def _bwd_kernel_one_col_block(\n     v_ptrs = V + (offs_n[:, None] * stride_vn + offs_d[None, :])\n     do_ptrs = DO + (offs_qm[:, None] * stride_dom + offs_d[None, :])\n     dq_ptrs = DQ + (offs_qm[:, None] * stride_dqm + offs_d[None, :])\n-    # initialize dv amd dk\n+    # initialize dv and dk\n     dv = tl.zeros([BLOCK_N, BLOCK_HEADDIM], dtype=tl.float32)\n     dk = tl.zeros([BLOCK_N, BLOCK_HEADDIM], dtype=tl.float32)\n     # k and v stay in SRAM throughout\n@@ -282,7 +281,8 @@ def _bwd_kernel_one_col_block(\n         if IS_CAUSAL:\n             qk = tl.where(offs_m_curr[:, None] >= (offs_n[None, :]), qk, float(\"-inf\"))\n         # There seems to be a race condition when headdim=48/96, and dq, dk, dv are wrong.\n-        if not EVEN_HEADDIM:\n+        # Also wrong for headdim=64.\n+        if not EVEN_M:\n             tl.debug_barrier()\n         lse_i = tl.load(LSE + offs_m_curr)\n         p = tl.exp(qk * softmax_scale - lse_i[:, None])\n@@ -293,21 +293,26 @@ def _bwd_kernel_one_col_block(\n         # the output is correct.\n         if EVEN_M & EVEN_HEADDIM:\n             do = tl.load(do_ptrs)\n+        else:\n+            # [2022-11-01] TD: Triton bug, there's a race condition if we just use m_mask and not d_mask.\n+            do = tl.load(do_ptrs, mask=(offs_m_curr[:, None] < seqlen_q)\n+                                        & (offs_d[None, :] < headdim), other=0.0)\n         # if EVEN_M:\n         #     if EVEN_HEADDIM:\n         #         do = tl.load(do_ptrs)\n         #     else:\n         #         do = tl.load(do_ptrs, mask=offs_d[None, :] < headdim, other=0.0)\n-        else:\n-            if EVEN_HEADDIM:\n-                do = tl.load(do_ptrs, mask=offs_m_curr[:, None] < seqlen_q, other=0.0)\n-            else:\n-                do = tl.load(do_ptrs, mask=(offs_m_curr[:, None] < seqlen_q)\n-                                           & (offs_d[None, :] < headdim), other=0.0)\n+        # else:\n+        #     if EVEN_HEADDIM:\n+        #         do = tl.load(do_ptrs, mask=offs_m_curr[:, None] < seqlen_q, other=0.0)\n+        #     else:\n+        #         do = tl.load(do_ptrs, mask=(offs_m_curr[:, None] < seqlen_q)\n+        #                                    & (offs_d[None, :] < headdim), other=0.0)\n         dv += tl.dot(p.to(do.dtype), do, trans_a=True)\n         # compute dp = dot(v, do)\n         # There seems to be a race condition when headdim=48/96, and dq, dk are wrong.\n         # Also wrong for headdim=128, seqlen=(108, 256), and ATOMIC_ADD=True\n+        # Also wrong for headdim=64, seqlen=(1023, 1024), and ATOMIC_ADD=False\n         if not EVEN_M:\n             tl.debug_barrier()\n         dp = tl.dot(do, v, trans_b=True)\n@@ -366,7 +371,9 @@ def _bwd_kernel_one_col_block(\n     # write-back\n     dv_ptrs = DV + (offs_n[:, None] * stride_dvn + offs_d[None, :])\n     dk_ptrs = DK + (offs_n[:, None] * stride_dkn + offs_d[None, :])\n-    if EVEN_N:\n+    # [2022-11-01] TD: Same bug. In the case of EVEN_N=True and EVEN_M=False,\n+    # if we just call tl.store(dv_ptrs), there's a race condition\n+    if EVEN_N & EVEN_M:\n         if EVEN_HEADDIM:\n             tl.store(dv_ptrs, dv)\n             tl.store(dk_ptrs, dk)\n@@ -536,6 +543,7 @@ def _flash_attn_backward(do, q, k, v, o, lse, dq, dk, dv, causal=False, softmax_\n     assert d <= 128\n     seqlen_q_rounded = math.ceil(seqlen_q / 128) * 128\n     assert lse.shape == (batch, nheads, seqlen_q_rounded)\n+    softmax_scale = softmax_scale or 1.0 / math.sqrt(d)\n     # dq_accum = torch.zeros_like(q, dtype=torch.float32)\n     dq_accum = torch.empty_like(q, dtype=torch.float32)\n     delta = torch.empty_like(lse)"
+    }
+  ]
+}

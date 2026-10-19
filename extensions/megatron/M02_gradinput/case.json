@@ -1,0 +1,29 @@
+{
+  "id": "M02_gradinput",
+  "collection": "megatron",
+  "path": "extensions/megatron/M02_gradinput",
+  "status": "original_parent_fix_and_specialized_verification_artifacts_recovered",
+  "pre_revision": "1ec6b0e941b4e324602d3fd6a955f28cd334a383",
+  "fixed_revision": "f1295380cf06b0475165fbcbd89fbd88e9fee84c",
+  "candidate": "extensions/megatron/M02_gradinput/pre/layer_norm_cuda_kernel.cu",
+  "reference": "extensions/megatron/M02_gradinput/post/layer_norm_cuda_kernel.cu",
+  "candidate_sha256": "e1685b99d43ac41b44888d7b47c1849063fcde61f32d3ea4fb740e06c0b09d17",
+  "reference_sha256": "cc02bf4c995ccd766fd81bd9f664569c4e6eff17bb0a2a40c8e75f213bb6e61f",
+  "artifact_is_specialized": true,
+  "launch_configuration": {
+    "pre_block": [
+      32,
+      4,
+      1
+    ],
+    "post_block": [
+      32,
+      1,
+      1
+    ]
+  },
+  "compiler_version": "original upstream build not pinned; artifact PTX retains producer/version headers",
+  "sources": [
+    "https://github.com/NVIDIA/Megatron-LM/commit/f1295380cf06b0475165fbcbd89fbd88e9fee84c"
+  ]
+}

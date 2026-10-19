@@ -1,0 +1,37 @@
+{
+  "id": "S_Quant_030_nvfp4_fused_decoder_layer_pre_norm_attention",
+  "collection": "sol-execbench",
+  "path": "extensions/sol-execbench/cases/Quant/030_nvfp4_fused_decoder_layer_pre_norm_attention",
+  "status": "candidate_and_original_pass_evidence_recovered_reference_requires_local_download",
+  "reported_category": "reseeding_failure",
+  "subset": "Quant",
+  "name": "030_nvfp4_fused_decoder_layer_pre_norm_attention",
+  "cursor_revision": "87ea087db7b6765ecdd8f5ca07a9cb3eb702e4b0",
+  "solution_name": "030_nvfp4_fused_decoder_layer_pre_norm_attention_cutedsl_exact85_gqa_donor_outbuf1024_v91",
+  "candidate_source_hashes": {
+    "extensions/sol-execbench/cases/Quant/030_nvfp4_fused_decoder_layer_pre_norm_attention/candidate/kernel.py": "8d4f024e921d101c83d54185689e49db38a00e19c475f8583afc193dbdda496e",
+    "extensions/sol-execbench/cases/Quant/030_nvfp4_fused_decoder_layer_pre_norm_attention/candidate/common_nvfp4_gemm.py": "ebcf295e0f45bc402a8b58e0942b88a90f37be2b2c177393aa8b7c776c324745"
+  },
+  "reference_embedded": false,
+  "reference_revision": "63699402f003496acc3af4eb534a5304a8ac1ea9",
+  "reference_sha256": "6798b90f0d4755da8462737df10a7966e6632da853db8378d00ffb4dc48a04da",
+  "original_reference_revision": "13c8c2dab5dbf1c1fca13aceb700f27574583460",
+  "original_reference_sha256": "6798b90f0d4755da8462737df10a7966e6632da853db8378d00ffb4dc48a04da",
+  "reference_unchanged_between_pins": true,
+  "original_trace_status_counts": {
+    "PASSED": 16
+  },
+  "reseed_values": [
+    200,
+    1337,
+    13337,
+    133337
+  ],
+  "failed_workload_indices": "not published in doubleAI article",
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/anysphere/kernel-optimization-results/tree/87ea087db7b6765ecdd8f5ca07a9cb3eb702e4b0/Quant/030_nvfp4_fused_decoder_layer_pre_norm_attention",
+    "https://www.doubleai.com/research/maxwell-approaches-speed-of-light-on-blackwell",
+    "https://huggingface.co/datasets/nvidia/SOL-ExecBench/tree/63699402f003496acc3af4eb534a5304a8ac1ea9"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "Op_Name": "30_Softsign",
+  "Level_ID": 1,
+  "Task_ID": 30,
+  "Kernel_Name": "constant_mem_opt_base",
+  "Correct": true,
+  "Max_Diff": 0.0,
+  "Error": null,
+  "CUDA_Runtime": 0.007,
+  "CUDA_Speedup_Native": 2.120157038526876,
+  "__index_level_0__": 10,
+  "dataset_row_position": 3917,
+  "join_rule": "pandas positional row ID assigned before Correct filtering, exactly as ABC preprocess_data.py"
+}

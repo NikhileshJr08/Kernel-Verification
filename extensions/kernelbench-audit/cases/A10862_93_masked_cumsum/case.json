@@ -1,0 +1,20 @@
+{
+  "id": "A10862_93_masked_cumsum",
+  "collection": "kernelbench-audit",
+  "path": "extensions/kernelbench-audit/cases/A10862_93_masked_cumsum",
+  "status": "original_pass_and_verified_adversarial_test_available",
+  "candidate": "extensions/kernelbench-audit/cases/A10862_93_masked_cumsum/candidate.cu",
+  "reference": "extensions/kernelbench-audit/cases/A10862_93_masked_cumsum/reference.py",
+  "candidate_sha256": "f4ae07b1c54886108465a2e112e8cd0263b83f5a2e0ebee47bbf84c7262e4a38",
+  "reference_sha256": "b3169f491dde09fcb41b1299b7c23b66dae8785a7d7d18b6c0ed79b5d754e5f1",
+  "dataset_row": 10862,
+  "task_id": 93,
+  "original_correct": true,
+  "candidate_matches_abc_bytes": true,
+  "reported_individual_adversarial_outcome": "not_available",
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/uiuc-kang-lab/agentic-benchmarks/blob/ae1124758098876db04336e1d8c6e419a139c6e3/benchmarks/kernel-bench/tests_verified/level_1/93_masked_cumsum/test_10862.py",
+    "https://huggingface.co/datasets/SakanaAI/AI-CUDA-Engineer-Archive/tree/4edbe8d6d0b417e05aaf8ec7e23f78aecdc5516b"
+  ]
+}

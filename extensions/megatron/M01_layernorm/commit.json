@@ -1,0 +1,101 @@
+{
+  "sha": "4831071c900df5901570984c28b9f907892ff632",
+  "node_id": "C_kwDOCoyH_toAKDQ4MzEwNzFjOTAwZGY1OTAxNTcwOTg0YzI4YjlmOTA3ODkyZmY2MzI",
+  "commit": {
+    "author": {
+      "name": "Eddie Yan",
+      "email": "eddiey@nvidia.com",
+      "date": "2021-10-07T00:33:54Z"
+    },
+    "committer": {
+      "name": "Eddie Yan",
+      "email": "eddiey@nvidia.com",
+      "date": "2021-10-07T00:33:54Z"
+    },
+    "message": "Update layer_norm_cuda_kernel.cu",
+    "tree": {
+      "sha": "6b624a2f3621d2e951b538f66f1feba5f2ae514a",
+      "url": "https://api.github.com/repos/NVIDIA/Megatron-LM/git/trees/6b624a2f3621d2e951b538f66f1feba5f2ae514a"
+    },
+    "url": "https://api.github.com/repos/NVIDIA/Megatron-LM/git/commits/4831071c900df5901570984c28b9f907892ff632",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/NVIDIA/Megatron-LM/commits/4831071c900df5901570984c28b9f907892ff632",
+  "html_url": "https://github.com/NVIDIA/Megatron-LM/commit/4831071c900df5901570984c28b9f907892ff632",
+  "comments_url": "https://api.github.com/repos/NVIDIA/Megatron-LM/commits/4831071c900df5901570984c28b9f907892ff632/comments",
+  "author": {
+    "login": "eqy",
+    "id": 2239616,
+    "node_id": "MDQ6VXNlcjIyMzk2MTY=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/2239616?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/eqy",
+    "html_url": "https://github.com/eqy",
+    "followers_url": "https://api.github.com/users/eqy/followers",
+    "following_url": "https://api.github.com/users/eqy/following{/other_user}",
+    "gists_url": "https://api.github.com/users/eqy/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/eqy/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/eqy/subscriptions",
+    "organizations_url": "https://api.github.com/users/eqy/orgs",
+    "repos_url": "https://api.github.com/users/eqy/repos",
+    "events_url": "https://api.github.com/users/eqy/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/eqy/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "eqy",
+    "id": 2239616,
+    "node_id": "MDQ6VXNlcjIyMzk2MTY=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/2239616?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/eqy",
+    "html_url": "https://github.com/eqy",
+    "followers_url": "https://api.github.com/users/eqy/followers",
+    "following_url": "https://api.github.com/users/eqy/following{/other_user}",
+    "gists_url": "https://api.github.com/users/eqy/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/eqy/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/eqy/subscriptions",
+    "organizations_url": "https://api.github.com/users/eqy/orgs",
+    "repos_url": "https://api.github.com/users/eqy/repos",
+    "events_url": "https://api.github.com/users/eqy/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/eqy/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "cdc614cfd4154d791b8b8d4756c2bcc1d8613a4d",
+      "url": "https://api.github.com/repos/NVIDIA/Megatron-LM/commits/cdc614cfd4154d791b8b8d4756c2bcc1d8613a4d",
+      "html_url": "https://github.com/NVIDIA/Megatron-LM/commit/cdc614cfd4154d791b8b8d4756c2bcc1d8613a4d"
+    }
+  ],
+  "stats": {
+    "total": 1,
+    "additions": 1,
+    "deletions": 0
+  },
+  "files": [
+    {
+      "sha": "6db8b99ffb9e084c2a4963d5346f16c0d423ae8d",
+      "filename": "megatron/fused_kernels/layer_norm_cuda_kernel.cu",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 0,
+      "changes": 1,
+      "blob_url": "https://github.com/NVIDIA/Megatron-LM/blob/4831071c900df5901570984c28b9f907892ff632/megatron%2Ffused_kernels%2Flayer_norm_cuda_kernel.cu",
+      "raw_url": "https://github.com/NVIDIA/Megatron-LM/raw/4831071c900df5901570984c28b9f907892ff632/megatron%2Ffused_kernels%2Flayer_norm_cuda_kernel.cu",
+      "contents_url": "https://api.github.com/repos/NVIDIA/Megatron-LM/contents/megatron%2Ffused_kernels%2Flayer_norm_cuda_kernel.cu?ref=4831071c900df5901570984c28b9f907892ff632",
+      "patch": "@@ -329,6 +329,7 @@ void cuApplyLayerNorm(\n       mean[i1] = mu;\n       invvar[i1] = c_invvar;\n     }\n+    __syncthreads();\n   }\n }\n "
+    }
+  ]
+}

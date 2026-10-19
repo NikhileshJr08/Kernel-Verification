@@ -1,0 +1,20 @@
+{
+  "id": "A05261_41_Max_Pooling_1D",
+  "collection": "kernelbench-audit",
+  "path": "extensions/kernelbench-audit/cases/A05261_41_Max_Pooling_1D",
+  "status": "original_pass_and_verified_adversarial_test_available",
+  "candidate": "extensions/kernelbench-audit/cases/A05261_41_Max_Pooling_1D/candidate.cu",
+  "reference": "extensions/kernelbench-audit/cases/A05261_41_Max_Pooling_1D/reference.py",
+  "candidate_sha256": "0d32709ac7514148887e648fc32bf5b9ee6ea4ac93968254c6d556741faca38b",
+  "reference_sha256": "c54c2bab8bc63eefe14f05f8d4eeae6d56feb34647608f62b358c80b4de00357",
+  "dataset_row": 5261,
+  "task_id": 41,
+  "original_correct": true,
+  "candidate_matches_abc_bytes": true,
+  "reported_individual_adversarial_outcome": "not_available",
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/uiuc-kang-lab/agentic-benchmarks/blob/ae1124758098876db04336e1d8c6e419a139c6e3/benchmarks/kernel-bench/tests_verified/level_1/41_Max_Pooling_1D/test_5261.py",
+    "https://huggingface.co/datasets/SakanaAI/AI-CUDA-Engineer-Archive/tree/4edbe8d6d0b417e05aaf8ec7e23f78aecdc5516b"
+  ]
+}

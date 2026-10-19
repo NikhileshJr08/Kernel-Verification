@@ -1,0 +1,14 @@
+{
+  "Op_Name": "10_3D_tensor_matrix_multiplication",
+  "Level_ID": 1,
+  "Task_ID": 10,
+  "Kernel_Name": "minimize_warp_divergence_base",
+  "Correct": true,
+  "Max_Diff": 0.001,
+  "Error": null,
+  "CUDA_Runtime": 8.341,
+  "CUDA_Speedup_Native": 0.1383688992668493,
+  "__index_level_0__": 35,
+  "dataset_row_position": 1142,
+  "join_rule": "pandas positional row ID assigned before Correct filtering, exactly as ABC preprocess_data.py"
+}

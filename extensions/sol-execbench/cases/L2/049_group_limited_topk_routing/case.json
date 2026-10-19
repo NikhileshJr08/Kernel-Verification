@@ -1,0 +1,36 @@
+{
+  "id": "S_L2_049_group_limited_topk_routing",
+  "collection": "sol-execbench",
+  "path": "extensions/sol-execbench/cases/L2/049_group_limited_topk_routing",
+  "status": "candidate_and_original_pass_evidence_recovered_reference_requires_local_download",
+  "reported_category": "reseeding_failure",
+  "subset": "L2",
+  "name": "049_group_limited_topk_routing",
+  "cursor_revision": "87ea087db7b6765ecdd8f5ca07a9cb3eb702e4b0",
+  "solution_name": "group_limited_topk_routing_parallel_emit_biased_only_iter54_fullsuite_post_iter114_confirm",
+  "candidate_source_hashes": {
+    "extensions/sol-execbench/cases/L2/049_group_limited_topk_routing/candidate/kernel.py": "54fe53be3309c9dba2101f6dff8f4737a62ccea63d14bbf381745543a57d0836"
+  },
+  "reference_embedded": false,
+  "reference_revision": "63699402f003496acc3af4eb534a5304a8ac1ea9",
+  "reference_sha256": "831bba0db50f78a99bcbd9cb24aa33087062cc738344daeffc9ee089ed95f7e7",
+  "original_reference_revision": "13c8c2dab5dbf1c1fca13aceb700f27574583460",
+  "original_reference_sha256": "831bba0db50f78a99bcbd9cb24aa33087062cc738344daeffc9ee089ed95f7e7",
+  "reference_unchanged_between_pins": true,
+  "original_trace_status_counts": {
+    "PASSED": 16
+  },
+  "reseed_values": [
+    200,
+    1337,
+    13337,
+    133337
+  ],
+  "failed_workload_indices": "not published in doubleAI article",
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/anysphere/kernel-optimization-results/tree/87ea087db7b6765ecdd8f5ca07a9cb3eb702e4b0/L2/049_group_limited_topk_routing",
+    "https://www.doubleai.com/research/maxwell-approaches-speed-of-light-on-blackwell",
+    "https://huggingface.co/datasets/nvidia/SOL-ExecBench/tree/63699402f003496acc3af4eb534a5304a8ac1ea9"
+  ]
+}

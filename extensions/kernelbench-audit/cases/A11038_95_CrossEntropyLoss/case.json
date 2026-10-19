@@ -1,0 +1,20 @@
+{
+  "id": "A11038_95_CrossEntropyLoss",
+  "collection": "kernelbench-audit",
+  "path": "extensions/kernelbench-audit/cases/A11038_95_CrossEntropyLoss",
+  "status": "original_pass_and_verified_adversarial_test_available",
+  "candidate": "extensions/kernelbench-audit/cases/A11038_95_CrossEntropyLoss/candidate.cu",
+  "reference": "extensions/kernelbench-audit/cases/A11038_95_CrossEntropyLoss/reference.py",
+  "candidate_sha256": "a8def83b6c50497db3fbc841154bb0f32e92b0c96d774045aad5e5cd56c5957d",
+  "reference_sha256": "a9a2489c73d1766ec853b270e76386efa34a2cb278bcf64970c7c52f43420802",
+  "dataset_row": 11038,
+  "task_id": 95,
+  "original_correct": true,
+  "candidate_matches_abc_bytes": true,
+  "reported_individual_adversarial_outcome": "not_available",
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/uiuc-kang-lab/agentic-benchmarks/blob/ae1124758098876db04336e1d8c6e419a139c6e3/benchmarks/kernel-bench/tests_verified/level_1/95_CrossEntropyLoss/test_11038.py",
+    "https://huggingface.co/datasets/SakanaAI/AI-CUDA-Engineer-Archive/tree/4edbe8d6d0b417e05aaf8ec7e23f78aecdc5516b"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "F_9b0bc978729d",
+  "collection": "flashattention",
+  "path": "extensions/flashattention/F_9b0bc978729d",
+  "status": "original_parent_fix_tests_recovered_compiler_pin_unresolved",
+  "title": "Fix race condition in Triton fwd",
+  "pre_revision": "215930bce365dc31ed890edeee8517102ca2ee35",
+  "fixed_revision": "9b0bc978729d5470aaf5667b8f65df6fa2b3a007",
+  "candidate": "extensions/flashattention/F_9b0bc978729d/pre/flash_attn/flash_attn_triton.py",
+  "reference": "extensions/flashattention/F_9b0bc978729d/post/flash_attn/flash_attn_triton.py",
+  "candidate_sha256": "d73067ba435d7ace935d37ba8770e36f3a8372ba1231770f011f027ab046a64b",
+  "reference_sha256": "99b5ce360574d6262f56216b24b6bc05473b3c32907a0a695b4d0b586de6b507",
+  "compiler_version": null,
+  "later_tested_version_note": {
+    "revision": "5d079fdd7a20bbd354080a80b20b5c36c93898d4",
+    "triton": "2.0.0.dev20221202",
+    "applies_to_this_fix": false
+  },
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/Dao-AILab/flash-attention/commit/9b0bc978729d5470aaf5667b8f65df6fa2b3a007"
+  ]
+}

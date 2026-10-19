@@ -1,0 +1,33 @@
+{
+  "id": "S_Quant_008_nvfp4_multimodal_embedding_projection",
+  "collection": "sol-execbench",
+  "path": "extensions/sol-execbench/cases/Quant/008_nvfp4_multimodal_embedding_projection",
+  "status": "candidate_and_original_pass_evidence_recovered_reference_requires_local_download",
+  "reported_category": "updated_benchmark_failure",
+  "subset": "Quant",
+  "name": "008_nvfp4_multimodal_embedding_projection",
+  "cursor_revision": "87ea087db7b6765ecdd8f5ca07a9cb3eb702e4b0",
+  "solution_name": "008_nvfp4_multimodal_embedding_projection_cute_nvfp4_v42_compiled_scale_bias_epilogue",
+  "candidate_source_hashes": {
+    "extensions/sol-execbench/cases/Quant/008_nvfp4_multimodal_embedding_projection/candidate/kernel.py": "91f547f56b412b69bfd3c5e5039d75ef8fddca06da3e4f047f95804d8cfe7906",
+    "extensions/sol-execbench/cases/Quant/008_nvfp4_multimodal_embedding_projection/candidate/nvfp4_gemm.py": "1ff6f0123055d282ad8898e858b1243c7ea9709272f3bd3a0c00cf2379d3cc59",
+    "extensions/sol-execbench/cases/Quant/008_nvfp4_multimodal_embedding_projection/candidate/nvfp4_common.py": "4f401a3c14133b65d23273bbfd7d92d6c309d7c374cba3f03e10efb5f4faf796"
+  },
+  "reference_embedded": false,
+  "reference_revision": "63699402f003496acc3af4eb534a5304a8ac1ea9",
+  "reference_sha256": "7d274bacf8cd8d7c02c5334fde1aac8a8db2188250f31e0008e75a6336330166",
+  "original_reference_revision": "13c8c2dab5dbf1c1fca13aceb700f27574583460",
+  "original_reference_sha256": "7d274bacf8cd8d7c02c5334fde1aac8a8db2188250f31e0008e75a6336330166",
+  "reference_unchanged_between_pins": true,
+  "original_trace_status_counts": {
+    "PASSED": 16
+  },
+  "reseed_values": null,
+  "failed_workload_indices": "not published in doubleAI article",
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/anysphere/kernel-optimization-results/tree/87ea087db7b6765ecdd8f5ca07a9cb3eb702e4b0/Quant/008_nvfp4_multimodal_embedding_projection",
+    "https://www.doubleai.com/research/maxwell-approaches-speed-of-light-on-blackwell",
+    "https://huggingface.co/datasets/nvidia/SOL-ExecBench/tree/63699402f003496acc3af4eb534a5304a8ac1ea9"
+  ]
+}

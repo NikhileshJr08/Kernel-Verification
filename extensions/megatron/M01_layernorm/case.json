@@ -1,0 +1,29 @@
+{
+  "id": "M01_layernorm",
+  "collection": "megatron",
+  "path": "extensions/megatron/M01_layernorm",
+  "status": "original_parent_fix_and_specialized_verification_artifacts_recovered",
+  "pre_revision": "cdc614cfd4154d791b8b8d4756c2bcc1d8613a4d",
+  "fixed_revision": "4831071c900df5901570984c28b9f907892ff632",
+  "candidate": "extensions/megatron/M01_layernorm/pre/layer_norm_cuda_kernel.cu",
+  "reference": "extensions/megatron/M01_layernorm/post/layer_norm_cuda_kernel.cu",
+  "candidate_sha256": "a13161019b59b0d035f6b218b5b1e6ad7203700957ad0c38a857f1e8d245966b",
+  "reference_sha256": "e1685b99d43ac41b44888d7b47c1849063fcde61f32d3ea4fb740e06c0b09d17",
+  "artifact_is_specialized": true,
+  "launch_configuration": {
+    "pre_block": [
+      32,
+      1,
+      1
+    ],
+    "post_block": [
+      32,
+      1,
+      1
+    ]
+  },
+  "compiler_version": "original upstream build not pinned; artifact PTX retains producer/version headers",
+  "sources": [
+    "https://github.com/NVIDIA/Megatron-LM/commit/4831071c900df5901570984c28b9f907892ff632"
+  ]
+}

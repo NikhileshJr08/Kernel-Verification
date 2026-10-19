@@ -1,0 +1,10 @@
+{
+  "id": "VB01_shared48",
+  "collection": "volta-bounds",
+  "status": "illustration_identified_complete_original_kernel_unmapped",
+  "candidate": null,
+  "reference": null,
+  "source": "https://theory.stanford.edu/~aiken/publications/papers/oopsla26c.pdf",
+  "searched_artifact": "https://doi.org/10.5281/zenodo.21529230",
+  "notes": "No unique full-kernel mapping established. Existing Conv2D-opt is not relabeled as the missing faulty candidate."
+}

@@ -1,0 +1,6 @@
+#include <torch/extension.h>
+#include <ATen/cuda/CUDAContext.h>
+#include <cuda_bf16.h>
+#include <cuda_runtime.h>
+namespace{using B=__nv_bfloat16;constexpr int W=4,T=128;constexpr float N=-1e30f;__device__ __forceinline__ float f(B x){return __bfloat162float(x);}__device__ __forceinline__ B b(float x){return __float2bfloat16_rn(x);}__device__ __forceinline__ float rs(float v){for(int o=16;o;o>>=1)v+=__shfl_down_sync(0xffffffffu,v,o);return __shfl_sync(0xffffffffu,v,0);}__device__ __forceinline__ float rm(float v){for(int o=16;o;o>>=1)v=fmaxf(v,__shfl_down_sync(0xffffffffu,v,o));return __shfl_sync(0xffffffffu,v,0);}__global__ __launch_bounds__(T,4) void k(const B*__restrict__ x,B*__restrict__ y,int rows,int n){int l=threadIdx.x&31,w=threadIdx.x>>5,r=blockIdx.x*W+w;if(r>=rows)return;size_t o=(size_t)r*n;float m=N;for(int i=l;i<n;i+=32)m=fmaxf(m,f(x[o+i]));m=rm(m);float q=0.f;for(int i=l;i<n;i+=32)q+=__expf(f(x[o+i])-m);q=rs(q);float inv=q>0.f?1.f/q:0.f;for(int i=l;i<n;i+=32)y[o+i]=b(__expf(f(x[o+i])-m)*inv);} }
+void r(torch::Tensor x,torch::Tensor y){auto s=at::cuda::getCurrentCUDAStream().stream();int rows=(int)(x.size(0)*x.size(1)*x.size(2)),n=(int)x.size(3);k<<<(rows+W-1)/W,T,0,s>>>((const B*)x.data_ptr(),(B*)y.data_ptr(),rows,n);}PYBIND11_MODULE(TORCH_EXTENSION_NAME,m){m.def("r",&r,"r");}

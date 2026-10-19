@@ -1,0 +1,434 @@
+[
+  {
+    "solution": "011_fp8_moe_gate_routing_qdq12_broadcast_exact1280_cache512_v40",
+    "evaluation": {
+      "status": "PASSED",
+      "environment": {
+        "hardware": "NVIDIA B200",
+        "libs": {
+          "torch": "2.9.0+cu130",
+          "triton": "3.5.0",
+          "cuda": "13.0"
+        }
+      },
+      "timestamp": "2026-04-04T02:37:40.742367",
+      "log": "",
+      "correctness": {
+        "max_relative_error": 39800.0,
+        "max_absolute_error": 253.0,
+        "has_nan": false,
+        "has_inf": false
+      },
+      "performance": {
+        "latency_ms": 0.4531195,
+        "reference_latency_ms": 0.0,
+        "speedup_factor": 0.0
+      }
+    }
+  },
+  {
+    "solution": "011_fp8_moe_gate_routing_qdq12_broadcast_exact1280_cache512_v40",
+    "evaluation": {
+      "status": "PASSED",
+      "environment": {
+        "hardware": "NVIDIA B200",
+        "libs": {
+          "torch": "2.9.0+cu130",
+          "triton": "3.5.0",
+          "cuda": "13.0"
+        }
+      },
+      "timestamp": "2026-04-04T02:37:41.266160",
+      "log": "",
+      "correctness": {
+        "max_relative_error": 186.0,
+        "max_absolute_error": 251.0,
+        "has_nan": false,
+        "has_inf": false
+      },
+      "performance": {
+        "latency_ms": 0.5167995,
+        "reference_latency_ms": 0.0,
+        "speedup_factor": 0.0
+      }
+    }
+  },
+  {
+    "solution": "011_fp8_moe_gate_routing_qdq12_broadcast_exact1280_cache512_v40",
+    "evaluation": {
+      "status": "PASSED",
+      "environment": {
+        "hardware": "NVIDIA B200",
+        "libs": {
+          "torch": "2.9.0+cu130",
+          "triton": "3.5.0",
+          "cuda": "13.0"
+        }
+      },
+      "timestamp": "2026-04-04T02:37:42.846214",
+      "log": "",
+      "correctness": {
+        "max_relative_error": 0.4965035021305084,
+        "max_absolute_error": 71.0,
+        "has_nan": false,
+        "has_inf": false
+      },
+      "performance": {
+        "latency_ms": 0.31065600000000004,
+        "reference_latency_ms": 0.0,
+        "speedup_factor": 0.0
+      }
+    }
+  },
+  {
+    "solution": "011_fp8_moe_gate_routing_qdq12_broadcast_exact1280_cache512_v40",
+    "evaluation": {
+      "status": "PASSED",
+      "environment": {
+        "hardware": "NVIDIA B200",
+        "libs": {
+          "torch": "2.9.0+cu130",
+          "triton": "3.5.0",
+          "cuda": "13.0"
+        }
+      },
+      "timestamp": "2026-04-04T02:37:44.348204",
+      "log": "",
+      "correctness": {
+        "max_relative_error": 0.00028080938500352204,
+        "max_absolute_error": 8.618831634521484e-05,
+        "has_nan": false,
+        "has_inf": false
+      },
+      "performance": {
+        "latency_ms": 0.3007355,
+        "reference_latency_ms": 0.0,
+        "speedup_factor": 0.0
+      }
+    }
+  },
+  {
+    "solution": "011_fp8_moe_gate_routing_qdq12_broadcast_exact1280_cache512_v40",
+    "evaluation": {
+      "status": "PASSED",
+      "environment": {
+        "hardware": "NVIDIA B200",
+        "libs": {
+          "torch": "2.9.0+cu130",
+          "triton": "3.5.0",
+          "cuda": "13.0"
+        }
+      },
+      "timestamp": "2026-04-04T02:37:44.850885",
+      "log": "",
+      "correctness": {
+        "max_relative_error": 26.88888931274414,
+        "max_absolute_error": 242.0,
+        "has_nan": false,
+        "has_inf": false
+      },
+      "performance": {
+        "latency_ms": 0.4760955,
+        "reference_latency_ms": 0.0,
+        "speedup_factor": 0.0
+      }
+    }
+  },
+  {
+    "solution": "011_fp8_moe_gate_routing_qdq12_broadcast_exact1280_cache512_v40",
+    "evaluation": {
+      "status": "PASSED",
+      "environment": {
+        "hardware": "NVIDIA B200",
+        "libs": {
+          "torch": "2.9.0+cu130",
+          "triton": "3.5.0",
+          "cuda": "13.0"
+        }
+      },
+      "timestamp": "2026-04-04T02:37:46.399577",
+      "log": "",
+      "correctness": {
+        "max_relative_error": 0.0005402694223448634,
+        "max_absolute_error": 0.00016319751739501953,
+        "has_nan": false,
+        "has_inf": false
+      },
+      "performance": {
+        "latency_ms": 0.39496,
+        "reference_latency_ms": 0.0,
+        "speedup_factor": 0.0
+      }
+    }
+  },
+  {
+    "solution": "011_fp8_moe_gate_routing_qdq12_broadcast_exact1280_cache512_v40",
+    "evaluation": {
+      "status": "PASSED",
+      "environment": {
+        "hardware": "NVIDIA B200",
+        "libs": {
+          "torch": "2.9.0+cu130",
+          "triton": "3.5.0",
+          "cuda": "13.0"
+        }
+      },
+      "timestamp": "2026-04-04T02:37:46.861855",
+      "log": "",
+      "correctness": {
+        "max_relative_error": 7.25,
+        "max_absolute_error": 240.0,
+        "has_nan": false,
+        "has_inf": false
+      },
+      "performance": {
+        "latency_ms": 0.3986555,
+        "reference_latency_ms": 0.0,
+        "speedup_factor": 0.0
+      }
+    }
+  },
+  {
+    "solution": "011_fp8_moe_gate_routing_qdq12_broadcast_exact1280_cache512_v40",
+    "evaluation": {
+      "status": "PASSED",
+      "environment": {
+        "hardware": "NVIDIA B200",
+        "libs": {
+          "torch": "2.9.0+cu130",
+          "triton": "3.5.0",
+          "cuda": "13.0"
+        }
+      },
+      "timestamp": "2026-04-04T02:37:47.323859",
+      "log": "",
+      "correctness": {
+        "max_relative_error": 25.77777862548828,
+        "max_absolute_error": 232.0,
+        "has_nan": false,
+        "has_inf": false
+      },
+      "performance": {
+        "latency_ms": 0.4264795,
+        "reference_latency_ms": 0.0,
+        "speedup_factor": 0.0
+      }
+    }
+  },
+  {
+    "solution": "011_fp8_moe_gate_routing_qdq12_broadcast_exact1280_cache512_v40",
+    "evaluation": {
+      "status": "PASSED",
+      "environment": {
+        "hardware": "NVIDIA B200",
+        "libs": {
+          "torch": "2.9.0+cu130",
+          "triton": "3.5.0",
+          "cuda": "13.0"
+        }
+      },
+      "timestamp": "2026-04-04T02:37:48.932345",
+      "log": "",
+      "correctness": {
+        "max_relative_error": 0.0010399571619927883,
+        "max_absolute_error": 0.0003032088279724121,
+        "has_nan": false,
+        "has_inf": false
+      },
+      "performance": {
+        "latency_ms": 0.4774075,
+        "reference_latency_ms": 0.0,
+        "speedup_factor": 0.0
+      }
+    }
+  },
+  {
+    "solution": "011_fp8_moe_gate_routing_qdq12_broadcast_exact1280_cache512_v40",
+    "evaluation": {
+      "status": "PASSED",
+      "environment": {
+        "hardware": "NVIDIA B200",
+        "libs": {
+          "torch": "2.9.0+cu130",
+          "triton": "3.5.0",
+          "cuda": "13.0"
+        }
+      },
+      "timestamp": "2026-04-04T02:37:49.483609",
+      "log": "",
+      "correctness": {
+        "max_relative_error": 40.33333206176758,
+        "max_absolute_error": 242.0,
+        "has_nan": false,
+        "has_inf": false
+      },
+      "performance": {
+        "latency_ms": 0.5831995,
+        "reference_latency_ms": 0.0,
+        "speedup_factor": 0.0
+      }
+    }
+  },
+  {
+    "solution": "011_fp8_moe_gate_routing_qdq12_broadcast_exact1280_cache512_v40",
+    "evaluation": {
+      "status": "PASSED",
+      "environment": {
+        "hardware": "NVIDIA B200",
+        "libs": {
+          "torch": "2.9.0+cu130",
+          "triton": "3.5.0",
+          "cuda": "13.0"
+        }
+      },
+      "timestamp": "2026-04-04T02:37:50.016101",
+      "log": "",
+      "correctness": {
+        "max_relative_error": 16800.0,
+        "max_absolute_error": 248.0,
+        "has_nan": false,
+        "has_inf": false
+      },
+      "performance": {
+        "latency_ms": 0.471471,
+        "reference_latency_ms": 0.0,
+        "speedup_factor": 0.0
+      }
+    }
+  },
+  {
+    "solution": "011_fp8_moe_gate_routing_qdq12_broadcast_exact1280_cache512_v40",
+    "evaluation": {
+      "status": "PASSED",
+      "environment": {
+        "hardware": "NVIDIA B200",
+        "libs": {
+          "torch": "2.9.0+cu130",
+          "triton": "3.5.0",
+          "cuda": "13.0"
+        }
+      },
+      "timestamp": "2026-04-04T02:37:51.612306",
+      "log": "",
+      "correctness": {
+        "max_relative_error": 0.00024834394571371377,
+        "max_absolute_error": 7.638335227966309e-05,
+        "has_nan": false,
+        "has_inf": false
+      },
+      "performance": {
+        "latency_ms": 0.2924155,
+        "reference_latency_ms": 0.0,
+        "speedup_factor": 0.0
+      }
+    }
+  },
+  {
+    "solution": "011_fp8_moe_gate_routing_qdq12_broadcast_exact1280_cache512_v40",
+    "evaluation": {
+      "status": "PASSED",
+      "environment": {
+        "hardware": "NVIDIA B200",
+        "libs": {
+          "torch": "2.9.0+cu130",
+          "triton": "3.5.0",
+          "cuda": "13.0"
+        }
+      },
+      "timestamp": "2026-04-04T02:37:52.135788",
+      "log": "",
+      "correctness": {
+        "max_relative_error": 13.5,
+        "max_absolute_error": 251.0,
+        "has_nan": false,
+        "has_inf": false
+      },
+      "performance": {
+        "latency_ms": 0.5503195,
+        "reference_latency_ms": 0.0,
+        "speedup_factor": 0.0
+      }
+    }
+  },
+  {
+    "solution": "011_fp8_moe_gate_routing_qdq12_broadcast_exact1280_cache512_v40",
+    "evaluation": {
+      "status": "PASSED",
+      "environment": {
+        "hardware": "NVIDIA B200",
+        "libs": {
+          "torch": "2.9.0+cu130",
+          "triton": "3.5.0",
+          "cuda": "13.0"
+        }
+      },
+      "timestamp": "2026-04-04T02:37:53.962997",
+      "log": "",
+      "correctness": {
+        "max_relative_error": 4.0,
+        "max_absolute_error": 194.0,
+        "has_nan": false,
+        "has_inf": false
+      },
+      "performance": {
+        "latency_ms": 0.21734399999999998,
+        "reference_latency_ms": 0.0,
+        "speedup_factor": 0.0
+      }
+    }
+  },
+  {
+    "solution": "011_fp8_moe_gate_routing_qdq12_broadcast_exact1280_cache512_v40",
+    "evaluation": {
+      "status": "PASSED",
+      "environment": {
+        "hardware": "NVIDIA B200",
+        "libs": {
+          "torch": "2.9.0+cu130",
+          "triton": "3.5.0",
+          "cuda": "13.0"
+        }
+      },
+      "timestamp": "2026-04-04T02:37:54.514378",
+      "log": "",
+      "correctness": {
+        "max_relative_error": 23.5,
+        "max_absolute_error": 245.0,
+        "has_nan": false,
+        "has_inf": false
+      },
+      "performance": {
+        "latency_ms": 0.6502870000000001,
+        "reference_latency_ms": 0.0,
+        "speedup_factor": 0.0
+      }
+    }
+  },
+  {
+    "solution": "011_fp8_moe_gate_routing_qdq12_broadcast_exact1280_cache512_v40",
+    "evaluation": {
+      "status": "PASSED",
+      "environment": {
+        "hardware": "NVIDIA B200",
+        "libs": {
+          "torch": "2.9.0+cu130",
+          "triton": "3.5.0",
+          "cuda": "13.0"
+        }
+      },
+      "timestamp": "2026-04-04T02:37:55.954786",
+      "log": "",
+      "correctness": {
+        "max_relative_error": 0.0007402778137475252,
+        "max_absolute_error": 0.00022050738334655762,
+        "has_nan": false,
+        "has_inf": false
+      },
+      "performance": {
+        "latency_ms": 0.3334875,
+        "reference_latency_ms": 0.0,
+        "speedup_factor": 0.0
+      }
+    }
+  }
+]

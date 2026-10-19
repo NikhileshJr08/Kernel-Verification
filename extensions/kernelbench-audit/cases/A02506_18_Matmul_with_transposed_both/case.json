@@ -1,0 +1,20 @@
+{
+  "id": "A02506_18_Matmul_with_transposed_both",
+  "collection": "kernelbench-audit",
+  "path": "extensions/kernelbench-audit/cases/A02506_18_Matmul_with_transposed_both",
+  "status": "original_pass_and_verified_adversarial_test_available",
+  "candidate": "extensions/kernelbench-audit/cases/A02506_18_Matmul_with_transposed_both/candidate.cu",
+  "reference": "extensions/kernelbench-audit/cases/A02506_18_Matmul_with_transposed_both/reference.py",
+  "candidate_sha256": "865459816b3a5fb2e498c9a6e1f6c1be9d93f718346ec01bc91d6faea0216a2e",
+  "reference_sha256": "377345cd785d9559fa64fb580019197c281f4e804d3135d598969ed4a25b8808",
+  "dataset_row": 2506,
+  "task_id": 18,
+  "original_correct": true,
+  "candidate_matches_abc_bytes": true,
+  "reported_individual_adversarial_outcome": "not_available",
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/uiuc-kang-lab/agentic-benchmarks/blob/ae1124758098876db04336e1d8c6e419a139c6e3/benchmarks/kernel-bench/tests_verified/level_1/18_Matmul_with_transposed_both/test_2506.py",
+    "https://huggingface.co/datasets/SakanaAI/AI-CUDA-Engineer-Archive/tree/4edbe8d6d0b417e05aaf8ec7e23f78aecdc5516b"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "id": "S_L2_038_audio_relative_position_attention",
+  "collection": "sol-execbench",
+  "path": "extensions/sol-execbench/cases/L2/038_audio_relative_position_attention",
+  "status": "candidate_and_original_pass_evidence_recovered_reference_requires_local_download",
+  "reported_category": "reseeding_failure",
+  "subset": "L2",
+  "name": "038_audio_relative_position_attention",
+  "cursor_revision": "87ea087db7b6765ecdd8f5ca07a9cb3eb702e4b0",
+  "solution_name": "038_audio_relative_position_attention_cutedsl_exactm_projection_compiledboundary_mediumlarge_bf16qkv",
+  "candidate_source_hashes": {
+    "extensions/sol-execbench/cases/L2/038_audio_relative_position_attention/candidate/kernel.py": "c5f25820a43e8192e104ba57a7b03f86a6617a70c46739fb8301653658587ed4",
+    "extensions/sol-execbench/cases/L2/038_audio_relative_position_attention/candidate/exact_m_dense_gemm.py": "3d1c602ef3aaf183a67a906a374b48e2e754b26b13a3c78f1cc6d4377ca26684",
+    "extensions/sol-execbench/cases/L2/038_audio_relative_position_attention/candidate/dense_gemm_kernel.py": "e7ec99c5db3f3e7d7260f2190b12b7f2e0c12abe63a1abc0737565bd9c28e938"
+  },
+  "reference_embedded": false,
+  "reference_revision": "63699402f003496acc3af4eb534a5304a8ac1ea9",
+  "reference_sha256": "8253089c42ea348701ba774387e0a1e6826a247b51c5eb1e6d80a8e5556b4f6a",
+  "original_reference_revision": "13c8c2dab5dbf1c1fca13aceb700f27574583460",
+  "original_reference_sha256": "8253089c42ea348701ba774387e0a1e6826a247b51c5eb1e6d80a8e5556b4f6a",
+  "reference_unchanged_between_pins": true,
+  "original_trace_status_counts": {
+    "PASSED": 14
+  },
+  "reseed_values": [
+    200,
+    1337,
+    13337,
+    133337
+  ],
+  "failed_workload_indices": "not published in doubleAI article",
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/anysphere/kernel-optimization-results/tree/87ea087db7b6765ecdd8f5ca07a9cb3eb702e4b0/L2/038_audio_relative_position_attention",
+    "https://www.doubleai.com/research/maxwell-approaches-speed-of-light-on-blackwell",
+    "https://huggingface.co/datasets/nvidia/SOL-ExecBench/tree/63699402f003496acc3af4eb534a5304a8ac1ea9"
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "sha": "ff78ea4123a29e10dccade3d73b7c4869f383b6a",
+  "node_id": "C_kwDOHXVlhNoAKGZmNzhlYTQxMjNhMjllMTBkY2NhZGUzZDczYjdjNDg2OWYzODNiNmE",
+  "commit": {
+    "author": {
+      "name": "Tri Dao",
+      "email": "tridpq@gmail.com",
+      "date": "2022-11-04T18:20:27Z"
+    },
+    "committer": {
+      "name": "Tri Dao",
+      "email": "tridpq@gmail.com",
+      "date": "2022-11-04T18:20:27Z"
+    },
+    "message": "Fix race condition in Triton bwd when there's bias",
+    "tree": {
+      "sha": "e8b87bb4fa1bbb743dbcbe167aff32db230770dd",
+      "url": "https://api.github.com/repos/Dao-AILab/flash-attention/git/trees/e8b87bb4fa1bbb743dbcbe167aff32db230770dd"
+    },
+    "url": "https://api.github.com/repos/Dao-AILab/flash-attention/git/commits/ff78ea4123a29e10dccade3d73b7c4869f383b6a",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/Dao-AILab/flash-attention/commits/ff78ea4123a29e10dccade3d73b7c4869f383b6a",
+  "html_url": "https://github.com/Dao-AILab/flash-attention/commit/ff78ea4123a29e10dccade3d73b7c4869f383b6a",
+  "comments_url": "https://api.github.com/repos/Dao-AILab/flash-attention/commits/ff78ea4123a29e10dccade3d73b7c4869f383b6a/comments",
+  "author": {
+    "login": "tridao",
+    "id": 5616128,
+    "node_id": "MDQ6VXNlcjU2MTYxMjg=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/5616128?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/tridao",
+    "html_url": "https://github.com/tridao",
+    "followers_url": "https://api.github.com/users/tridao/followers",
+    "following_url": "https://api.github.com/users/tridao/following{/other_user}",
+    "gists_url": "https://api.github.com/users/tridao/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/tridao/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/tridao/subscriptions",
+    "organizations_url": "https://api.github.com/users/tridao/orgs",
+    "repos_url": "https://api.github.com/users/tridao/repos",
+    "events_url": "https://api.github.com/users/tridao/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/tridao/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "tridao",
+    "id": 5616128,
+    "node_id": "MDQ6VXNlcjU2MTYxMjg=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/5616128?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/tridao",
+    "html_url": "https://github.com/tridao",
+    "followers_url": "https://api.github.com/users/tridao/followers",
+    "following_url": "https://api.github.com/users/tridao/following{/other_user}",
+    "gists_url": "https://api.github.com/users/tridao/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/tridao/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/tridao/subscriptions",
+    "organizations_url": "https://api.github.com/users/tridao/orgs",
+    "repos_url": "https://api.github.com/users/tridao/repos",
+    "events_url": "https://api.github.com/users/tridao/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/tridao/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "86862cfd7bab1fe0279d1cdcdf370268792339cb",
+      "url": "https://api.github.com/repos/Dao-AILab/flash-attention/commits/86862cfd7bab1fe0279d1cdcdf370268792339cb",
+      "html_url": "https://github.com/Dao-AILab/flash-attention/commit/86862cfd7bab1fe0279d1cdcdf370268792339cb"
+    }
+  ],
+  "stats": {
+    "total": 4,
+    "additions": 3,
+    "deletions": 1
+  },
+  "files": [
+    {
+      "sha": "af035f34c82855b7cc1bfa105e1430c642509e15",
+      "filename": "flash_attn/flash_attn_triton.py",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 0,
+      "changes": 1,
+      "blob_url": "https://github.com/Dao-AILab/flash-attention/blob/ff78ea4123a29e10dccade3d73b7c4869f383b6a/flash_attn%2Fflash_attn_triton.py",
+      "raw_url": "https://github.com/Dao-AILab/flash-attention/raw/ff78ea4123a29e10dccade3d73b7c4869f383b6a/flash_attn%2Fflash_attn_triton.py",
+      "contents_url": "https://api.github.com/repos/Dao-AILab/flash-attention/contents/flash_attn%2Fflash_attn_triton.py?ref=ff78ea4123a29e10dccade3d73b7c4869f383b6a",
+      "patch": "@@ -326,6 +326,7 @@ def _bwd_kernel_one_col_block(\n         if IS_CAUSAL:\n             qk = tl.where(offs_m_curr[:, None] >= (offs_n[None, :]), qk, float(\"-inf\"))\n         if BIAS_TYPE != 'none':\n+            tl.debug_barrier()  # Race condition otherwise\n             if BIAS_TYPE == 'vector':\n                 if EVEN_N:\n                     bias = tl.load(b_ptrs).to(tl.float32)"
+    },
+    {
+      "sha": "8434ac43fbc00c2ec252ff72604859d1e94e7411",
+      "filename": "tests/test_flash_attn.py",
+      "status": "modified",
+      "additions": 2,
+      "deletions": 1,
+      "changes": 3,
+      "blob_url": "https://github.com/Dao-AILab/flash-attention/blob/ff78ea4123a29e10dccade3d73b7c4869f383b6a/tests%2Ftest_flash_attn.py",
+      "raw_url": "https://github.com/Dao-AILab/flash-attention/raw/ff78ea4123a29e10dccade3d73b7c4869f383b6a/tests%2Ftest_flash_attn.py",
+      "contents_url": "https://api.github.com/repos/Dao-AILab/flash-attention/contents/tests%2Ftest_flash_attn.py?ref=ff78ea4123a29e10dccade3d73b7c4869f383b6a",
+      "patch": "@@ -976,7 +976,7 @@ def test_flash_attn_triton_race_condition(seqlen_q, seqlen_k, d, causal, dtype,\n     equal_fn = torch.equal if deterministic_dq else partial(torch.allclose, atol=dq_atol)\n     # Run 10000 times and check that the results don't change\n     for i in range(10000):\n-        output = flash_attn_func(q, k, v, None, causal)\n+        output = flash_attn_func(q, k, v, bias, causal)\n         output_equal = torch.equal(output, output_0)\n         if not output_equal:  # Printing / computing diff sometimes makes the race condition disappear\n             print(f'Output max diff: {(output - output_0).abs().max().item()}')\n@@ -986,6 +986,7 @@ def test_flash_attn_triton_race_condition(seqlen_q, seqlen_k, d, causal, dtype,\n         dk_equal = torch.equal(dk, dk_0)\n         dv_equal = torch.equal(dv, dv_0)\n         if not (dq_equal and dk_equal and dv_equal):\n+            print(f'{i = }')\n             print(f'dQ max diff: {(dq - dq_0).abs().max().item()}')\n             print(f'dK max diff: {(dk - dk_0).abs().max().item()}')\n             print(f'dV max diff: {(dv - dv_0).abs().max().item()}')"
+    }
+  ]
+}

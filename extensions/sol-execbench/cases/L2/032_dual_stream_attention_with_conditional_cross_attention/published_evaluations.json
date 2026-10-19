@@ -1,0 +1,434 @@
+[
+  {
+    "solution": "032_dual_stream_attention_with_conditional_cross_attention_cutedsl_frontier545_allused3_qkropefused_w11_fullsuite_probe",
+    "evaluation": {
+      "status": "PASSED",
+      "environment": {
+        "hardware": "NVIDIA B200",
+        "libs": {
+          "torch": "2.9.0+cu130",
+          "triton": "3.5.0",
+          "cuda": "13.0"
+        }
+      },
+      "timestamp": "2026-04-04T02:15:25.838105",
+      "log": "",
+      "correctness": {
+        "max_relative_error": 0.5771126747131348,
+        "max_absolute_error": 0.004721641540527344,
+        "has_nan": false,
+        "has_inf": false
+      },
+      "performance": {
+        "latency_ms": 0.396336,
+        "reference_latency_ms": 0.0,
+        "speedup_factor": 0.0
+      }
+    }
+  },
+  {
+    "solution": "032_dual_stream_attention_with_conditional_cross_attention_cutedsl_frontier545_allused3_qkropefused_w11_fullsuite_probe",
+    "evaluation": {
+      "status": "PASSED",
+      "environment": {
+        "hardware": "NVIDIA B200",
+        "libs": {
+          "torch": "2.9.0+cu130",
+          "triton": "3.5.0",
+          "cuda": "13.0"
+        }
+      },
+      "timestamp": "2026-04-04T02:15:27.590173",
+      "log": "",
+      "correctness": {
+        "max_relative_error": 1.9675607681274414,
+        "max_absolute_error": 0.02204298973083496,
+        "has_nan": false,
+        "has_inf": false
+      },
+      "performance": {
+        "latency_ms": 1.082927,
+        "reference_latency_ms": 0.0,
+        "speedup_factor": 0.0
+      }
+    }
+  },
+  {
+    "solution": "032_dual_stream_attention_with_conditional_cross_attention_cutedsl_frontier545_allused3_qkropefused_w11_fullsuite_probe",
+    "evaluation": {
+      "status": "PASSED",
+      "environment": {
+        "hardware": "NVIDIA B200",
+        "libs": {
+          "torch": "2.9.0+cu130",
+          "triton": "3.5.0",
+          "cuda": "13.0"
+        }
+      },
+      "timestamp": "2026-04-04T02:15:29.191203",
+      "log": "",
+      "correctness": {
+        "max_relative_error": 1.7506037950515747,
+        "max_absolute_error": 0.025083541870117188,
+        "has_nan": false,
+        "has_inf": false
+      },
+      "performance": {
+        "latency_ms": 0.5070399999999999,
+        "reference_latency_ms": 0.0,
+        "speedup_factor": 0.0
+      }
+    }
+  },
+  {
+    "solution": "032_dual_stream_attention_with_conditional_cross_attention_cutedsl_frontier545_allused3_qkropefused_w11_fullsuite_probe",
+    "evaluation": {
+      "status": "PASSED",
+      "environment": {
+        "hardware": "NVIDIA B200",
+        "libs": {
+          "torch": "2.9.0+cu130",
+          "triton": "3.5.0",
+          "cuda": "13.0"
+        }
+      },
+      "timestamp": "2026-04-04T02:15:30.331297",
+      "log": "",
+      "correctness": {
+        "max_relative_error": 2.3787693977355957,
+        "max_absolute_error": 0.02424776554107666,
+        "has_nan": false,
+        "has_inf": false
+      },
+      "performance": {
+        "latency_ms": 1.161999,
+        "reference_latency_ms": 0.0,
+        "speedup_factor": 0.0
+      }
+    }
+  },
+  {
+    "solution": "032_dual_stream_attention_with_conditional_cross_attention_cutedsl_frontier545_allused3_qkropefused_w11_fullsuite_probe",
+    "evaluation": {
+      "status": "PASSED",
+      "environment": {
+        "hardware": "NVIDIA B200",
+        "libs": {
+          "torch": "2.9.0+cu130",
+          "triton": "3.5.0",
+          "cuda": "13.0"
+        }
+      },
+      "timestamp": "2026-04-04T02:15:31.557992",
+      "log": "",
+      "correctness": {
+        "max_relative_error": 1.4960559606552124,
+        "max_absolute_error": 0.026529312133789062,
+        "has_nan": false,
+        "has_inf": false
+      },
+      "performance": {
+        "latency_ms": 0.616719,
+        "reference_latency_ms": 0.0,
+        "speedup_factor": 0.0
+      }
+    }
+  },
+  {
+    "solution": "032_dual_stream_attention_with_conditional_cross_attention_cutedsl_frontier545_allused3_qkropefused_w11_fullsuite_probe",
+    "evaluation": {
+      "status": "PASSED",
+      "environment": {
+        "hardware": "NVIDIA B200",
+        "libs": {
+          "torch": "2.9.0+cu130",
+          "triton": "3.5.0",
+          "cuda": "13.0"
+        }
+      },
+      "timestamp": "2026-04-04T02:15:32.641439",
+      "log": "",
+      "correctness": {
+        "max_relative_error": 0.39838463068008423,
+        "max_absolute_error": 0.0044095516204833984,
+        "has_nan": false,
+        "has_inf": false
+      },
+      "performance": {
+        "latency_ms": 0.658879,
+        "reference_latency_ms": 0.0,
+        "speedup_factor": 0.0
+      }
+    }
+  },
+  {
+    "solution": "032_dual_stream_attention_with_conditional_cross_attention_cutedsl_frontier545_allused3_qkropefused_w11_fullsuite_probe",
+    "evaluation": {
+      "status": "PASSED",
+      "environment": {
+        "hardware": "NVIDIA B200",
+        "libs": {
+          "torch": "2.9.0+cu130",
+          "triton": "3.5.0",
+          "cuda": "13.0"
+        }
+      },
+      "timestamp": "2026-04-04T02:15:33.858019",
+      "log": "",
+      "correctness": {
+        "max_relative_error": 1.6888731718063354,
+        "max_absolute_error": 0.024225831031799316,
+        "has_nan": false,
+        "has_inf": false
+      },
+      "performance": {
+        "latency_ms": 0.681103,
+        "reference_latency_ms": 0.0,
+        "speedup_factor": 0.0
+      }
+    }
+  },
+  {
+    "solution": "032_dual_stream_attention_with_conditional_cross_attention_cutedsl_frontier545_allused3_qkropefused_w11_fullsuite_probe",
+    "evaluation": {
+      "status": "PASSED",
+      "environment": {
+        "hardware": "NVIDIA B200",
+        "libs": {
+          "torch": "2.9.0+cu130",
+          "triton": "3.5.0",
+          "cuda": "13.0"
+        }
+      },
+      "timestamp": "2026-04-04T02:15:34.972668",
+      "log": "",
+      "correctness": {
+        "max_relative_error": 0.3595755100250244,
+        "max_absolute_error": 0.005585670471191406,
+        "has_nan": false,
+        "has_inf": false
+      },
+      "performance": {
+        "latency_ms": 0.5541915,
+        "reference_latency_ms": 0.0,
+        "speedup_factor": 0.0
+      }
+    }
+  },
+  {
+    "solution": "032_dual_stream_attention_with_conditional_cross_attention_cutedsl_frontier545_allused3_qkropefused_w11_fullsuite_probe",
+    "evaluation": {
+      "status": "PASSED",
+      "environment": {
+        "hardware": "NVIDIA B200",
+        "libs": {
+          "torch": "2.9.0+cu130",
+          "triton": "3.5.0",
+          "cuda": "13.0"
+        }
+      },
+      "timestamp": "2026-04-04T02:15:36.185416",
+      "log": "",
+      "correctness": {
+        "max_relative_error": 2.751788377761841,
+        "max_absolute_error": 0.021498441696166992,
+        "has_nan": false,
+        "has_inf": false
+      },
+      "performance": {
+        "latency_ms": 1.2252945,
+        "reference_latency_ms": 0.0,
+        "speedup_factor": 0.0
+      }
+    }
+  },
+  {
+    "solution": "032_dual_stream_attention_with_conditional_cross_attention_cutedsl_frontier545_allused3_qkropefused_w11_fullsuite_probe",
+    "evaluation": {
+      "status": "PASSED",
+      "environment": {
+        "hardware": "NVIDIA B200",
+        "libs": {
+          "torch": "2.9.0+cu130",
+          "triton": "3.5.0",
+          "cuda": "13.0"
+        }
+      },
+      "timestamp": "2026-04-04T02:15:38.135040",
+      "log": "",
+      "correctness": {
+        "max_relative_error": 0.4483112096786499,
+        "max_absolute_error": 0.009339332580566406,
+        "has_nan": false,
+        "has_inf": false
+      },
+      "performance": {
+        "latency_ms": 1.73963,
+        "reference_latency_ms": 0.0,
+        "speedup_factor": 0.0
+      }
+    }
+  },
+  {
+    "solution": "032_dual_stream_attention_with_conditional_cross_attention_cutedsl_frontier545_allused3_qkropefused_w11_fullsuite_probe",
+    "evaluation": {
+      "status": "PASSED",
+      "environment": {
+        "hardware": "NVIDIA B200",
+        "libs": {
+          "torch": "2.9.0+cu130",
+          "triton": "3.5.0",
+          "cuda": "13.0"
+        }
+      },
+      "timestamp": "2026-04-04T02:15:39.469266",
+      "log": "",
+      "correctness": {
+        "max_relative_error": 2.104013204574585,
+        "max_absolute_error": 0.02330803871154785,
+        "has_nan": false,
+        "has_inf": false
+      },
+      "performance": {
+        "latency_ms": 0.935007,
+        "reference_latency_ms": 0.0,
+        "speedup_factor": 0.0
+      }
+    }
+  },
+  {
+    "solution": "032_dual_stream_attention_with_conditional_cross_attention_cutedsl_frontier545_allused3_qkropefused_w11_fullsuite_probe",
+    "evaluation": {
+      "status": "PASSED",
+      "environment": {
+        "hardware": "NVIDIA B200",
+        "libs": {
+          "torch": "2.9.0+cu130",
+          "triton": "3.5.0",
+          "cuda": "13.0"
+        }
+      },
+      "timestamp": "2026-04-04T02:15:40.533083",
+      "log": "",
+      "correctness": {
+        "max_relative_error": 1.8131017684936523,
+        "max_absolute_error": 0.019068241119384766,
+        "has_nan": false,
+        "has_inf": false
+      },
+      "performance": {
+        "latency_ms": 0.7750235000000001,
+        "reference_latency_ms": 0.0,
+        "speedup_factor": 0.0
+      }
+    }
+  },
+  {
+    "solution": "032_dual_stream_attention_with_conditional_cross_attention_cutedsl_frontier545_allused3_qkropefused_w11_fullsuite_probe",
+    "evaluation": {
+      "status": "PASSED",
+      "environment": {
+        "hardware": "NVIDIA B200",
+        "libs": {
+          "torch": "2.9.0+cu130",
+          "triton": "3.5.0",
+          "cuda": "13.0"
+        }
+      },
+      "timestamp": "2026-04-04T02:15:41.819645",
+      "log": "",
+      "correctness": {
+        "max_relative_error": 2.318368673324585,
+        "max_absolute_error": 0.029317259788513184,
+        "has_nan": false,
+        "has_inf": false
+      },
+      "performance": {
+        "latency_ms": 0.9073915,
+        "reference_latency_ms": 0.0,
+        "speedup_factor": 0.0
+      }
+    }
+  },
+  {
+    "solution": "032_dual_stream_attention_with_conditional_cross_attention_cutedsl_frontier545_allused3_qkropefused_w11_fullsuite_probe",
+    "evaluation": {
+      "status": "PASSED",
+      "environment": {
+        "hardware": "NVIDIA B200",
+        "libs": {
+          "torch": "2.9.0+cu130",
+          "triton": "3.5.0",
+          "cuda": "13.0"
+        }
+      },
+      "timestamp": "2026-04-04T02:15:43.143055",
+      "log": "",
+      "correctness": {
+        "max_relative_error": 2.2528128623962402,
+        "max_absolute_error": 0.02502608299255371,
+        "has_nan": false,
+        "has_inf": false
+      },
+      "performance": {
+        "latency_ms": 0.935199,
+        "reference_latency_ms": 0.0,
+        "speedup_factor": 0.0
+      }
+    }
+  },
+  {
+    "solution": "032_dual_stream_attention_with_conditional_cross_attention_cutedsl_frontier545_allused3_qkropefused_w11_fullsuite_probe",
+    "evaluation": {
+      "status": "PASSED",
+      "environment": {
+        "hardware": "NVIDIA B200",
+        "libs": {
+          "torch": "2.9.0+cu130",
+          "triton": "3.5.0",
+          "cuda": "13.0"
+        }
+      },
+      "timestamp": "2026-04-04T02:15:44.861289",
+      "log": "",
+      "correctness": {
+        "max_relative_error": 0.5335857272148132,
+        "max_absolute_error": 0.010824203491210938,
+        "has_nan": false,
+        "has_inf": false
+      },
+      "performance": {
+        "latency_ms": 1.7040785,
+        "reference_latency_ms": 0.0,
+        "speedup_factor": 0.0
+      }
+    }
+  },
+  {
+    "solution": "032_dual_stream_attention_with_conditional_cross_attention_cutedsl_frontier545_allused3_qkropefused_w11_fullsuite_probe",
+    "evaluation": {
+      "status": "PASSED",
+      "environment": {
+        "hardware": "NVIDIA B200",
+        "libs": {
+          "torch": "2.9.0+cu130",
+          "triton": "3.5.0",
+          "cuda": "13.0"
+        }
+      },
+      "timestamp": "2026-04-04T02:15:45.913797",
+      "log": "",
+      "correctness": {
+        "max_relative_error": 0.3863431513309479,
+        "max_absolute_error": 0.005040585994720459,
+        "has_nan": false,
+        "has_inf": false
+      },
+      "performance": {
+        "latency_ms": 0.4851355,
+        "reference_latency_ms": 0.0,
+        "speedup_factor": 0.0
+      }
+    }
+  }
+]

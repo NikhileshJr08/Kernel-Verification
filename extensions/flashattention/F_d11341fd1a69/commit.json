@@ -1,0 +1,113 @@
+{
+  "sha": "d11341fd1a6913272666123baecfc32b3804f928",
+  "node_id": "C_kwDOHXVlhNoAKGQxMTM0MWZkMWE2OTEzMjcyNjY2MTIzYmFlY2ZjMzJiMzgwNGY5Mjg",
+  "commit": {
+    "author": {
+      "name": "Tri Dao",
+      "email": "tridpq@gmail.com",
+      "date": "2022-10-31T02:04:00Z"
+    },
+    "committer": {
+      "name": "Tri Dao",
+      "email": "tridpq@gmail.com",
+      "date": "2022-10-31T02:05:47Z"
+    },
+    "message": "Fix Triton fwd to support seqlen not multiples of 128",
+    "tree": {
+      "sha": "1534e9a8ae70b462b4b652a1bc2ee796ab713194",
+      "url": "https://api.github.com/repos/Dao-AILab/flash-attention/git/trees/1534e9a8ae70b462b4b652a1bc2ee796ab713194"
+    },
+    "url": "https://api.github.com/repos/Dao-AILab/flash-attention/git/commits/d11341fd1a6913272666123baecfc32b3804f928",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/Dao-AILab/flash-attention/commits/d11341fd1a6913272666123baecfc32b3804f928",
+  "html_url": "https://github.com/Dao-AILab/flash-attention/commit/d11341fd1a6913272666123baecfc32b3804f928",
+  "comments_url": "https://api.github.com/repos/Dao-AILab/flash-attention/commits/d11341fd1a6913272666123baecfc32b3804f928/comments",
+  "author": {
+    "login": "tridao",
+    "id": 5616128,
+    "node_id": "MDQ6VXNlcjU2MTYxMjg=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/5616128?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/tridao",
+    "html_url": "https://github.com/tridao",
+    "followers_url": "https://api.github.com/users/tridao/followers",
+    "following_url": "https://api.github.com/users/tridao/following{/other_user}",
+    "gists_url": "https://api.github.com/users/tridao/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/tridao/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/tridao/subscriptions",
+    "organizations_url": "https://api.github.com/users/tridao/orgs",
+    "repos_url": "https://api.github.com/users/tridao/repos",
+    "events_url": "https://api.github.com/users/tridao/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/tridao/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "tridao",
+    "id": 5616128,
+    "node_id": "MDQ6VXNlcjU2MTYxMjg=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/5616128?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/tridao",
+    "html_url": "https://github.com/tridao",
+    "followers_url": "https://api.github.com/users/tridao/followers",
+    "following_url": "https://api.github.com/users/tridao/following{/other_user}",
+    "gists_url": "https://api.github.com/users/tridao/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/tridao/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/tridao/subscriptions",
+    "organizations_url": "https://api.github.com/users/tridao/orgs",
+    "repos_url": "https://api.github.com/users/tridao/repos",
+    "events_url": "https://api.github.com/users/tridao/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/tridao/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "b0c0db81f64cf8d2adc8d5fd962a49cd3e9396a4",
+      "url": "https://api.github.com/repos/Dao-AILab/flash-attention/commits/b0c0db81f64cf8d2adc8d5fd962a49cd3e9396a4",
+      "html_url": "https://github.com/Dao-AILab/flash-attention/commit/b0c0db81f64cf8d2adc8d5fd962a49cd3e9396a4"
+    }
+  ],
+  "stats": {
+    "total": 54,
+    "additions": 31,
+    "deletions": 23
+  },
+  "files": [
+    {
+      "sha": "7e205ce771932e40f5f26f7bf1aae1df138ce1ff",
+      "filename": "flash_attn/flash_attn_triton.py",
+      "status": "modified",
+      "additions": 9,
+      "deletions": 6,
+      "changes": 15,
+      "blob_url": "https://github.com/Dao-AILab/flash-attention/blob/d11341fd1a6913272666123baecfc32b3804f928/flash_attn%2Fflash_attn_triton.py",
+      "raw_url": "https://github.com/Dao-AILab/flash-attention/raw/d11341fd1a6913272666123baecfc32b3804f928/flash_attn%2Fflash_attn_triton.py",
+      "contents_url": "https://api.github.com/repos/Dao-AILab/flash-attention/contents/flash_attn%2Fflash_attn_triton.py?ref=d11341fd1a6913272666123baecfc32b3804f928",
+      "patch": "@@ -4,6 +4,7 @@\n \n Changes:\n - Support both causal and non-causal attention.\n+- Support arbitrary seqlens (not just multiples of 128) in the forward pass.\n - Speed up the forward pass a bit (and only store the LSE instead of m and l).\n - Make the backward for d=128 much faster by reducing register spilling.\n - Add the option to parallelize the backward pass across seqlen_k, to deal with the case of\n@@ -30,7 +31,7 @@\n @triton.heuristics(\n     {\n         \"EVEN_M\": lambda args: args[\"seqlen_q\"] % args[\"BLOCK_M\"] == 0,\n-        \"EVEN_N\": lambda args: args[\"seqlen_k\"] % (args[\"BLOCK_N\"]) == 0,\n+        \"EVEN_N\": lambda args: args[\"seqlen_k\"] % args[\"BLOCK_N\"] == 0,\n     }\n )\n @triton.jit\n@@ -42,7 +43,7 @@ def _fwd_kernel(\n     stride_kb, stride_kh, stride_kn,\n     stride_vb, stride_vh, stride_vn,\n     stride_ob, stride_oh, stride_om,\n-    nheads, seqlen_q, seqlen_k,\n+    nheads, seqlen_q, seqlen_k, seqlen_q_rounded,\n     CACHE_KEY_SEQLEN_Q, CACHE_KEY_SEQLEN_K,\n     IS_CAUSAL: tl.constexpr,\n     BLOCK_HEADDIM: tl.constexpr,\n@@ -68,12 +69,14 @@ def _fwd_kernel(\n     k_ptrs = K + off_b * stride_kb + off_h * stride_kh + (offs_n[:, None] * stride_kn + offs_d[None, :])\n     v_ptrs = V + off_b * stride_vb + off_h * stride_vh + (offs_n[:, None] * stride_vn + offs_d[None, :])\n     # initialize pointer to m and l\n-    t_ptrs = TMP + off_hb * seqlen_q + offs_m\n+    t_ptrs = TMP + off_hb * seqlen_q_rounded + offs_m\n     lse_i = tl.zeros([BLOCK_M], dtype=tl.float32) - float(\"inf\")\n     m_i = tl.zeros([BLOCK_M], dtype=tl.float32) - float(\"inf\")\n     acc_o = tl.zeros([BLOCK_M, BLOCK_HEADDIM], dtype=tl.float32)\n     # load q: it will stay in SRAM throughout\n-    if EVEN_M:\n+    # [2022-10-30] TD: Idk why but in the case of EVEN_M=True and EVEN_N=False, if we just call\n+    # tl.load(q_ptrs), we get the wrong output! Could be a bug in the compiler?\n+    if EVEN_M & EVEN_N:\n         q = tl.load(q_ptrs)\n     else:\n         q = tl.load(q_ptrs, mask=offs_m[:, None] < seqlen_q, other=0.0)\n@@ -130,7 +133,7 @@ def _fwd_kernel(\n     start_m = tl.program_id(0)\n     offs_m = start_m * BLOCK_M + tl.arange(0, BLOCK_M)\n     # write back l and m\n-    lse_ptrs = Lse + off_hb * seqlen_q + offs_m\n+    lse_ptrs = Lse + off_hb * seqlen_q_rounded + offs_m\n     tl.store(lse_ptrs, lse_i)\n     # initialize pointers to output\n     offs_n = tl.arange(0, BLOCK_HEADDIM)\n@@ -373,7 +376,7 @@ def _flash_attn_forward(q, k, v, causal=False, softmax_scale=None):\n         k.stride(0), k.stride(2), k.stride(1),\n         v.stride(0), v.stride(2), v.stride(1),\n         o.stride(0), o.stride(2), o.stride(1),\n-        nheads, seqlen_q, seqlen_k,\n+        nheads, seqlen_q, seqlen_k, seqlen_q_rounded,\n         seqlen_q // 32,  seqlen_k // 32, # key for triton cache (limit number of compilations)\n         # Can't use kwargs here because triton autotune expects key to be args, not kwargs\n         # IS_CAUSAL=causal, BLOCK_HEADDIM=d,"
+    },
+    {
+      "sha": "4713f11b67a67161ddd5c4bdda0e054e5ee85440",
+      "filename": "tests/test_flash_attn.py",
+      "status": "modified",
+      "additions": 22,
+      "deletions": 17,
+      "changes": 39,
+      "blob_url": "https://github.com/Dao-AILab/flash-attention/blob/d11341fd1a6913272666123baecfc32b3804f928/tests%2Ftest_flash_attn.py",
+      "raw_url": "https://github.com/Dao-AILab/flash-attention/raw/d11341fd1a6913272666123baecfc32b3804f928/tests%2Ftest_flash_attn.py",
+      "contents_url": "https://api.github.com/repos/Dao-AILab/flash-attention/contents/tests%2Ftest_flash_attn.py?ref=d11341fd1a6913272666123baecfc32b3804f928",
+      "patch": "@@ -855,15 +855,17 @@ def test_flash_attn_multigpu():\n \n from flash_attn.flash_attn_triton import flash_attn_func\n \n+\n+@pytest.mark.skipif(not is_sm80, reason='Triton version is only tested on A100')\n @pytest.mark.parametrize('dtype', ([torch.float16] if is_sm75 else [torch.float16, torch.bfloat16]))\n-# @pytest.mark.parametrize('dtype', [torch.bfloat16])\n+# @pytest.mark.parametrize('dtype', [torch.float16])\n @pytest.mark.parametrize('causal', [False, True])\n-# @pytest.mark.parametrize('causal', [True])\n+# @pytest.mark.parametrize('causal', [False])\n @pytest.mark.parametrize('d', [64, 128])\n # @pytest.mark.parametrize('d', [64])\n # @pytest.mark.parametrize('seqlen', [97, 128, 200, 256, 257, 384, 512, 768, 1024, 1025, 2048])\n-@pytest.mark.parametrize('seqlen_q,seqlen_k', [(256, 512), (512, 256), (1024, 1024), (2048, 2048)])\n-# @pytest.mark.parametrize('seqlen_q,seqlen_k', [(512, 256)])\n+@pytest.mark.parametrize('seqlen_q,seqlen_k', [(113, 203), (128, 217), (113, 211), (256, 512), (512, 256), (1024, 1024), (2048, 2048)])\n+# @pytest.mark.parametrize('seqlen_q,seqlen_k', [(127, 256)])\n def test_flash_attn_triton(seqlen_q, seqlen_k, d, causal, dtype):\n     if seqlen_q >= 2048 and torch.cuda.get_device_properties('cuda').total_memory <= 16 * 2**30:\n         pytest.skip()  # Reference implementation OOM\n@@ -885,22 +887,25 @@ def test_flash_attn_triton(seqlen_q, seqlen_k, d, causal, dtype):\n     print(f'Pytorch max diff: {(output_pt - output_ref).abs().max().item()}')\n     print(f'Pytorch mean diff: {(output_pt - output_ref).abs().mean().item()}')\n \n-    g = torch.randn_like(output)\n-    dq, dk, dv = torch.autograd.grad(output, (q, k, v), g)\n-    dq_ref, dk_ref, dv_ref, = torch.autograd.grad(output_ref, (q, k, v), g)\n-    dq_pt, dk_pt, dv_pt, = torch.autograd.grad(output_pt, (q, k, v), g)\n-    print(f'dQ max diff: {(dq - dq_ref).abs().max().item()}')\n-    print(f'dK max diff: {(dk - dk_ref).abs().max().item()}')\n-    print(f'dV max diff: {(dv - dv_ref).abs().max().item()}')\n-    print(f'dQ Pytorch max diff: {(dq_pt - dq_ref).abs().max().item()}')\n-    print(f'dK Pytorch max diff: {(dk_pt - dk_ref).abs().max().item()}')\n-    print(f'dV Pytorch max diff: {(dv_pt - dv_ref).abs().max().item()}')\n+    run_bwd = (seqlen_q % 128 == 0) and (seqlen_k % 128 == 0)\n+    if run_bwd:\n+        g = torch.randn_like(output)\n+        dq, dk, dv = torch.autograd.grad(output, (q, k, v), g)\n+        dq_ref, dk_ref, dv_ref, = torch.autograd.grad(output_ref, (q, k, v), g)\n+        dq_pt, dk_pt, dv_pt, = torch.autograd.grad(output_pt, (q, k, v), g)\n+        print(f'dQ max diff: {(dq - dq_ref).abs().max().item()}')\n+        print(f'dK max diff: {(dk - dk_ref).abs().max().item()}')\n+        print(f'dV max diff: {(dv - dv_ref).abs().max().item()}')\n+        print(f'dQ Pytorch max diff: {(dq_pt - dq_ref).abs().max().item()}')\n+        print(f'dK Pytorch max diff: {(dk_pt - dk_ref).abs().max().item()}')\n+        print(f'dV Pytorch max diff: {(dv_pt - dv_ref).abs().max().item()}')\n \n     # Check that FlashAttention's numerical error is at most twice the numerical error\n     # of a Pytorch implementation.\n     assert (output - output_ref).abs().max().item() <= 2 * (output_pt - output_ref).abs().max().item()\n     # assert torch.allclose(output, output_ref, rtol=rtol, atol=atol)\n \n-    assert (dq - dq_ref).abs().max().item() <= 2 * (dq_pt - dq_ref).abs().max().item()\n-    assert (dk - dk_ref).abs().max().item() <= 2 * (dk_pt - dk_ref).abs().max().item()\n-    assert (dv - dv_ref).abs().max().item() <= 2 * (dv_pt - dv_ref).abs().max().item()\n+    if run_bwd:\n+        assert (dq - dq_ref).abs().max().item() <= 2 * (dq_pt - dq_ref).abs().max().item()\n+        assert (dk - dk_ref).abs().max().item() <= 2 * (dk_pt - dk_ref).abs().max().item()\n+        assert (dv - dv_ref).abs().max().item() <= 2 * (dv_pt - dv_ref).abs().max().item()"
+    }
+  ]
+}

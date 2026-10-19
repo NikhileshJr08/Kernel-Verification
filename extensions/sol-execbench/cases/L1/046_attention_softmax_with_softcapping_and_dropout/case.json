@@ -1,0 +1,31 @@
+{
+  "id": "S_L1_046_attention_softmax_with_softcapping_and_dropout",
+  "collection": "sol-execbench",
+  "path": "extensions/sol-execbench/cases/L1/046_attention_softmax_with_softcapping_and_dropout",
+  "status": "candidate_and_original_pass_evidence_recovered_reference_requires_local_download",
+  "reported_category": "illustrative_specialization_case",
+  "subset": "L1",
+  "name": "046_attention_softmax_with_softcapping_and_dropout",
+  "cursor_revision": "87ea087db7b6765ecdd8f5ca07a9cb3eb702e4b0",
+  "solution_name": "a74i27",
+  "candidate_source_hashes": {
+    "extensions/sol-execbench/cases/L1/046_attention_softmax_with_softcapping_and_dropout/candidate/a.cu": "89e7fc4422e9fa7b77b90dfba90798c0482f1fb91127a7d16419244cd628356c"
+  },
+  "reference_embedded": false,
+  "reference_revision": "63699402f003496acc3af4eb534a5304a8ac1ea9",
+  "reference_sha256": "85335a0d406f98bdb4e6b43f68c758cbe291d4194ac8f8c916cd6e05dcaff6c8",
+  "original_reference_revision": "13c8c2dab5dbf1c1fca13aceb700f27574583460",
+  "original_reference_sha256": "85335a0d406f98bdb4e6b43f68c758cbe291d4194ac8f8c916cd6e05dcaff6c8",
+  "reference_unchanged_between_pins": true,
+  "original_trace_status_counts": {
+    "PASSED": 16
+  },
+  "reseed_values": null,
+  "failed_workload_indices": "not published in doubleAI article",
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/anysphere/kernel-optimization-results/tree/87ea087db7b6765ecdd8f5ca07a9cb3eb702e4b0/L1/046_attention_softmax_with_softcapping_and_dropout",
+    "https://www.doubleai.com/research/maxwell-approaches-speed-of-light-on-blackwell",
+    "https://huggingface.co/datasets/nvidia/SOL-ExecBench/tree/63699402f003496acc3af4eb534a5304a8ac1ea9"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "Op_Name": "17_Matmul_with_transposed_B",
+  "Level_ID": 1,
+  "Task_ID": 17,
+  "Kernel_Name": "matmul_thread_efficiency_base_base",
+  "Correct": true,
+  "Max_Diff": 0.001,
+  "Error": null,
+  "CUDA_Runtime": 18.949,
+  "CUDA_Speedup_Native": 0.0184321882882164,
+  "__index_level_0__": 34,
+  "dataset_row_position": 2408,
+  "join_rule": "pandas positional row ID assigned before Correct filtering, exactly as ABC preprocess_data.py"
+}

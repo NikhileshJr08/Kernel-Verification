@@ -1,0 +1,20 @@
+{
+  "id": "A07546_58_conv_transposed_3D__asymmetric_input__asymmetric_kernel",
+  "collection": "kernelbench-audit",
+  "path": "extensions/kernelbench-audit/cases/A07546_58_conv_transposed_3D__asymmetric_input__asymmetric_kernel",
+  "status": "original_pass_and_verified_adversarial_test_available",
+  "candidate": "extensions/kernelbench-audit/cases/A07546_58_conv_transposed_3D__asymmetric_input__asymmetric_kernel/candidate.cu",
+  "reference": "extensions/kernelbench-audit/cases/A07546_58_conv_transposed_3D__asymmetric_input__asymmetric_kernel/reference.py",
+  "candidate_sha256": "8c578eec62afc88c730083e66ad0b042af359a87ece6538fda364eb677c5a7af",
+  "reference_sha256": "aff0adb28b2e2cc18ef4b13a14d35ced9ac8abf480568e9bd06090925239711f",
+  "dataset_row": 7546,
+  "task_id": 58,
+  "original_correct": true,
+  "candidate_matches_abc_bytes": true,
+  "reported_individual_adversarial_outcome": "not_available",
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/uiuc-kang-lab/agentic-benchmarks/blob/ae1124758098876db04336e1d8c6e419a139c6e3/benchmarks/kernel-bench/tests_verified/level_1/58_conv_transposed_3D__asymmetric_input__asymmetric_kernel/test_7546.py",
+    "https://huggingface.co/datasets/SakanaAI/AI-CUDA-Engineer-Archive/tree/4edbe8d6d0b417e05aaf8ec7e23f78aecdc5516b"
+  ]
+}

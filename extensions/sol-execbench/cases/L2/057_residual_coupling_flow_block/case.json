@@ -1,0 +1,31 @@
+{
+  "id": "S_L2_057_residual_coupling_flow_block",
+  "collection": "sol-execbench",
+  "path": "extensions/sol-execbench/cases/L2/057_residual_coupling_flow_block",
+  "status": "candidate_and_original_pass_evidence_recovered_reference_requires_local_download",
+  "reported_category": "updated_benchmark_failure",
+  "subset": "L2",
+  "name": "057_residual_coupling_flow_block",
+  "cursor_revision": "87ea087db7b6765ecdd8f5ca07a9cb3eb702e4b0",
+  "solution_name": "057_residual_coupling_flow_block_cutedsl_hybrid_split_large_forward_tuned_v49",
+  "candidate_source_hashes": {
+    "extensions/sol-execbench/cases/L2/057_residual_coupling_flow_block/candidate/kernel.py": "fba8f9a5d565acf010ea2619bfa6132b1afe86a52ddee1b3d753f79fba779a43"
+  },
+  "reference_embedded": false,
+  "reference_revision": "63699402f003496acc3af4eb534a5304a8ac1ea9",
+  "reference_sha256": "b52048924cc714cecf31a230378b49b5da566e2ad01fe1d72ff6b4f145c3f7f9",
+  "original_reference_revision": "13c8c2dab5dbf1c1fca13aceb700f27574583460",
+  "original_reference_sha256": "b52048924cc714cecf31a230378b49b5da566e2ad01fe1d72ff6b4f145c3f7f9",
+  "reference_unchanged_between_pins": true,
+  "original_trace_status_counts": {
+    "PASSED": 16
+  },
+  "reseed_values": null,
+  "failed_workload_indices": "not published in doubleAI article",
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/anysphere/kernel-optimization-results/tree/87ea087db7b6765ecdd8f5ca07a9cb3eb702e4b0/L2/057_residual_coupling_flow_block",
+    "https://www.doubleai.com/research/maxwell-approaches-speed-of-light-on-blackwell",
+    "https://huggingface.co/datasets/nvidia/SOL-ExecBench/tree/63699402f003496acc3af4eb534a5304a8ac1ea9"
+  ]
+}

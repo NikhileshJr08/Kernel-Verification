@@ -4,3 +4,4 @@ __pycache__/
 vendor/volta/target/
 results/*-local.json
 results/volta-local/
+local-data/

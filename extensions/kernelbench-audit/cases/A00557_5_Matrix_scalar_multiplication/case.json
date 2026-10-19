@@ -1,0 +1,20 @@
+{
+  "id": "A00557_5_Matrix_scalar_multiplication",
+  "collection": "kernelbench-audit",
+  "path": "extensions/kernelbench-audit/cases/A00557_5_Matrix_scalar_multiplication",
+  "status": "original_pass_and_verified_adversarial_test_available",
+  "candidate": "extensions/kernelbench-audit/cases/A00557_5_Matrix_scalar_multiplication/candidate.cu",
+  "reference": "extensions/kernelbench-audit/cases/A00557_5_Matrix_scalar_multiplication/reference.py",
+  "candidate_sha256": "7062381e9d42de876315c03ae7cf79b56b37bd74c53d9cbf0ae05968f45708d7",
+  "reference_sha256": "5ac41fb122d8346b9b85a8ba6c91895fec54e6feb1a36c82512e53903e03b164",
+  "dataset_row": 557,
+  "task_id": 5,
+  "original_correct": true,
+  "candidate_matches_abc_bytes": true,
+  "reported_individual_adversarial_outcome": "not_available",
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/uiuc-kang-lab/agentic-benchmarks/blob/ae1124758098876db04336e1d8c6e419a139c6e3/benchmarks/kernel-bench/tests_verified/level_1/5_Matrix_scalar_multiplication/test_557.py",
+    "https://huggingface.co/datasets/SakanaAI/AI-CUDA-Engineer-Archive/tree/4edbe8d6d0b417e05aaf8ec7e23f78aecdc5516b"
+  ]
+}

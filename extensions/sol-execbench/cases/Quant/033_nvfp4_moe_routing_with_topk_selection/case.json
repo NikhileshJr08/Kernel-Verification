@@ -1,0 +1,36 @@
+{
+  "id": "S_Quant_033_nvfp4_moe_routing_with_topk_selection",
+  "collection": "sol-execbench",
+  "path": "extensions/sol-execbench/cases/Quant/033_nvfp4_moe_routing_with_topk_selection",
+  "status": "candidate_and_original_pass_evidence_recovered_reference_requires_local_download",
+  "reported_category": "reseeding_failure",
+  "subset": "Quant",
+  "name": "033_nvfp4_moe_routing_with_topk_selection",
+  "cursor_revision": "87ea087db7b6765ecdd8f5ca07a9cb3eb702e4b0",
+  "solution_name": "agent43_sol033_iteration_59_tcgen05_hybridtopk_hwfp8largefallback_tmem0_ldx16_nofastmath",
+  "candidate_source_hashes": {
+    "extensions/sol-execbench/cases/Quant/033_nvfp4_moe_routing_with_topk_selection/candidate/kernel.cu": "63782154751dd5cd5b8957243650721f8eba9af5855a75959a6edcc810d6272d"
+  },
+  "reference_embedded": false,
+  "reference_revision": "63699402f003496acc3af4eb534a5304a8ac1ea9",
+  "reference_sha256": "af2f7030b58afe5a37cfc47921440b1304352786496bef949b774fa05d02aaa5",
+  "original_reference_revision": "13c8c2dab5dbf1c1fca13aceb700f27574583460",
+  "original_reference_sha256": "af2f7030b58afe5a37cfc47921440b1304352786496bef949b774fa05d02aaa5",
+  "reference_unchanged_between_pins": true,
+  "original_trace_status_counts": {
+    "PASSED": 16
+  },
+  "reseed_values": [
+    200,
+    1337,
+    13337,
+    133337
+  ],
+  "failed_workload_indices": "not published in doubleAI article",
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/anysphere/kernel-optimization-results/tree/87ea087db7b6765ecdd8f5ca07a9cb3eb702e4b0/Quant/033_nvfp4_moe_routing_with_topk_selection",
+    "https://www.doubleai.com/research/maxwell-approaches-speed-of-light-on-blackwell",
+    "https://huggingface.co/datasets/nvidia/SOL-ExecBench/tree/63699402f003496acc3af4eb534a5304a8ac1ea9"
+  ]
+}

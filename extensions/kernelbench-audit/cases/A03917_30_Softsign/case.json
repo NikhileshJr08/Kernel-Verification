@@ -1,0 +1,20 @@
+{
+  "id": "A03917_30_Softsign",
+  "collection": "kernelbench-audit",
+  "path": "extensions/kernelbench-audit/cases/A03917_30_Softsign",
+  "status": "original_pass_and_verified_adversarial_test_available",
+  "candidate": "extensions/kernelbench-audit/cases/A03917_30_Softsign/candidate.cu",
+  "reference": "extensions/kernelbench-audit/cases/A03917_30_Softsign/reference.py",
+  "candidate_sha256": "78d33c01e7d4a9d24b7e087ccd004220e70fe1fa97ba43de7ae6b96e7ad86743",
+  "reference_sha256": "1ce26baa9b2bdf9c9901b28dad5d3edca4b4c854e803ce1cadf35b08b33313c2",
+  "dataset_row": 3917,
+  "task_id": 30,
+  "original_correct": true,
+  "candidate_matches_abc_bytes": true,
+  "reported_individual_adversarial_outcome": "not_available",
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/uiuc-kang-lab/agentic-benchmarks/blob/ae1124758098876db04336e1d8c6e419a139c6e3/benchmarks/kernel-bench/tests_verified/level_1/30_Softsign/test_3917.py",
+    "https://huggingface.co/datasets/SakanaAI/AI-CUDA-Engineer-Archive/tree/4edbe8d6d0b417e05aaf8ec7e23f78aecdc5516b"
+  ]
+}

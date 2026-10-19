@@ -1,0 +1,36 @@
+{
+  "id": "S_Quant_018_nvfp4_attention_output_projection_with_residual",
+  "collection": "sol-execbench",
+  "path": "extensions/sol-execbench/cases/Quant/018_nvfp4_attention_output_projection_with_residual",
+  "status": "candidate_and_original_pass_evidence_recovered_reference_requires_local_download",
+  "reported_category": "reseeding_failure",
+  "subset": "Quant",
+  "name": "018_nvfp4_attention_output_projection_with_residual",
+  "cursor_revision": "87ea087db7b6765ecdd8f5ca07a9cb3eb702e4b0",
+  "solution_name": "agent83_q018_i97_exactpost_exactscaledmmhotset_min",
+  "candidate_source_hashes": {
+    "extensions/sol-execbench/cases/Quant/018_nvfp4_attention_output_projection_with_residual/candidate/kernel.cu": "d4eb2c62abc487134bf440ee7d1596168aed85ab89883132552f6b4cee385328"
+  },
+  "reference_embedded": false,
+  "reference_revision": "63699402f003496acc3af4eb534a5304a8ac1ea9",
+  "reference_sha256": "2666f785bfbe5a7152491a121d7f091cdf0095b0919beacc40042ac3f2c53414",
+  "original_reference_revision": "13c8c2dab5dbf1c1fca13aceb700f27574583460",
+  "original_reference_sha256": "2666f785bfbe5a7152491a121d7f091cdf0095b0919beacc40042ac3f2c53414",
+  "reference_unchanged_between_pins": true,
+  "original_trace_status_counts": {
+    "PASSED": 16
+  },
+  "reseed_values": [
+    200,
+    1337,
+    13337,
+    133337
+  ],
+  "failed_workload_indices": "not published in doubleAI article",
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/anysphere/kernel-optimization-results/tree/87ea087db7b6765ecdd8f5ca07a9cb3eb702e4b0/Quant/018_nvfp4_attention_output_projection_with_residual",
+    "https://www.doubleai.com/research/maxwell-approaches-speed-of-light-on-blackwell",
+    "https://huggingface.co/datasets/nvidia/SOL-ExecBench/tree/63699402f003496acc3af4eb534a5304a8ac1ea9"
+  ]
+}

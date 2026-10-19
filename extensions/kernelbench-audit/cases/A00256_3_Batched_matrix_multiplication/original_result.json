@@ -1,0 +1,14 @@
+{
+  "Op_Name": "3_Batched_matrix_multiplication",
+  "Level_ID": 1,
+  "Task_ID": 3,
+  "Kernel_Name": "bmm_ldg_aligned_base",
+  "Correct": true,
+  "Max_Diff": 0.0,
+  "Error": null,
+  "CUDA_Runtime": 0.519,
+  "CUDA_Speedup_Native": 0.2476469342648868,
+  "__index_level_0__": 36,
+  "dataset_row_position": 256,
+  "join_rule": "pandas positional row ID assigned before Correct filtering, exactly as ABC preprocess_data.py"
+}

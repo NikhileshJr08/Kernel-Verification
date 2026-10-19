@@ -1,0 +1,22 @@
+{
+  "revisions": {
+    "abc": "ae1124758098876db04336e1d8c6e419a139c6e3",
+    "cursor": "87ea087db7b6765ecdd8f5ca07a9cb3eb702e4b0",
+    "sol_harness": "a9fa0804c793d438e70850c33fe34426e66d53dd",
+    "gimlet_kernelbench": "67f3a48683cbbfb760ec4eb1d2a444b9839a5d57",
+    "sakana": "4edbe8d6d0b417e05aaf8ec7e23f78aecdc5516b",
+    "sol_current": "63699402f003496acc3af4eb534a5304a8ac1ea9",
+    "sol_cursor_era": "13c8c2dab5dbf1c1fca13aceb700f27574583460"
+  },
+  "downloaded_source_sha256": {
+    "sol-FlashInfer-Bench.parquet": "89d1feacf02b6f8c07ec8d67a9dbb2c531652251095a7f762f2bc296f6a1fe74",
+    "sol-L2.parquet": "4a55a4bfbe9a6f9b2ad4c5c5c680977e66926175643739530bf5a8ca3e87cd54",
+    "sol-original-L1.parquet": "269ee75da599c991216dc72ebb5acffd237907384c3c52493f80f482c5f176e1",
+    "sol-L1.parquet": "dbaf8476812194920e405118cc5f4abc65035b79a4307b5ee88fb07666ceed48",
+    "sol-original-Quant.parquet": "aa30e9a66ac2292499eacb1cc73ad789ddc7c5f5808ddb10d9dc211e94560036",
+    "sol-Quant.parquet": "aa30e9a66ac2292499eacb1cc73ad789ddc7c5f5808ddb10d9dc211e94560036",
+    "sakana-level1.parquet": "a74e399809f87b583aedc757a826a47cc84ee53487e6630dae53857ebce565ff",
+    "sol-original-L2.parquet": "02d810405c6dc4f16d73bd241b082d3984dfed259e2972b968995c74f8dbf4b3"
+  },
+  "important": "SOL parquet files are not distributed; only hashes and direct-download coordinates are retained."
+}

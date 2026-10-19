@@ -1,0 +1,14 @@
+{
+  "Op_Name": "37_FrobeniusNorm_",
+  "Level_ID": 1,
+  "Task_ID": 37,
+  "Kernel_Name": "shared_memory_coalesced_access_base",
+  "Correct": true,
+  "Max_Diff": 0.001,
+  "Error": null,
+  "CUDA_Runtime": 0.239,
+  "CUDA_Speedup_Native": 1.3418196384876842,
+  "__index_level_0__": 12,
+  "dataset_row_position": 4714,
+  "join_rule": "pandas positional row ID assigned before Correct filtering, exactly as ABC preprocess_data.py"
+}

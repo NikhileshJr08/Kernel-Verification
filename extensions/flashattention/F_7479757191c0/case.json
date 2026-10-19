@@ -1,0 +1,23 @@
+{
+  "id": "F_7479757191c0",
+  "collection": "flashattention",
+  "path": "extensions/flashattention/F_7479757191c0",
+  "status": "original_parent_fix_tests_recovered_compiler_pin_unresolved",
+  "title": "Fix pipelining bug in Triton bwd with bias_type=matrix",
+  "pre_revision": "557781933dbc13cc4e75626bb064b4784869426f",
+  "fixed_revision": "7479757191c04cc1d5a029b0b34c5064278c93ef",
+  "candidate": "extensions/flashattention/F_7479757191c0/pre/flash_attn/flash_attn_triton.py",
+  "reference": "extensions/flashattention/F_7479757191c0/post/flash_attn/flash_attn_triton.py",
+  "candidate_sha256": "81ec9b1fcddd0c0c63fa0c974786916399283127131102b4fd2d7e0645ae1d20",
+  "reference_sha256": "93e48356dd58b77b212cb91a10a03194dc62326b5735a80f698d6df087f98517",
+  "compiler_version": null,
+  "later_tested_version_note": {
+    "revision": "5d079fdd7a20bbd354080a80b20b5c36c93898d4",
+    "triton": "2.0.0.dev20221202",
+    "applies_to_this_fix": false
+  },
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/Dao-AILab/flash-attention/commit/7479757191c04cc1d5a029b0b34c5064278c93ef"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "id": "S_L1_087_embedding_with_initial_layernorm_backward",
+  "collection": "sol-execbench",
+  "path": "extensions/sol-execbench/cases/L1/087_embedding_with_initial_layernorm_backward",
+  "status": "candidate_and_original_pass_evidence_recovered_reference_requires_local_download",
+  "reported_category": "embedding_training_failure_mapping",
+  "subset": "L1",
+  "name": "087_embedding_with_initial_layernorm_backward",
+  "cursor_revision": "87ea087db7b6765ecdd8f5ca07a9cb3eb702e4b0",
+  "solution_name": "agent9_embed_ln_bwd_v5",
+  "candidate_source_hashes": {
+    "extensions/sol-execbench/cases/L1/087_embedding_with_initial_layernorm_backward/candidate/kernel.cu": "d67e1ebcd18c0f28a5145d91eef744687af2347143454e960d4c247cd25f51f8"
+  },
+  "reference_embedded": false,
+  "reference_revision": "63699402f003496acc3af4eb534a5304a8ac1ea9",
+  "reference_sha256": "eac6ec06e8da296b9fe82ed9b2d5d4771fb9dc80f38c9ca3a9c70921de8f4041",
+  "original_reference_revision": "13c8c2dab5dbf1c1fca13aceb700f27574583460",
+  "original_reference_sha256": "eac6ec06e8da296b9fe82ed9b2d5d4771fb9dc80f38c9ca3a9c70921de8f4041",
+  "reference_unchanged_between_pins": true,
+  "original_trace_status_counts": {
+    "PASSED": 16
+  },
+  "reseed_values": null,
+  "failed_workload_indices": "not published in doubleAI article",
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/anysphere/kernel-optimization-results/tree/87ea087db7b6765ecdd8f5ca07a9cb3eb702e4b0/L1/087_embedding_with_initial_layernorm_backward",
+    "https://www.doubleai.com/research/maxwell-approaches-speed-of-light-on-blackwell",
+    "https://huggingface.co/datasets/nvidia/SOL-ExecBench/tree/63699402f003496acc3af4eb534a5304a8ac1ea9"
+  ],
+  "mapping_evidence": {
+    "constants_found_in_candidate": [
+      "HIDDEN_SIZE = 4096",
+      "VOCAB_SIZE = 65536"
+    ],
+    "mechanism": "packed __nv_bfloat162 atomicAdd into embedding gradient; reference uses FP32 scratch then BF16 cast",
+    "mapping_strength": "unique name/constants/mechanism match; blog itself does not state numeric problem ID"
+  }
+}

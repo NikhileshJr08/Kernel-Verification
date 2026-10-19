@@ -1,0 +1,11 @@
+{
+  "id": "G03",
+  "collection": "gimlet",
+  "path": "extensions/gimlet/G03",
+  "status": "public_reference_task_identified_original_candidate_unresolved",
+  "reference": "extensions/gimlet/G03/reference.py",
+  "reference_sha256": "fc773884c6c52af0fd6d41c610ca5bd15f66c4c47f0d4e9fad24564afea4c50a",
+  "candidate": null,
+  "reference_match": "operation sequence and parameter names match article; not a byte-identical identity claim for Gimlet private input",
+  "source": "https://github.com/gimletlabs/KernelBench/blob/67f3a48683cbbfb760ec4eb1d2a444b9839a5d57/KernelBench/level1/28_HardSigmoid.py"
+}

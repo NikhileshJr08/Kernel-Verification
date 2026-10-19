@@ -1,0 +1,33 @@
+{
+  "id": "S_L2_018_cu_seqlens_variable_length_vision_attention",
+  "collection": "sol-execbench",
+  "path": "extensions/sol-execbench/cases/L2/018_cu_seqlens_variable_length_vision_attention",
+  "status": "candidate_and_original_pass_evidence_recovered_reference_requires_local_download",
+  "reported_category": "updated_benchmark_failure",
+  "subset": "L2",
+  "name": "018_cu_seqlens_variable_length_vision_attention",
+  "cursor_revision": "87ea087db7b6765ecdd8f5ca07a9cb3eb702e4b0",
+  "solution_name": "agent32_cu_seqlens_varlen_vision_attn_compilefull7168_4096x16_cutedsl_v123",
+  "candidate_source_hashes": {
+    "extensions/sol-execbench/cases/L2/018_cu_seqlens_variable_length_vision_attention/candidate/kernel.py": "328299aecbc2c93eba487c84579e623000ad1e926e005e130bafa65503c6413e",
+    "extensions/sol-execbench/cases/L2/018_cu_seqlens_variable_length_vision_attention/candidate/gemm.py": "a4a5566e895421265630ec4fcfc0cfcee6991bc99c5bf05d854bc1c9f2debe98",
+    "extensions/sol-execbench/cases/L2/018_cu_seqlens_variable_length_vision_attention/candidate/dense_gemm_helper.py": "3aae5bd904c541431240946339b676c538a607a3bf3f123f024413103fe7e2df"
+  },
+  "reference_embedded": false,
+  "reference_revision": "63699402f003496acc3af4eb534a5304a8ac1ea9",
+  "reference_sha256": "96e47aed96014ae381ca0b9ac07e23268fa325861ec2c805b57832e56b38b0a4",
+  "original_reference_revision": "13c8c2dab5dbf1c1fca13aceb700f27574583460",
+  "original_reference_sha256": "96e47aed96014ae381ca0b9ac07e23268fa325861ec2c805b57832e56b38b0a4",
+  "reference_unchanged_between_pins": true,
+  "original_trace_status_counts": {
+    "PASSED": 16
+  },
+  "reseed_values": null,
+  "failed_workload_indices": "not published in doubleAI article",
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/anysphere/kernel-optimization-results/tree/87ea087db7b6765ecdd8f5ca07a9cb3eb702e4b0/L2/018_cu_seqlens_variable_length_vision_attention",
+    "https://www.doubleai.com/research/maxwell-approaches-speed-of-light-on-blackwell",
+    "https://huggingface.co/datasets/nvidia/SOL-ExecBench/tree/63699402f003496acc3af4eb534a5304a8ac1ea9"
+  ]
+}

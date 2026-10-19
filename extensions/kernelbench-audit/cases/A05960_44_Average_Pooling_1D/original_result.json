@@ -1,0 +1,14 @@
+{
+  "Op_Name": "44_Average_Pooling_1D",
+  "Level_ID": 1,
+  "Task_ID": 44,
+  "Kernel_Name": "const_memory_avg_pool1d_base",
+  "Correct": true,
+  "Max_Diff": 0.0,
+  "Error": null,
+  "CUDA_Runtime": 0.018,
+  "CUDA_Speedup_Native": 0.4125172272324562,
+  "__index_level_0__": 11,
+  "dataset_row_position": 5960,
+  "join_rule": "pandas positional row ID assigned before Correct filtering, exactly as ABC preprocess_data.py"
+}

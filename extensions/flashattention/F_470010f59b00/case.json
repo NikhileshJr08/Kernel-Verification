@@ -1,0 +1,23 @@
+{
+  "id": "F_470010f59b00",
+  "collection": "flashattention",
+  "path": "extensions/flashattention/F_470010f59b00",
+  "status": "original_parent_fix_tests_recovered_compiler_pin_unresolved",
+  "title": "Fix race condition for Triton bwd for headdim 48 and 96",
+  "pre_revision": "aacc10fbab8ce4d252524e9b18c6edcff02ffa88",
+  "fixed_revision": "470010f59b00a53f371e602cfcfd9bb2919f140d",
+  "candidate": "extensions/flashattention/F_470010f59b00/pre/flash_attn/flash_attn_triton.py",
+  "reference": "extensions/flashattention/F_470010f59b00/post/flash_attn/flash_attn_triton.py",
+  "candidate_sha256": "52bb2bcd71e38fb3fada16ee7f09d4f7502ce31730cec4299feaf54dc8ad90cb",
+  "reference_sha256": "4d3305f454e802e3cbe779bb532c9ec57a374a879084773410a6d6e887cad9ee",
+  "compiler_version": null,
+  "later_tested_version_note": {
+    "revision": "5d079fdd7a20bbd354080a80b20b5c36c93898d4",
+    "triton": "2.0.0.dev20221202",
+    "applies_to_this_fix": false
+  },
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/Dao-AILab/flash-attention/commit/470010f59b00a53f371e602cfcfd9bb2919f140d"
+  ]
+}

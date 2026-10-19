@@ -1,0 +1,20 @@
+{
+  "id": "A11289_97_CosineSimilarityLoss",
+  "collection": "kernelbench-audit",
+  "path": "extensions/kernelbench-audit/cases/A11289_97_CosineSimilarityLoss",
+  "status": "original_pass_and_verified_adversarial_test_available",
+  "candidate": "extensions/kernelbench-audit/cases/A11289_97_CosineSimilarityLoss/candidate.cu",
+  "reference": "extensions/kernelbench-audit/cases/A11289_97_CosineSimilarityLoss/reference.py",
+  "candidate_sha256": "4f0bd6ddc63c1f146f9a8ee467eb6400ac5bc4dbebe4122ae35ffee8dcc946a6",
+  "reference_sha256": "56c41eb7ea477ef81b86f025c8755aab4482e99fb01df29ddef90f6679a4ab82",
+  "dataset_row": 11289,
+  "task_id": 97,
+  "original_correct": true,
+  "candidate_matches_abc_bytes": true,
+  "reported_individual_adversarial_outcome": "not_available",
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/uiuc-kang-lab/agentic-benchmarks/blob/ae1124758098876db04336e1d8c6e419a139c6e3/benchmarks/kernel-bench/tests_verified/level_1/97_CosineSimilarityLoss/test_11289.py",
+    "https://huggingface.co/datasets/SakanaAI/AI-CUDA-Engineer-Archive/tree/4edbe8d6d0b417e05aaf8ec7e23f78aecdc5516b"
+  ]
+}

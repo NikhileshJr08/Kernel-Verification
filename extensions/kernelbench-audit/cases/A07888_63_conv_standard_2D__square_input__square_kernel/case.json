@@ -1,0 +1,20 @@
+{
+  "id": "A07888_63_conv_standard_2D__square_input__square_kernel",
+  "collection": "kernelbench-audit",
+  "path": "extensions/kernelbench-audit/cases/A07888_63_conv_standard_2D__square_input__square_kernel",
+  "status": "original_pass_and_verified_adversarial_test_available",
+  "candidate": "extensions/kernelbench-audit/cases/A07888_63_conv_standard_2D__square_input__square_kernel/candidate.cu",
+  "reference": "extensions/kernelbench-audit/cases/A07888_63_conv_standard_2D__square_input__square_kernel/reference.py",
+  "candidate_sha256": "4804ef153b99b18173c01023aabcd48a5abe5992cc0919e92c49aff3ac3eb6f4",
+  "reference_sha256": "578648eb66b7200a2de30cd2dd3a1d824771e0efd1ebc2b2bd9ed8cc37a77746",
+  "dataset_row": 7888,
+  "task_id": 63,
+  "original_correct": true,
+  "candidate_matches_abc_bytes": true,
+  "reported_individual_adversarial_outcome": "not_available",
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/uiuc-kang-lab/agentic-benchmarks/blob/ae1124758098876db04336e1d8c6e419a139c6e3/benchmarks/kernel-bench/tests_verified/level_1/63_conv_standard_2D__square_input__square_kernel/test_7888.py",
+    "https://huggingface.co/datasets/SakanaAI/AI-CUDA-Engineer-Archive/tree/4edbe8d6d0b417e05aaf8ec7e23f78aecdc5516b"
+  ]
+}

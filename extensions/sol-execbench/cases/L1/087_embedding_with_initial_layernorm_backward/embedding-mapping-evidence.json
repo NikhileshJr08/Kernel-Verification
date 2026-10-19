@@ -1,0 +1,51 @@
+{
+  "source": "kernel.cu",
+  "matches": [
+    {
+      "line": 15,
+      "source": "constexpr int HIDDEN_SIZE = 4096;"
+    },
+    {
+      "line": 16,
+      "source": "constexpr int VOCAB_SIZE = 65536;"
+    },
+    {
+      "line": 121,
+      "source": "auto* addr_pairs = reinterpret_cast<__nv_bfloat162*>(addr);"
+    },
+    {
+      "line": 122,
+      "source": "atomicAdd(addr_pairs + 0, bits_to_bf162(v0));"
+    },
+    {
+      "line": 123,
+      "source": "atomicAdd(addr_pairs + 1, bits_to_bf162(v1));"
+    },
+    {
+      "line": 124,
+      "source": "atomicAdd(addr_pairs + 2, bits_to_bf162(v2));"
+    },
+    {
+      "line": 125,
+      "source": "atomicAdd(addr_pairs + 3, bits_to_bf162(v3));"
+    },
+    {
+      "line": 173,
+      "source": "const auto* grad_row_pairs = reinterpret_cast<const __nv_bfloat162*>(grad_row);"
+    },
+    {
+      "line": 174,
+      "source": "const auto* weight_pairs = reinterpret_cast<const __nv_bfloat162*>(norm_weight);"
+    },
+    {
+      "line": 175,
+      "source": "auto* out_row_pairs = reinterpret_cast<__nv_bfloat162*>(grad_embed_weight + static_cast<int64_t>(token_id) * HIDDEN_SIZE);"
+    },
+    {
+      "line": 373,
+      "source": "reinterpret_cast<__nv_bfloat16*>(grad_embed_weight.data_ptr<at::BFloat16>()),"
+    }
+  ],
+  "reference_hash": "eac6ec06e8da296b9fe82ed9b2d5d4771fb9dc80f38c9ca3a9c70921de8f4041",
+  "note": "The unique source mechanism and constants match the article; this is a source-based identity inference, not a problem ID printed by doubleAI."
+}

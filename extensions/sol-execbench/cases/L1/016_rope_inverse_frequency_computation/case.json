@@ -1,0 +1,31 @@
+{
+  "id": "S_L1_016_rope_inverse_frequency_computation",
+  "collection": "sol-execbench",
+  "path": "extensions/sol-execbench/cases/L1/016_rope_inverse_frequency_computation",
+  "status": "candidate_and_original_pass_evidence_recovered_reference_requires_local_download",
+  "reported_category": "illustrative_specialization_case",
+  "subset": "L1",
+  "name": "016_rope_inverse_frequency_computation",
+  "cursor_revision": "87ea087db7b6765ecdd8f5ca07a9cb3eb702e4b0",
+  "solution_name": "016_rope_inverse_frequency_computation_cutedsl_iteration_45_exact_theta_hybrid_vec4winners_warp32rec_closure",
+  "candidate_source_hashes": {
+    "extensions/sol-execbench/cases/L1/016_rope_inverse_frequency_computation/candidate/kernel.py": "02bcb0ff3001322161e36f33f0dea51057aa87d926657cccee6489f379ca7f7c"
+  },
+  "reference_embedded": false,
+  "reference_revision": "63699402f003496acc3af4eb534a5304a8ac1ea9",
+  "reference_sha256": "72a523f2ea1aa2f8ec05b73ec4c3f55be2e4c7de55de21467287577f1023b495",
+  "original_reference_revision": "13c8c2dab5dbf1c1fca13aceb700f27574583460",
+  "original_reference_sha256": "72a523f2ea1aa2f8ec05b73ec4c3f55be2e4c7de55de21467287577f1023b495",
+  "reference_unchanged_between_pins": true,
+  "original_trace_status_counts": {
+    "PASSED": 16
+  },
+  "reseed_values": null,
+  "failed_workload_indices": "not published in doubleAI article",
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/anysphere/kernel-optimization-results/tree/87ea087db7b6765ecdd8f5ca07a9cb3eb702e4b0/L1/016_rope_inverse_frequency_computation",
+    "https://www.doubleai.com/research/maxwell-approaches-speed-of-light-on-blackwell",
+    "https://huggingface.co/datasets/nvidia/SOL-ExecBench/tree/63699402f003496acc3af4eb534a5304a8ac1ea9"
+  ]
+}

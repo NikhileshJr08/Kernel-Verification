@@ -1,0 +1,47 @@
+{
+  "id": "S_Quant_011_fp8_moe_gate_routing",
+  "collection": "sol-execbench",
+  "path": "extensions/sol-execbench/cases/Quant/011_fp8_moe_gate_routing",
+  "status": "candidate_and_original_pass_evidence_recovered_reference_requires_local_download",
+  "reported_category": "reseeding_failure",
+  "subset": "Quant",
+  "name": "011_fp8_moe_gate_routing",
+  "cursor_revision": "87ea087db7b6765ecdd8f5ca07a9cb3eb702e4b0",
+  "solution_name": "011_fp8_moe_gate_routing_qdq12_broadcast_exact1280_cache512_v40",
+  "candidate_source_hashes": {
+    "extensions/sol-execbench/cases/Quant/011_fp8_moe_gate_routing/candidate/kernel.py": "8193322037b7125b1e6c02a2000f50266a38200ab444df3bba18c51725e621f3",
+    "extensions/sol-execbench/cases/Quant/011_fp8_moe_gate_routing/candidate/kernel_mid_family.py": "6107a942136c80a58cd11ab848d2849ea94d2126a8940e86a67880e6e46da47a",
+    "extensions/sol-execbench/cases/Quant/011_fp8_moe_gate_routing/candidate/kernel_mid_plain_family.py": "8c3cc53a6b3600054b9fe002128704054db40d4110598193aebd50961d60d09e",
+    "extensions/sol-execbench/cases/Quant/011_fp8_moe_gate_routing/candidate/kernel_rawptr_all_family.py": "d70a492fd0eaf8b64de2cfeec15dc27b2c8b1ed01986f2152cde7a680db6a474",
+    "extensions/sol-execbench/cases/Quant/011_fp8_moe_gate_routing/candidate/kernel_qdq12_family.py": "f14da745871606bca8d730d9734ed6c83d892b6f3085a48d64a5b3b411d3ae40",
+    "extensions/sol-execbench/cases/Quant/011_fp8_moe_gate_routing/candidate/kernel_qdq_family.py": "c4c1a24844a43f534ab31b5589984aead47696e3f8dff2564f99157e612dac90",
+    "extensions/sol-execbench/cases/Quant/011_fp8_moe_gate_routing/candidate/kernel_v20_family.py": "64c41cb4091a1d69ae2f547f92ab0b9c7476673c69959336e1e6fc64c4253159",
+    "extensions/sol-execbench/cases/Quant/011_fp8_moe_gate_routing/candidate/routing_workspace_common.py": "76e488c007d3998351a8056a7c9a6b010749b4277b295de1afc9bbce292500aa",
+    "extensions/sol-execbench/cases/Quant/011_fp8_moe_gate_routing/candidate/blockwise_gemm_impl.py": "8253afa9998201d61bcb4ffe0a48a13859af9a5bbe50c59ed905096b50906d16",
+    "extensions/sol-execbench/cases/Quant/011_fp8_moe_gate_routing/candidate/fp8_blockwise_common_dynamic.py": "1e897c288c9222ae23f55f879b3559008f4533383b42857dbb3c9f4217eb0f80",
+    "extensions/sol-execbench/cases/Quant/011_fp8_moe_gate_routing/candidate/fp8_blockwise_common_rawptr.py": "dd1805555caee24cf506760c2618a2e9c913baabfb09dec2b082ebeb4305b441",
+    "extensions/sol-execbench/cases/Quant/011_fp8_moe_gate_routing/candidate/fp8_blockwise_common.py": "aed8b8e98e4c3fce4d39163761d24bb361f10ef3872e8fbdc1b3b6acaf89d7cf"
+  },
+  "reference_embedded": false,
+  "reference_revision": "63699402f003496acc3af4eb534a5304a8ac1ea9",
+  "reference_sha256": "ef1bdbf87c7e51b912bbd75cee606152477508c8300df3175f9d81e22163f97a",
+  "original_reference_revision": "13c8c2dab5dbf1c1fca13aceb700f27574583460",
+  "original_reference_sha256": "ef1bdbf87c7e51b912bbd75cee606152477508c8300df3175f9d81e22163f97a",
+  "reference_unchanged_between_pins": true,
+  "original_trace_status_counts": {
+    "PASSED": 16
+  },
+  "reseed_values": [
+    200,
+    1337,
+    13337,
+    133337
+  ],
+  "failed_workload_indices": "not published in doubleAI article",
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/anysphere/kernel-optimization-results/tree/87ea087db7b6765ecdd8f5ca07a9cb3eb702e4b0/Quant/011_fp8_moe_gate_routing",
+    "https://www.doubleai.com/research/maxwell-approaches-speed-of-light-on-blackwell",
+    "https://huggingface.co/datasets/nvidia/SOL-ExecBench/tree/63699402f003496acc3af4eb534a5304a8ac1ea9"
+  ]
+}

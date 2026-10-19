@@ -1,0 +1,20 @@
+{
+  "id": "A11997_99_TripletMarginLoss",
+  "collection": "kernelbench-audit",
+  "path": "extensions/kernelbench-audit/cases/A11997_99_TripletMarginLoss",
+  "status": "original_pass_and_verified_adversarial_test_available",
+  "candidate": "extensions/kernelbench-audit/cases/A11997_99_TripletMarginLoss/candidate.cu",
+  "reference": "extensions/kernelbench-audit/cases/A11997_99_TripletMarginLoss/reference.py",
+  "candidate_sha256": "f5b53636ffd3cb0221d64adfe23a16f53dea6b0a1479fd4fb9f4a9395037f07b",
+  "reference_sha256": "ad852f205f79cb4e3ae388b32dcda8e87ef94fe95f1d5b9a3c6df503a1ba0254",
+  "dataset_row": 11997,
+  "task_id": 99,
+  "original_correct": true,
+  "candidate_matches_abc_bytes": true,
+  "reported_individual_adversarial_outcome": "not_available",
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/uiuc-kang-lab/agentic-benchmarks/blob/ae1124758098876db04336e1d8c6e419a139c6e3/benchmarks/kernel-bench/tests_verified/level_1/99_TripletMarginLoss/test_11997.py",
+    "https://huggingface.co/datasets/SakanaAI/AI-CUDA-Engineer-Archive/tree/4edbe8d6d0b417e05aaf8ec7e23f78aecdc5516b"
+  ]
+}

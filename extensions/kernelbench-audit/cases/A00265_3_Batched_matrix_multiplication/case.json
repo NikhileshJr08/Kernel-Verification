@@ -1,0 +1,20 @@
+{
+  "id": "A00265_3_Batched_matrix_multiplication",
+  "collection": "kernelbench-audit",
+  "path": "extensions/kernelbench-audit/cases/A00265_3_Batched_matrix_multiplication",
+  "status": "original_pass_and_verified_adversarial_test_available",
+  "candidate": "extensions/kernelbench-audit/cases/A00265_3_Batched_matrix_multiplication/candidate.cu",
+  "reference": "extensions/kernelbench-audit/cases/A00265_3_Batched_matrix_multiplication/reference.py",
+  "candidate_sha256": "829c0f0e7129b05830b94d4efd0ab64a8af80e7d26333ad8d25f65befb984711",
+  "reference_sha256": "16153e37cffd09257aa86db740696970945268df8c07ba18770bb084a69ae3d3",
+  "dataset_row": 265,
+  "task_id": 3,
+  "original_correct": true,
+  "candidate_matches_abc_bytes": true,
+  "reported_individual_adversarial_outcome": "not_available",
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/uiuc-kang-lab/agentic-benchmarks/blob/ae1124758098876db04336e1d8c6e419a139c6e3/benchmarks/kernel-bench/tests_verified/level_1/3_Batched_matrix_multiplication/test_265.py",
+    "https://huggingface.co/datasets/SakanaAI/AI-CUDA-Engineer-Archive/tree/4edbe8d6d0b417e05aaf8ec7e23f78aecdc5516b"
+  ]
+}

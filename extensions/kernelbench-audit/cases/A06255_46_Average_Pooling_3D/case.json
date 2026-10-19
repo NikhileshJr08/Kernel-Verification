@@ -1,0 +1,20 @@
+{
+  "id": "A06255_46_Average_Pooling_3D",
+  "collection": "kernelbench-audit",
+  "path": "extensions/kernelbench-audit/cases/A06255_46_Average_Pooling_3D",
+  "status": "original_pass_and_verified_adversarial_test_available",
+  "candidate": "extensions/kernelbench-audit/cases/A06255_46_Average_Pooling_3D/candidate.cu",
+  "reference": "extensions/kernelbench-audit/cases/A06255_46_Average_Pooling_3D/reference.py",
+  "candidate_sha256": "eb2cb025532bdeb67ee01693d2260e5fa3d5e8621bbd0e2367f24d99894b7eda",
+  "reference_sha256": "e0e15d2040d4fbe468ad9e0d921d15e3ccea81335c00e1ace9e75be493768cd7",
+  "dataset_row": 6255,
+  "task_id": 46,
+  "original_correct": true,
+  "candidate_matches_abc_bytes": true,
+  "reported_individual_adversarial_outcome": "not_available",
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/uiuc-kang-lab/agentic-benchmarks/blob/ae1124758098876db04336e1d8c6e419a139c6e3/benchmarks/kernel-bench/tests_verified/level_1/46_Average_Pooling_3D/test_6255.py",
+    "https://huggingface.co/datasets/SakanaAI/AI-CUDA-Engineer-Archive/tree/4edbe8d6d0b417e05aaf8ec7e23f78aecdc5516b"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "Op_Name": "26_GELU_",
+  "Level_ID": 1,
+  "Task_ID": 26,
+  "Kernel_Name": "26_gelu_no_sync_edit_1",
+  "Correct": true,
+  "Max_Diff": 0.0,
+  "Error": null,
+  "CUDA_Runtime": 0.007,
+  "CUDA_Speedup_Native": 0.9650612649108682,
+  "__index_level_0__": 29,
+  "dataset_row_position": 3492,
+  "join_rule": "pandas positional row ID assigned before Correct filtering, exactly as ABC preprocess_data.py"
+}

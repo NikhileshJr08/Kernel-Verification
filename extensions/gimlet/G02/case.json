@@ -1,0 +1,11 @@
+{
+  "id": "G02",
+  "collection": "gimlet",
+  "path": "extensions/gimlet/G02",
+  "status": "public_reference_task_identified_original_candidate_unresolved",
+  "reference": "extensions/gimlet/G02/reference.py",
+  "reference_sha256": "2b69e31d12d28d291fb5b56634176269ba6513e8d240fc01d6f8a7b706abc109",
+  "candidate": null,
+  "reference_match": "operation sequence and parameter names match article; not a byte-identical identity claim for Gimlet private input",
+  "source": "https://github.com/gimletlabs/KernelBench/blob/67f3a48683cbbfb760ec4eb1d2a444b9839a5d57/KernelBench/level2/2_ConvTranspose2d_BiasAdd_Clamp_Scaling_Clamp_Divide.py"
+}

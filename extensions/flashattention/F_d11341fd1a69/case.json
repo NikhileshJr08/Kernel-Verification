@@ -1,0 +1,23 @@
+{
+  "id": "F_d11341fd1a69",
+  "collection": "flashattention",
+  "path": "extensions/flashattention/F_d11341fd1a69",
+  "status": "original_parent_fix_tests_recovered_compiler_pin_unresolved",
+  "title": "Fix Triton fwd to support seqlen not multiples of 128",
+  "pre_revision": "b0c0db81f64cf8d2adc8d5fd962a49cd3e9396a4",
+  "fixed_revision": "d11341fd1a6913272666123baecfc32b3804f928",
+  "candidate": "extensions/flashattention/F_d11341fd1a69/pre/flash_attn/flash_attn_triton.py",
+  "reference": "extensions/flashattention/F_d11341fd1a69/post/flash_attn/flash_attn_triton.py",
+  "candidate_sha256": "20ff1ba604da7b24ce2c138c9a26d656755fc1187140d0e0fb18d49815e6e6ca",
+  "reference_sha256": "f8fb2d3b902dbe2dd22dad2a9b80c496604a563a6c73e7a0a4dcb590cc05412f",
+  "compiler_version": null,
+  "later_tested_version_note": {
+    "revision": "5d079fdd7a20bbd354080a80b20b5c36c93898d4",
+    "triton": "2.0.0.dev20221202",
+    "applies_to_this_fix": false
+  },
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/Dao-AILab/flash-attention/commit/d11341fd1a6913272666123baecfc32b3804f928"
+  ]
+}

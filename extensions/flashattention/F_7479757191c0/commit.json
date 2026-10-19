@@ -1,0 +1,113 @@
+{
+  "sha": "7479757191c04cc1d5a029b0b34c5064278c93ef",
+  "node_id": "C_kwDOHXVlhNoAKDc0Nzk3NTcxOTFjMDRjYzFkNWEwMjliMGIzNGM1MDY0Mjc4YzkzZWY",
+  "commit": {
+    "author": {
+      "name": "Tri Dao",
+      "email": "tridpq@gmail.com",
+      "date": "2022-11-06T19:46:55Z"
+    },
+    "committer": {
+      "name": "Tri Dao",
+      "email": "tridpq@gmail.com",
+      "date": "2022-11-06T19:50:35Z"
+    },
+    "message": "Fix pipelining bug in Triton bwd with bias_type=matrix",
+    "tree": {
+      "sha": "267fa867c95b76bb29384a29ca92057102c2ea3a",
+      "url": "https://api.github.com/repos/Dao-AILab/flash-attention/git/trees/267fa867c95b76bb29384a29ca92057102c2ea3a"
+    },
+    "url": "https://api.github.com/repos/Dao-AILab/flash-attention/git/commits/7479757191c04cc1d5a029b0b34c5064278c93ef",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/Dao-AILab/flash-attention/commits/7479757191c04cc1d5a029b0b34c5064278c93ef",
+  "html_url": "https://github.com/Dao-AILab/flash-attention/commit/7479757191c04cc1d5a029b0b34c5064278c93ef",
+  "comments_url": "https://api.github.com/repos/Dao-AILab/flash-attention/commits/7479757191c04cc1d5a029b0b34c5064278c93ef/comments",
+  "author": {
+    "login": "tridao",
+    "id": 5616128,
+    "node_id": "MDQ6VXNlcjU2MTYxMjg=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/5616128?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/tridao",
+    "html_url": "https://github.com/tridao",
+    "followers_url": "https://api.github.com/users/tridao/followers",
+    "following_url": "https://api.github.com/users/tridao/following{/other_user}",
+    "gists_url": "https://api.github.com/users/tridao/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/tridao/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/tridao/subscriptions",
+    "organizations_url": "https://api.github.com/users/tridao/orgs",
+    "repos_url": "https://api.github.com/users/tridao/repos",
+    "events_url": "https://api.github.com/users/tridao/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/tridao/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "tridao",
+    "id": 5616128,
+    "node_id": "MDQ6VXNlcjU2MTYxMjg=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/5616128?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/tridao",
+    "html_url": "https://github.com/tridao",
+    "followers_url": "https://api.github.com/users/tridao/followers",
+    "following_url": "https://api.github.com/users/tridao/following{/other_user}",
+    "gists_url": "https://api.github.com/users/tridao/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/tridao/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/tridao/subscriptions",
+    "organizations_url": "https://api.github.com/users/tridao/orgs",
+    "repos_url": "https://api.github.com/users/tridao/repos",
+    "events_url": "https://api.github.com/users/tridao/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/tridao/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "557781933dbc13cc4e75626bb064b4784869426f",
+      "url": "https://api.github.com/repos/Dao-AILab/flash-attention/commits/557781933dbc13cc4e75626bb064b4784869426f",
+      "html_url": "https://github.com/Dao-AILab/flash-attention/commit/557781933dbc13cc4e75626bb064b4784869426f"
+    }
+  ],
+  "stats": {
+    "total": 72,
+    "additions": 46,
+    "deletions": 26
+  },
+  "files": [
+    {
+      "sha": "274a083ba4f4ec9ad987a650ffb43cf584be038b",
+      "filename": "flash_attn/flash_attn_triton.py",
+      "status": "modified",
+      "additions": 36,
+      "deletions": 16,
+      "changes": 52,
+      "blob_url": "https://github.com/Dao-AILab/flash-attention/blob/7479757191c04cc1d5a029b0b34c5064278c93ef/flash_attn%2Fflash_attn_triton.py",
+      "raw_url": "https://github.com/Dao-AILab/flash-attention/raw/7479757191c04cc1d5a029b0b34c5064278c93ef/flash_attn%2Fflash_attn_triton.py",
+      "contents_url": "https://api.github.com/repos/Dao-AILab/flash-attention/contents/flash_attn%2Fflash_attn_triton.py?ref=7479757191c04cc1d5a029b0b34c5064278c93ef",
+      "patch": "@@ -18,6 +18,7 @@\n Caution:\n - This is an *experimental* implementation. The forward pass should be quite robust but\n I'm not 100% sure that the backward pass doesn't have race conditions (due to the Triton compiler).\n+- This implementation has only been tested on A100.\n - If you plan to use headdim other than 64 and 128, you should test for race conditions\n (due to the Triton compiler), as done in tests/test_flash_attn.py\n \"test_flash_attn_triton_race_condition\". I've tested and fixed many race conditions\n@@ -250,6 +251,29 @@ def _bwd_preprocess_do_o_dot(\n     tl.store(Delta + off_hb * seqlen_q_rounded + offs_m, delta)\n \n \n+@triton.jit\n+def _bwd_store_dk_dv(\n+    dk_ptrs, dv_ptrs, dk, dv, offs_n, offs_d, seqlen_k, headdim,\n+    EVEN_M: tl.constexpr, EVEN_N: tl.constexpr, EVEN_HEADDIM: tl.constexpr,\n+):\n+    # [2022-11-01] TD: Same bug. In the case of EVEN_N=True and EVEN_M=False,\n+    # if we just call tl.store(dv_ptrs), there's a race condition\n+    if EVEN_N & EVEN_M:\n+        if EVEN_HEADDIM:\n+            tl.store(dv_ptrs, dv)\n+            tl.store(dk_ptrs, dk)\n+        else:\n+            tl.store(dv_ptrs, dv, mask=offs_d[None, :] < headdim)\n+            tl.store(dk_ptrs, dk, mask=offs_d[None, :] < headdim)\n+    else:\n+        if EVEN_HEADDIM:\n+            tl.store(dv_ptrs, dv, mask=offs_n[:, None] < seqlen_k)\n+            tl.store(dk_ptrs, dk, mask=offs_n[:, None] < seqlen_k)\n+        else:\n+            tl.store(dv_ptrs, dv, mask=(offs_n[:, None] < seqlen_k) & (offs_d[None, :] < headdim))\n+            tl.store(dk_ptrs, dk, mask=(offs_n[:, None] < seqlen_k) & (offs_d[None, :] < headdim))\n+\n+\n @triton.jit\n def _bwd_kernel_one_col_block(\n     start_n,\n@@ -287,6 +311,16 @@ def _bwd_kernel_one_col_block(\n     # initialize dv and dk\n     dv = tl.zeros([BLOCK_N, BLOCK_HEADDIM], dtype=tl.float32)\n     dk = tl.zeros([BLOCK_N, BLOCK_HEADDIM], dtype=tl.float32)\n+    # There seems to be some problem with Triton pipelining that makes results wrong for\n+    # headdim=64, seqlen=(113, 255), bias_type='matrix'. In this case the for loop\n+    # may have zero step, and pipelining with the bias matrix could screw it up.\n+    # So we just exit early.\n+    if begin_m >= seqlen_q:\n+        dv_ptrs = DV + (offs_n[:, None] * stride_dvn + offs_d[None, :])\n+        dk_ptrs = DK + (offs_n[:, None] * stride_dkn + offs_d[None, :])\n+        _bwd_store_dk_dv(dk_ptrs, dv_ptrs, dk, dv, offs_n, offs_d, seqlen_k, headdim,\n+                         EVEN_M=EVEN_M, EVEN_N=EVEN_N, EVEN_HEADDIM=EVEN_HEADDIM)\n+        return\n     # k and v stay in SRAM throughout\n     # [2022-10-30] TD: Same bug as the fwd. In the case of EVEN_N=True and EVEN_M=False,\n     # if we just call tl.load(k_ptrs), we get the wrong output!\n@@ -437,22 +471,8 @@ def _bwd_kernel_one_col_block(\n     # write-back\n     dv_ptrs = DV + (offs_n[:, None] * stride_dvn + offs_d[None, :])\n     dk_ptrs = DK + (offs_n[:, None] * stride_dkn + offs_d[None, :])\n-    # [2022-11-01] TD: Same bug. In the case of EVEN_N=True and EVEN_M=False,\n-    # if we just call tl.store(dv_ptrs), there's a race condition\n-    if EVEN_N & EVEN_M:\n-        if EVEN_HEADDIM:\n-            tl.store(dv_ptrs, dv)\n-            tl.store(dk_ptrs, dk)\n-        else:\n-            tl.store(dv_ptrs, dv, mask=offs_d[None, :] < headdim)\n-            tl.store(dk_ptrs, dk, mask=offs_d[None, :] < headdim)\n-    else:\n-        if EVEN_HEADDIM:\n-            tl.store(dv_ptrs, dv, mask=offs_n[:, None] < seqlen_k)\n-            tl.store(dk_ptrs, dk, mask=offs_n[:, None] < seqlen_k)\n-        else:\n-            tl.store(dv_ptrs, dv, mask=(offs_n[:, None] < seqlen_k) & (offs_d[None, :] < headdim))\n-            tl.store(dk_ptrs, dk, mask=(offs_n[:, None] < seqlen_k) & (offs_d[None, :] < headdim))\n+    _bwd_store_dk_dv(dk_ptrs, dv_ptrs, dk, dv, offs_n, offs_d, seqlen_k, headdim,\n+                     EVEN_M=EVEN_M, EVEN_N=EVEN_N, EVEN_HEADDIM=EVEN_HEADDIM)\n \n \n def init_to_zero(name):"
+    },
+    {
+      "sha": "b85da45b79ba3954034bfec3831257485be2deca",
+      "filename": "tests/test_flash_attn.py",
+      "status": "modified",
+      "additions": 10,
+      "deletions": 10,
+      "changes": 20,
+      "blob_url": "https://github.com/Dao-AILab/flash-attention/blob/7479757191c04cc1d5a029b0b34c5064278c93ef/tests%2Ftest_flash_attn.py",
+      "raw_url": "https://github.com/Dao-AILab/flash-attention/raw/7479757191c04cc1d5a029b0b34c5064278c93ef/tests%2Ftest_flash_attn.py",
+      "contents_url": "https://api.github.com/repos/Dao-AILab/flash-attention/contents/tests%2Ftest_flash_attn.py?ref=7479757191c04cc1d5a029b0b34c5064278c93ef",
+      "patch": "@@ -864,14 +864,13 @@ def test_flash_attn_multigpu():\n @pytest.mark.parametrize('dtype', ([torch.float16] if is_sm75 else [torch.float16, torch.bfloat16]))\n # @pytest.mark.parametrize('dtype', [torch.bfloat16])\n @pytest.mark.parametrize('causal', [False, True])\n-# @pytest.mark.parametrize('causal', [False])\n+# @pytest.mark.parametrize('causal', [True])\n @pytest.mark.parametrize('d', [40, 48, 64, 128, 80, 88, 96])\n-# @pytest.mark.parametrize('d', [64])\n-# @pytest.mark.parametrize('seqlen', [97, 128, 200, 256, 257, 384, 512, 768, 1024, 1025, 2048])\n+# @pytest.mark.parametrize('d', [48])\n @pytest.mark.parametrize('seqlen_q,seqlen_k', [(113, 203), (128, 217), (113, 211), (108, 256), (256, 512), (512, 256), (1024, 1024), (1023, 1024), (1024, 1023), (2048, 2048)])\n-# @pytest.mark.parametrize('seqlen_q,seqlen_k', [(256, 128)])\n+# @pytest.mark.parametrize('seqlen_q,seqlen_k', [(1024, 1023)])\n @pytest.mark.parametrize('bias_shape', ([None, '1h1k', '1hqk', 'b11k', 'b1qk']))\n-# @pytest.mark.parametrize('bias_shape', (['1h1k']))\n+# @pytest.mark.parametrize('bias_shape', (['1hqk']))\n def test_flash_attn_triton_output(seqlen_q, seqlen_k, d, causal, dtype, bias_shape):\n     if seqlen_q >= 2048 and torch.cuda.get_device_properties('cuda').total_memory <= 16 * 2**30:\n         pytest.skip()  # Reference implementation OOM\n@@ -935,13 +934,13 @@ def test_flash_attn_triton_output(seqlen_q, seqlen_k, d, causal, dtype, bias_sha\n @pytest.mark.parametrize('dtype', ([torch.float16] if is_sm75 else [torch.float16, torch.bfloat16]))\n # @pytest.mark.parametrize('dtype', [torch.bfloat16])\n @pytest.mark.parametrize('causal', [False, True])\n-# @pytest.mark.parametrize('causal', [False])\n+# @pytest.mark.parametrize('causal', [True])\n @pytest.mark.parametrize('d', [40, 48, 64, 128, 80, 88, 96])\n-# @pytest.mark.parametrize('d', [96])\n-# @pytest.mark.parametrize('seqlen', [97, 128, 200, 256, 257, 384, 512, 768, 1024, 1025, 2048])\n+# @pytest.mark.parametrize('d', [64])\n @pytest.mark.parametrize('seqlen_q,seqlen_k', [(113, 203), (128, 217), (91, 211), (108, 256), (256, 512), (512, 256), (1024, 1024), (1023, 1024), (1024, 1023), (2048, 2048)])\n-# @pytest.mark.parametrize('seqlen_q,seqlen_k', [(256, 512)])\n+# @pytest.mark.parametrize('seqlen_q,seqlen_k', [(113, 203)])\n @pytest.mark.parametrize('bias_shape', ([None, '1h1k', '1hqk', 'b11k', 'b1qk']))\n+# @pytest.mark.parametrize('bias_shape', (['b1qk']))\n def test_flash_attn_triton_race_condition(seqlen_q, seqlen_k, d, causal, dtype, bias_shape):\n     if seqlen_q >= 2048 and torch.cuda.get_device_properties('cuda').total_memory <= 16 * 2**30:\n         pytest.skip()  # Reference implementation OOM\n@@ -979,14 +978,15 @@ def test_flash_attn_triton_race_condition(seqlen_q, seqlen_k, d, causal, dtype,\n         output = flash_attn_func(q, k, v, bias, causal)\n         output_equal = torch.equal(output, output_0)\n         if not output_equal:  # Printing / computing diff sometimes makes the race condition disappear\n+            print(f'{dtype = }, {causal = }, {d = }, {seqlen_q = }, {seqlen_k = }, {bias_shape = }, {i = }')\n             print(f'Output max diff: {(output - output_0).abs().max().item()}')\n         assert torch.equal(output, output_0)\n         dq, dk, dv = torch.autograd.grad(output, (q, k, v), g)\n         dq_equal = equal_fn(dq, dq_0)\n         dk_equal = torch.equal(dk, dk_0)\n         dv_equal = torch.equal(dv, dv_0)\n         if not (dq_equal and dk_equal and dv_equal):\n-            print(f'{i = }')\n+            print(f'{dtype = }, {causal = }, {d = }, {seqlen_q = }, {seqlen_k = }, {bias_shape = }, {i = }')\n             print(f'dQ max diff: {(dq - dq_0).abs().max().item()}')\n             print(f'dK max diff: {(dk - dk_0).abs().max().item()}')\n             print(f'dV max diff: {(dv - dv_0).abs().max().item()}')"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "A10463_89_cumsum",
+  "collection": "kernelbench-audit",
+  "path": "extensions/kernelbench-audit/cases/A10463_89_cumsum",
+  "status": "original_pass_and_verified_adversarial_test_available",
+  "candidate": "extensions/kernelbench-audit/cases/A10463_89_cumsum/candidate.cu",
+  "reference": "extensions/kernelbench-audit/cases/A10463_89_cumsum/reference.py",
+  "candidate_sha256": "df629b76a7abeed9b2e9b01423b1b091b3e9bd75efdc0dbe9c7cfd4e20c540b0",
+  "reference_sha256": "e4d764b5813b3732f7c5e11ee1eb2a2edde9279808112bfad0973821edde1605",
+  "dataset_row": 10463,
+  "task_id": 89,
+  "original_correct": true,
+  "candidate_matches_abc_bytes": true,
+  "reported_individual_adversarial_outcome": "not_available",
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/uiuc-kang-lab/agentic-benchmarks/blob/ae1124758098876db04336e1d8c6e419a139c6e3/benchmarks/kernel-bench/tests_verified/level_1/89_cumsum/test_10463.py",
+    "https://huggingface.co/datasets/SakanaAI/AI-CUDA-Engineer-Archive/tree/4edbe8d6d0b417e05aaf8ec7e23f78aecdc5516b"
+  ]
+}

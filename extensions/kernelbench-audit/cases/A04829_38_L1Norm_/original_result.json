@@ -1,0 +1,14 @@
+{
+  "Op_Name": "38_L1Norm_",
+  "Level_ID": 1,
+  "Task_ID": 38,
+  "Kernel_Name": "l1norm_memory_coalesced_base",
+  "Correct": true,
+  "Max_Diff": 0.0,
+  "Error": null,
+  "CUDA_Runtime": 0.014,
+  "CUDA_Speedup_Native": 1.1667301878333092,
+  "__index_level_0__": 6,
+  "dataset_row_position": 4829,
+  "join_rule": "pandas positional row ID assigned before Correct filtering, exactly as ABC preprocess_data.py"
+}

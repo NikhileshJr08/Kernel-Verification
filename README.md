@@ -1,5 +1,7 @@
 # Kernel Correctness Corpus
 
+**Requested-source expansion:** see [extensions/README.md](extensions/README.md) for the ABC/Sakana audit, exact Megatron fixes, doubleAI/SOL case mappings, historical FlashAttention revisions, and the remaining Gimlet/bounds gaps. The original twenty-case manifest below is preserved; the extension has a separate evidence index.
+
 A source-backed research starter repository for comparing GPU-kernel verification approaches. It contains **20 original reference/candidate cases**, their provenance, published failure records, and replay tools. Retrieved October 19, 2026.
 
 **The evidence is mixed, deliberately labeled:**

@@ -237,7 +237,7 @@
         "https://doi.org/10.5281/zenodo.21529230",
         "https://github.com/NVIDIA/Megatron-LM/commit/4831071c9"
       ],
-      "caveat": "Specialized artifact; use one warp, not the nominal geometry in the CUDA header.",
+      "caveat": "Specialized artifact; use one warp, not the nominal geometry in the CUDA header. The artifact contains deliberate reproduction edits and specializations; its formal verdict is not a fresh verification of the untouched upstream parent/fix sources. Exact raw upstream files are now in extensions/megatron/.",
       "launch_config_source": "vendor/volta/crates/volta_bench/src/benchmarks/races.rs",
       "failure_evidence": "cases/V07_layernorm/formal_report.json",
       "sha256": {
@@ -267,7 +267,7 @@
         "https://doi.org/10.5281/zenodo.21529230",
         "https://github.com/NVIDIA/Megatron-LM/commit/f1295380c"
       ],
-      "caveat": "The fixed artifact also changes launch geometry from 32x4 to 32x1; compare kernel plus launch configuration.",
+      "caveat": "The fixed artifact also changes launch geometry from 32x4 to 32x1; compare kernel plus launch configuration. The artifact contains deliberate reproduction edits and specializations; its formal verdict is not a fresh verification of the untouched upstream parent/fix sources. Exact raw upstream files are now in extensions/megatron/.",
       "launch_config_source": "vendor/volta/crates/volta_bench/src/benchmarks/races.rs",
       "failure_evidence": "cases/V08_gradinput/formal_report.json",
       "sha256": {

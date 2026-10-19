@@ -1,0 +1,20 @@
+{
+  "id": "A04476_35_GroupNorm_",
+  "collection": "kernelbench-audit",
+  "path": "extensions/kernelbench-audit/cases/A04476_35_GroupNorm_",
+  "status": "original_pass_and_verified_adversarial_test_available",
+  "candidate": "extensions/kernelbench-audit/cases/A04476_35_GroupNorm_/candidate.cu",
+  "reference": "extensions/kernelbench-audit/cases/A04476_35_GroupNorm_/reference.py",
+  "candidate_sha256": "6ed4b3fd1cc73e86fb79a77b5e35c467de1fc6375f4380342f5c2ca30bde106c",
+  "reference_sha256": "d711c1361f0ad3af51da0e7f5678ac9113ead5c39362ca549edbfc1a84cddaf9",
+  "dataset_row": 4476,
+  "task_id": 35,
+  "original_correct": true,
+  "candidate_matches_abc_bytes": true,
+  "reported_individual_adversarial_outcome": "not_available",
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/uiuc-kang-lab/agentic-benchmarks/blob/ae1124758098876db04336e1d8c6e419a139c6e3/benchmarks/kernel-bench/tests_verified/level_1/35_GroupNorm_/test_4476.py",
+    "https://huggingface.co/datasets/SakanaAI/AI-CUDA-Engineer-Archive/tree/4edbe8d6d0b417e05aaf8ec7e23f78aecdc5516b"
+  ]
+}

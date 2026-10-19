@@ -1,0 +1,14 @@
+{
+  "Op_Name": "15_Matmul_for_lower_triangular_matrices",
+  "Level_ID": 1,
+  "Task_ID": 15,
+  "Kernel_Name": "tiled_even_base",
+  "Correct": true,
+  "Max_Diff": 0.001,
+  "Error": null,
+  "CUDA_Runtime": 4.56,
+  "CUDA_Speedup_Native": 0.6138063313668235,
+  "__index_level_0__": 15,
+  "dataset_row_position": 2027,
+  "join_rule": "pandas positional row ID assigned before Correct filtering, exactly as ABC preprocess_data.py"
+}

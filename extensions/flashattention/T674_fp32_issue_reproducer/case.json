@@ -1,0 +1,19 @@
+{
+  "id": "T674_fp32_issue_reproducer",
+  "collection": "flashattention",
+  "path": "extensions/flashattention/T674_fp32_issue_reproducer",
+  "status": "original_issue_reproducer_exact_reported_compiler_version_fixed_compiler_unidentified",
+  "compiler_version": "2.0.0.dev20220830",
+  "issue": 674,
+  "source": "https://github.com/triton-lang/triton/issues/674",
+  "candidate": "extensions/flashattention/T674_fp32_issue_reproducer/candidate_and_reference_test.py",
+  "candidate_sha256": "6c436232cee75be21276a18b644e9f2f2e555787d137fe6e3ca0e86c69a06014",
+  "reference": "embedded torch reference in same test",
+  "fixed_revision": null,
+  "reported_pass_dtypes": [
+    "float16",
+    "bfloat16"
+  ],
+  "reported_fail_dtype": "float32",
+  "local_gpu_rerun": "not_run"
+}

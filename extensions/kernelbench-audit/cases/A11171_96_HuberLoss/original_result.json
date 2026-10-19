@@ -1,0 +1,14 @@
+{
+  "Op_Name": "96_HuberLoss",
+  "Level_ID": 1,
+  "Task_ID": 96,
+  "Kernel_Name": "shared_tile_huberloss_base",
+  "Correct": true,
+  "Max_Diff": 0.0,
+  "Error": null,
+  "CUDA_Runtime": 0.012,
+  "CUDA_Speedup_Native": 1.34638836607337,
+  "__index_level_0__": 19,
+  "dataset_row_position": 11171,
+  "join_rule": "pandas positional row ID assigned before Correct filtering, exactly as ABC preprocess_data.py"
+}

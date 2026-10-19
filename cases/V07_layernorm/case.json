@@ -20,7 +20,7 @@
     "https://doi.org/10.5281/zenodo.21529230",
     "https://github.com/NVIDIA/Megatron-LM/commit/4831071c9"
   ],
-  "caveat": "Specialized artifact; use one warp, not the nominal geometry in the CUDA header.",
+  "caveat": "Specialized artifact; use one warp, not the nominal geometry in the CUDA header. The artifact contains deliberate reproduction edits and specializations; its formal verdict is not a fresh verification of the untouched upstream parent/fix sources. Exact raw upstream files are now in extensions/megatron/.",
   "launch_config_source": "vendor/volta/crates/volta_bench/src/benchmarks/races.rs",
   "failure_evidence": "cases/V07_layernorm/formal_report.json",
   "sha256": {

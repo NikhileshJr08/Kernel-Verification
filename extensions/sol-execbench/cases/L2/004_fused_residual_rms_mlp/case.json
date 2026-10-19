@@ -1,0 +1,32 @@
+{
+  "id": "S_L2_004_fused_residual_rms_mlp",
+  "collection": "sol-execbench",
+  "path": "extensions/sol-execbench/cases/L2/004_fused_residual_rms_mlp",
+  "status": "candidate_and_original_pass_evidence_recovered_reference_requires_local_download",
+  "reported_category": "updated_benchmark_failure",
+  "subset": "L2",
+  "name": "004_fused_residual_rms_mlp",
+  "cursor_revision": "87ea087db7b6765ecdd8f5ca07a9cb3eb702e4b0",
+  "solution_name": "004_fused_residual_rms_mlp_cutedsl_dynamic_persistent_v55_selgate_growws_all8192_static8192_cluster12_outputc1_w4prepass_lazy_agent8",
+  "candidate_source_hashes": {
+    "extensions/sol-execbench/cases/L2/004_fused_residual_rms_mlp/candidate/kernel.py": "b78675c755009d2aac20dc047f988618fceff5a73abfd91241b6dd590dad1b97",
+    "extensions/sol-execbench/cases/L2/004_fused_residual_rms_mlp/candidate/dynamic_persistent_gemm_impl.py": "144e34f2dd3a3ab9bd288f3312dfce5a65e7f3f0d3ffb5d096e5adb635f67b9f"
+  },
+  "reference_embedded": false,
+  "reference_revision": "63699402f003496acc3af4eb534a5304a8ac1ea9",
+  "reference_sha256": "76d85f5c90f250855ace0422e9cca277633045ee4707a88456fd44f19c2d7e7d",
+  "original_reference_revision": "13c8c2dab5dbf1c1fca13aceb700f27574583460",
+  "original_reference_sha256": "76d85f5c90f250855ace0422e9cca277633045ee4707a88456fd44f19c2d7e7d",
+  "reference_unchanged_between_pins": true,
+  "original_trace_status_counts": {
+    "PASSED": 16
+  },
+  "reseed_values": null,
+  "failed_workload_indices": "not published in doubleAI article",
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/anysphere/kernel-optimization-results/tree/87ea087db7b6765ecdd8f5ca07a9cb3eb702e4b0/L2/004_fused_residual_rms_mlp",
+    "https://www.doubleai.com/research/maxwell-approaches-speed-of-light-on-blackwell",
+    "https://huggingface.co/datasets/nvidia/SOL-ExecBench/tree/63699402f003496acc3af4eb534a5304a8ac1ea9"
+  ]
+}

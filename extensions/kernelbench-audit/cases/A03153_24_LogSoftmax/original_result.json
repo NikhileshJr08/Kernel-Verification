@@ -1,0 +1,14 @@
+{
+  "Op_Name": "24_LogSoftmax",
+  "Level_ID": 1,
+  "Task_ID": 24,
+  "Kernel_Name": "grid2d_logsoftmax_base",
+  "Correct": true,
+  "Max_Diff": 0.0,
+  "Error": null,
+  "CUDA_Runtime": 0.011,
+  "CUDA_Speedup_Native": 0.9746606546369466,
+  "__index_level_0__": 12,
+  "dataset_row_position": 3153,
+  "join_rule": "pandas positional row ID assigned before Correct filtering, exactly as ABC preprocess_data.py"
+}

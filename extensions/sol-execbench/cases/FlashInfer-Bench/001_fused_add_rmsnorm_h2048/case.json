@@ -1,0 +1,31 @@
+{
+  "id": "S_FlashInfer-Bench_001_fused_add_rmsnorm_h2048",
+  "collection": "sol-execbench",
+  "path": "extensions/sol-execbench/cases/FlashInfer-Bench/001_fused_add_rmsnorm_h2048",
+  "status": "candidate_and_original_pass_evidence_recovered_reference_requires_local_download",
+  "reported_category": "illustrative_specialization_case",
+  "subset": "FlashInfer-Bench",
+  "name": "001_fused_add_rmsnorm_h2048",
+  "cursor_revision": "87ea087db7b6765ecdd8f5ca07a9cb3eb702e4b0",
+  "solution_name": "agent11_fused_add_rmsnorm_h2048_cutedsl_v59_full_exact_tiny16_mod34plus",
+  "candidate_source_hashes": {
+    "extensions/sol-execbench/cases/FlashInfer-Bench/001_fused_add_rmsnorm_h2048/candidate/kernel.py": "53ea8e702f5f5b5e88b8b42434ab4347c60694e008ebc2bb70f30e6667379822"
+  },
+  "reference_embedded": false,
+  "reference_revision": "63699402f003496acc3af4eb534a5304a8ac1ea9",
+  "reference_sha256": "a07713aa149f43f8d24eb287ed19ba22b6e61cae7d85901eef6abddffee92014",
+  "original_reference_revision": null,
+  "original_reference_sha256": null,
+  "reference_unchanged_between_pins": null,
+  "original_trace_status_counts": {
+    "PASSED": 7
+  },
+  "reseed_values": null,
+  "failed_workload_indices": "not published in doubleAI article",
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/anysphere/kernel-optimization-results/tree/87ea087db7b6765ecdd8f5ca07a9cb3eb702e4b0/FlashInfer-Bench/001_fused_add_rmsnorm_h2048",
+    "https://www.doubleai.com/research/maxwell-approaches-speed-of-light-on-blackwell",
+    "https://huggingface.co/datasets/nvidia/SOL-ExecBench/tree/63699402f003496acc3af4eb534a5304a8ac1ea9"
+  ]
+}

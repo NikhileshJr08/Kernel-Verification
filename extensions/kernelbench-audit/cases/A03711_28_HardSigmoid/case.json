@@ -1,0 +1,20 @@
+{
+  "id": "A03711_28_HardSigmoid",
+  "collection": "kernelbench-audit",
+  "path": "extensions/kernelbench-audit/cases/A03711_28_HardSigmoid",
+  "status": "original_pass_and_verified_adversarial_test_available",
+  "candidate": "extensions/kernelbench-audit/cases/A03711_28_HardSigmoid/candidate.cu",
+  "reference": "extensions/kernelbench-audit/cases/A03711_28_HardSigmoid/reference.py",
+  "candidate_sha256": "f6d42d23bed89a3fe8814ec9dbed87bc41ec3653647e219aa2bc2db2d10cc77d",
+  "reference_sha256": "c9cb96d5bbd111e882472675e8564e215487ef1c485a898a64c9540bf80e70ca",
+  "dataset_row": 3711,
+  "task_id": 28,
+  "original_correct": true,
+  "candidate_matches_abc_bytes": true,
+  "reported_individual_adversarial_outcome": "not_available",
+  "local_gpu_rerun": "not_run",
+  "sources": [
+    "https://github.com/uiuc-kang-lab/agentic-benchmarks/blob/ae1124758098876db04336e1d8c6e419a139c6e3/benchmarks/kernel-bench/tests_verified/level_1/28_HardSigmoid/test_3711.py",
+    "https://huggingface.co/datasets/SakanaAI/AI-CUDA-Engineer-Archive/tree/4edbe8d6d0b417e05aaf8ec7e23f78aecdc5516b"
+  ]
+}
