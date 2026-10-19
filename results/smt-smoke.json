@@ -1,0 +1,24 @@
+{
+  "z3_version": "5.3.1",
+  "scope": "scalar_models_only",
+  "results": [
+    {
+      "case": "D1088",
+      "query": "equal_outputs_under_E_gt_1",
+      "result": "unsat",
+      "meaning": "inequivalent for all E>1, under the source-derived scalar model"
+    },
+    {
+      "case": "G02",
+      "query": "reference_ne_candidate",
+      "result": "sat",
+      "model": "[x = 3/4, scale = 1]"
+    },
+    {
+      "case": "G03",
+      "query": "real_coefficient_models_differ",
+      "result": "sat",
+      "warning": "At x=0 the actual rounded FP32 outputs can agree; this witness belongs only to the exact-real coefficient model."
+    }
+  ]
+}

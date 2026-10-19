@@ -1,0 +1,48 @@
+{
+  "id": "D0416_layernorm_then_tanh",
+  "title": "LayerNorm then tanh",
+  "family": "norm",
+  "evidence_tier": "numerical_pass_then_adversarial_failure",
+  "language": "Triton/PyTorch",
+  "candidate": "cases/D0416_layernorm_then_tanh/candidate.py",
+  "reference": "cases/D0416_layernorm_then_tanh/reference.py",
+  "failure": "Candidate computes E[x^2]-E[x]^2 in FP32; audit reports NaN on large finite input.",
+  "failure_category": "Unstable variance",
+  "contract": "floating_point_error",
+  "uuid": 416,
+  "round": 5,
+  "native_shape": [
+    64,
+    128
+  ],
+  "primary_input": 0,
+  "expected": "adversarial_contract_failure",
+  "numeric_pass_evidence": "cases/D0416_layernorm_then_tanh/numerical_pass.json",
+  "failure_evidence": "cases/D0416_layernorm_then_tanh/audit.json",
+  "production_incident": false,
+  "formally_disproved_upstream": false,
+  "local_gpu_rerun": "not_run_no_cuda_device",
+  "upstream_sources": [
+    "https://huggingface.co/datasets/hkust-nlp/drkernel-coldstart-8k/tree/cba0ef0",
+    "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/audit_rows.jsonl.gz",
+    "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/kernelbench_actual_rows.jsonl",
+    "https://arxiv.org/html/2608.12700v2"
+  ],
+  "reported_failed_gates": {
+    "CMP-01": {
+      "reason": "large_1e6: max_err=nan > atol=4.308e-05 (scaled)",
+      "skipped": 1,
+      "status": "fail"
+    },
+    "EXC-02": {
+      "reason": "flush-to-zero behaviour disagrees with reference",
+      "skipped": 0,
+      "status": "fail"
+    }
+  },
+  "caveat": "Published adversarial testing result, not an SMT proof or a documented production incident. Final and best round are both 5, avoiding a last-vs-best extraction ambiguity. Upstream ID join supplies the pass/fail provenance; locally extracted candidate hashes are recorded, but the audit does not publish per-row candidate hashes.",
+  "sha256": {
+    "candidate": "a10c59fc202e452662d5a8736468c4e8fcb39c536232a68d98ffbb90b79b0f74",
+    "reference": "8e7259d7f87b8337310ced953a14eeacd3049af68006cfee4609e0207139c7b7"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "V07_layernorm",
+  "title": "Megatron-LM LayerNorm",
+  "family": "normalization",
+  "evidence_tier": "formal_race_report",
+  "language": "CUDA/PTX",
+  "candidate": "cases/V07_layernorm/candidate.ptx",
+  "reference": "cases/V07_layernorm/reference.ptx",
+  "source_candidate": "cases/V07_layernorm/candidate.cu",
+  "source_reference": "cases/V07_layernorm/reference.cu",
+  "failure": "Missing barrier before shared mean/inverse-standard-deviation broadcast.",
+  "contract": "data_race_freedom",
+  "numeric_pass_evidence": "Real upstream bug-fix provenance and published formal race detection; no individual historical numerical-test pass log recovered.",
+  "production_incident": false,
+  "expected": "data_race_pre_fix_and_race_free_post_fix",
+  "baseline_selector": "LayerNorm (pre-fix)",
+  "upstream_fix": "4831071c9",
+  "upstream_sources": [
+    "https://arxiv.org/html/2511.12638v3#S6.SS4",
+    "https://doi.org/10.5281/zenodo.21529230",
+    "https://github.com/NVIDIA/Megatron-LM/commit/4831071c9"
+  ],
+  "caveat": "Specialized artifact; use one warp, not the nominal geometry in the CUDA header.",
+  "launch_config_source": "vendor/volta/crates/volta_bench/src/benchmarks/races.rs",
+  "failure_evidence": "cases/V07_layernorm/formal_report.json",
+  "sha256": {
+    "candidate": "fa6c342db3f92bda7812dd32f211059369ae2d5cc987bfc28f73b4e26b629732",
+    "reference": "4a99798f56a149507a5e8d1edc8ab2f5c9bb00c4889fc9d9c3002f6c5c34cf90"
+  }
+}

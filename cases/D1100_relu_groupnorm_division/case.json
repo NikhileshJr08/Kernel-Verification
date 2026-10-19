@@ -1,0 +1,50 @@
+{
+  "id": "D1100_relu_groupnorm_division",
+  "title": "ReLU, GroupNorm, division",
+  "family": "norm",
+  "evidence_tier": "numerical_pass_then_adversarial_failure",
+  "language": "Triton/PyTorch",
+  "candidate": "cases/D1100_relu_groupnorm_division/candidate.py",
+  "reference": "cases/D1100_relu_groupnorm_division/reference.py",
+  "failure": "Audit reports large-input normalization error and non-finite-mask disagreement.",
+  "failure_category": "Unstable variance and special values",
+  "contract": "floating_point_error_and_special_values",
+  "uuid": 1100,
+  "round": 5,
+  "native_shape": [
+    128,
+    3,
+    32,
+    32
+  ],
+  "primary_input": 0,
+  "expected": "adversarial_contract_failure",
+  "numeric_pass_evidence": "cases/D1100_relu_groupnorm_division/numerical_pass.json",
+  "failure_evidence": "cases/D1100_relu_groupnorm_division/audit.json",
+  "production_incident": false,
+  "formally_disproved_upstream": false,
+  "local_gpu_rerun": "not_run_no_cuda_device",
+  "upstream_sources": [
+    "https://huggingface.co/datasets/hkust-nlp/drkernel-coldstart-8k/tree/cba0ef0",
+    "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/audit_rows.jsonl.gz",
+    "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/kernelbench_actual_rows.jsonl",
+    "https://arxiv.org/html/2608.12700v2"
+  ],
+  "reported_failed_gates": {
+    "CMP-01": {
+      "reason": "large_1e6: max_err=4.343e+00 > atol=1.296e-03 (scaled)",
+      "skipped": 1,
+      "status": "fail"
+    },
+    "EXC-01": {
+      "reason": "scattered_nan: NaN mask mismatch; scattered_pos_inf: NaN mask mismatch; scattered_pos_inf: -Inf mask mismatch (sign flip?)",
+      "skipped": 0,
+      "status": "fail"
+    }
+  },
+  "caveat": "Published adversarial testing result, not an SMT proof or a documented production incident. Final and best round are both 5, avoiding a last-vs-best extraction ambiguity. Upstream ID join supplies the pass/fail provenance; locally extracted candidate hashes are recorded, but the audit does not publish per-row candidate hashes.",
+  "sha256": {
+    "candidate": "29ab2ee5d7acb0b3eb828062287e1379a1cb9c87bfe3b510bdea0d96a05ded69",
+    "reference": "c3396482b997490ca2e3c051d083a288df421d21708646484b1e7b8488d2884c"
+  }
+}

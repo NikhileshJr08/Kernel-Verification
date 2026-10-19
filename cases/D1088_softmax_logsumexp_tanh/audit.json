@@ -1,0 +1,68 @@
+{
+  "elapsed_s": 13.4,
+  "final_speedup": 4.824902723735408,
+  "gates": {
+    "CMP-01": {
+      "reason": "random[0]: max_err=1.441e-02 > atol=2.725e-04 (scaled); random[1]: max_err=1.441e-02 > atol=2.725e-04 (scaled); random[2]: max_err=1.441e-02 > atol=2.725e-04 (scaled)",
+      "skipped": 0,
+      "status": "fail"
+    },
+    "CMP-03": {
+      "reason": "shape=(16, 10, 32, 32): max_err=1.441e-02 > atol=2.725e-04; shape=(64, 10, 32, 32): max_err=1.441e-02 > atol=2.725e-04; shape=(32, 10, 32, 64): max_err=1.441e-02 > atol=2.725e-04",
+      "skipped": 0,
+      "status": "fail"
+    },
+    "EXC-01": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "EXC-02": {
+      "reason": "subnormal non-zero values disagree: max_err=1.441e-02",
+      "skipped": 0,
+      "status": "fail"
+    },
+    "ORD-01": {
+      "reason": "max_err=1.440e-02 > atol=2.725e-04",
+      "skipped": 0,
+      "status": "fail"
+    },
+    "ORD-02": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "ORD-03": {
+      "reason": "not within atol=1.0e-03/rtol=1.0e-03: max_err=1.441e-02 (reduction order differs)",
+      "skipped": 0,
+      "status": "fail"
+    },
+    "PRC-01": {
+      "reason": "torch.float16: max_err=1.416e-02 > atol=1.000e-03",
+      "skipped": 1,
+      "status": "fail"
+    },
+    "PRC-02": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "RES-01": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    }
+  },
+  "id": "1088",
+  "multi_output": false,
+  "native_shape": [
+    32,
+    10,
+    32,
+    32
+  ],
+  "op_class": "softmax",
+  "output_aliasing": false,
+  "primary_idx": 0,
+  "status": "gated"
+}

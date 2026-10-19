@@ -1,0 +1,522 @@
+"""Channel-wise GDN-2 chunkwise backward reference: the channel-wise ground truth."""
+
+from __future__ import annotations
+
+import math
+from dataclasses import dataclass
+
+import torch
+from torch import Tensor
+
+RCP_LN2 = 1.0 / math.log(2.0)
+
+
+def _l2norm(x: Tensor, eps: float = 1e-6) -> Tensor:
+    return x / torch.sqrt((x * x).sum(-1, keepdim=True) + eps)
+
+
+def _to_chunks(x: Tensor, chunk_len: int) -> Tensor:
+    """[B, T, H, D] -> [B, H, NT, C, D] (head-major, chunked along T)."""
+    b, t, h, d = x.shape
+    if t % chunk_len != 0:
+        raise ValueError(f"seqlen {t} not divisible by chunk_len {chunk_len}")
+    nt = t // chunk_len
+    return x.transpose(1, 2).reshape(b, h, nt, chunk_len, d)
+
+
+def _from_chunks(x: Tensor) -> Tensor:
+    """[B, H, NT, C, D] -> [B, T, H, D]."""
+    b, h, nt, c, d = x.shape
+    return x.reshape(b, h, nt * c, d).transpose(1, 2).contiguous()
+
+
+def masked_decay_rel(g2: Tensor) -> Tensor:
+    """``exp2(g2_i - g2_s)`` [..., C, C, d_k] with the strict-upper triangle exactly zero."""
+    c = g2.shape[-2]
+    upper = torch.triu(torch.ones(c, c, dtype=torch.bool, device=g2.device), 1)
+    diff = g2[..., :, None, :] - g2[..., None, :, :]
+    return torch.exp2(diff.masked_fill(upper[..., None], float("-inf")))
+
+
+@dataclass
+class ChunkwiseForwardCW:
+    """Channel-wise forward output ``o`` plus every intermediate, head-major + chunked."""
+
+    o: Tensor
+    q: Tensor
+    k: Tensor
+    v: Tensor
+    b: Tensor
+    w_gate: Tensor
+    g2: Tensor
+    g_last: Tensor
+    gamma: Tensor
+    T: Tensor
+    u: Tensor
+    wy: Tensor
+    v_new: Tensor
+    h: Tensor
+    A_qk: Tensor
+    h_list: list[Tensor]
+    v_new_list: list[Tensor]
+    wy_list: list[Tensor]
+    u_list: list[Tensor]
+    leaves: tuple[Tensor, ...]
+    chunk_len: int
+    scale: float
+    skip_erase: bool = False
+    # Restage-only stash: masked_decay_rel(g2) [B,H,NT,C,C,d_k]; ~1.07 GB @B2/L2048/H8.
+    decay_rel: Tensor | None = None
+
+
+def chunkwise_forward_cw(
+    q: Tensor,
+    k: Tensor,
+    v: Tensor,
+    g: Tensor,
+    b: Tensor,
+    w: Tensor,
+    *,
+    chunk_len: int = 64,
+    scale: float | None = None,
+    initial_state: Tensor | None = None,
+    use_qk_l2norm: bool = False,
+    skip_erase: bool = False,
+) -> ChunkwiseForwardCW:
+    """Channel-wise GDN-2 chunkwise forward, retaining all intermediates."""
+    if q.dtype not in (torch.float32, torch.float64):
+        raise ValueError(f"Expected float32/float64, got {q.dtype}")
+    if skip_erase and bool((b != 0).any()):
+        raise ValueError("skip_erase requires b == 0 everywhere")
+    bsz, t, h, d_k = q.shape
+    d_v = v.shape[-1]
+    s = d_k**-0.5 if scale is None else scale
+
+    q_lf = q.detach().clone().requires_grad_(True)
+    k_lf = k.detach().clone().requires_grad_(True)
+    v_lf = v.detach().clone().requires_grad_(True)
+    g_lf = g.detach().clone().requires_grad_(True)
+    b_lf = b.detach().clone().requires_grad_(True)
+    w_lf = w.detach().clone().requires_grad_(True)
+    leaves = [q_lf, k_lf, v_lf, g_lf, b_lf, w_lf]
+
+    qh = _l2norm(q_lf) if use_qk_l2norm else q_lf
+    kh = _l2norm(k_lf) if use_qk_l2norm else k_lf
+    qh = qh * s
+
+    nt = t // chunk_len
+    qc = _to_chunks(qh, chunk_len)
+    kc = _to_chunks(kh, chunk_len)
+    vc = _to_chunks(v_lf, chunk_len)
+    bc = _to_chunks(b_lf, chunk_len)  # [B,H,NT,C,d_k]
+    wc = _to_chunks(w_lf, chunk_len)  # [B,H,NT,C,d_v]
+    g_chan = _to_chunks(g_lf, chunk_len)  # [B,H,NT,C,d_k]
+
+    g2 = torch.cumsum(g_chan, dim=-2) * RCP_LN2  # [B,H,NT,C,d_k]
+    g_last = g2[..., -1, :]  # [B,H,NT,d_k]
+    gamma = torch.exp2(g2)  # [B,H,NT,C,d_k]
+
+    if initial_state is not None:
+        h0 = initial_state.detach().clone().to(q.dtype).requires_grad_(True)
+        leaves.append(h0)
+    else:
+        h0 = torch.zeros(bsz, h, d_k, d_v, dtype=q.dtype, device=q.device).requires_grad_(True)
+
+    eye = torch.eye(chunk_len, dtype=q.dtype, device=q.device)
+    strict_lower = torch.tril(
+        torch.ones(chunk_len, chunk_len, dtype=torch.bool, device=q.device), -1
+    )
+    lower_incl = torch.tril(torch.ones(chunk_len, chunk_len, dtype=torch.bool, device=q.device), 0)
+
+    h_list: list[Tensor] = [h0]
+    o_list: list[Tensor] = []
+    T_list: list[Tensor] = []
+    u_list: list[Tensor] = []
+    wy_list: list[Tensor] = []
+    v_new_list: list[Tensor] = []
+    A_qk_list: list[Tensor] = []
+
+    for c in range(nt):
+        kc_c, qc_c, vc_c = kc[:, :, c], qc[:, :, c], vc[:, :, c]
+        bc_c, wc_c = bc[:, :, c], wc[:, :, c]
+        gamma_c, g2_c = gamma[:, :, c], g2[:, :, c]
+        glast_c = g_last[:, :, c]
+
+        decay_rel = masked_decay_rel(g2_c)  # [B,H,C,C,d_k]; strict-upper exactly zero
+
+        h_c = h_list[c]
+        if skip_erase:
+            t_mat = eye.expand(bsz, h, chunk_len, chunk_len)
+            T_list.append(t_mat)
+            u_c = wc_c * vc_c
+            wy_c = torch.zeros(bsz, h, chunk_len, d_k, dtype=q.dtype, device=q.device)
+            v_new_c = u_c
+        else:
+            bk = bc_c * kc_c  # erase-gated key  [B,H,C,d_k]
+            m = torch.einsum("...id,...sd,...isd->...is", bk, kc_c, decay_rel)
+            m = torch.where(strict_lower, m, torch.zeros_like(m))
+            t_mat = torch.linalg.solve_triangular(eye + m, eye, upper=False, unitriangular=True)
+            T_list.append(t_mat)
+
+            u_c = t_mat @ (wc_c * vc_c)  # T (w (.) v)   [B,H,C,d_v]
+            kbg = bk * gamma_c  # b (.) gamma (.) k       [B,H,C,d_k]
+            wy_c = t_mat @ kbg  # T (b gamma k)           [B,H,C,d_k]
+            v_new_c = u_c - wy_c @ h_c  # [B,H,C,d_v]
+
+        qg = qc_c * gamma_c
+        o_inter = qg @ h_c
+        a_qk = torch.einsum("...id,...sd,...isd->...is", qc_c, kc_c, decay_rel)
+        a_qk = torch.where(lower_incl, a_qk, torch.zeros_like(a_qk))
+        o_intra = a_qk @ v_new_c
+        o_list.append(o_inter + o_intra)
+
+        decay_end = torch.exp2(glast_c[..., None, :] - g2_c)  # gamma_C / gamma_i  [B,H,C,d_k]
+        k_dec = kc_c * decay_end
+        h_next = torch.exp2(glast_c)[..., :, None] * h_c + k_dec.transpose(-1, -2) @ v_new_c
+        h_list.append(h_next)
+
+        u_list.append(u_c)
+        wy_list.append(wy_c)
+        v_new_list.append(v_new_c)
+        A_qk_list.append(a_qk)
+
+    o_chunks = torch.stack(o_list, dim=2)  # [B,H,NT,C,d_v]
+    o = _from_chunks(o_chunks)
+
+    return ChunkwiseForwardCW(
+        o=o,
+        q=qc,
+        k=kc,
+        v=vc,
+        b=bc,
+        w_gate=wc,
+        g2=g2,
+        g_last=g_last,
+        gamma=gamma,
+        T=torch.stack(T_list, dim=2),
+        u=torch.stack(u_list, dim=2),
+        wy=torch.stack(wy_list, dim=2),
+        v_new=torch.stack(v_new_list, dim=2),
+        h=torch.stack(h_list, dim=2),
+        A_qk=torch.stack(A_qk_list, dim=2),
+        h_list=h_list,
+        v_new_list=v_new_list,
+        wy_list=wy_list,
+        u_list=u_list,
+        leaves=tuple(leaves),
+        chunk_len=chunk_len,
+        scale=s,
+        skip_erase=skip_erase,
+    )
+
+
+@torch.no_grad()
+def chunkwise_restage_cw(
+    q: Tensor,
+    k: Tensor,
+    v: Tensor,
+    g: Tensor,
+    b: Tensor,
+    w: Tensor,
+    *,
+    chunk_len: int = 64,
+    scale: float | None = None,
+    initial_state: Tensor | None = None,
+    use_qk_l2norm: bool = False,
+) -> ChunkwiseForwardCW:
+    """Batched no-grad restage of the channel-wise forward: the de-glue hot path."""
+    if q.dtype not in (torch.float32, torch.float64):
+        raise ValueError(f"Expected float32/float64, got {q.dtype}")
+    bsz, t, h, d_k = q.shape
+    d_v = v.shape[-1]
+    s = d_k**-0.5 if scale is None else scale
+
+    qh = _l2norm(q) if use_qk_l2norm else q
+    kh = _l2norm(k) if use_qk_l2norm else k
+    qh = qh * s
+
+    nt = t // chunk_len
+    qc = _to_chunks(qh, chunk_len)
+    kc = _to_chunks(kh, chunk_len)
+    vc = _to_chunks(v, chunk_len)
+    bc = _to_chunks(b, chunk_len)
+    wc = _to_chunks(w, chunk_len)
+    g_chan = _to_chunks(g, chunk_len)
+
+    g2 = torch.cumsum(g_chan, dim=-2) * RCP_LN2
+    g_last = g2[..., -1, :]
+    gamma = torch.exp2(g2)
+
+    if initial_state is not None:
+        h0 = initial_state.detach().to(q.dtype)
+    else:
+        h0 = torch.zeros(bsz, h, d_k, d_v, dtype=q.dtype, device=q.device)
+
+    eye = torch.eye(chunk_len, dtype=q.dtype, device=q.device)
+    strict_lower = torch.tril(
+        torch.ones(chunk_len, chunk_len, dtype=torch.bool, device=q.device), -1
+    )
+    lower_incl = torch.tril(torch.ones(chunk_len, chunk_len, dtype=torch.bool, device=q.device), 0)
+
+    decay_rel = masked_decay_rel(g2)  # [B,H,NT,C,C,d_k]
+    bk = bc * kc
+    m = torch.einsum("...id,...sd,...isd->...is", bk, kc, decay_rel)
+    m = torch.where(strict_lower, m, torch.zeros_like(m))
+    t_mat = torch.linalg.solve_triangular(eye + m, eye, upper=False, unitriangular=True)
+
+    u = t_mat @ (wc * vc)  # [B,H,NT,C,d_v]
+    wy = t_mat @ (bk * gamma)  # [B,H,NT,C,d_k]
+
+    a_qk = torch.einsum("...id,...sd,...isd->...is", qc, kc, decay_rel)
+    a_qk = torch.where(lower_incl, a_qk, torch.zeros_like(a_qk))
+
+    decay_end = torch.exp2(g_last[..., None, :] - g2)
+    k_dec = kc * decay_end
+    exp_glast = torch.exp2(g_last)  # [B,H,NT,d_k]
+
+    hs = torch.empty(bsz, h, nt + 1, d_k, d_v, dtype=q.dtype, device=q.device)
+    v_new = torch.empty(bsz, h, nt, chunk_len, d_v, dtype=q.dtype, device=q.device)
+    hh = h0
+    hs[:, :, 0] = hh
+    for ci in range(nt):
+        vn = u[:, :, ci] - wy[:, :, ci] @ hh
+        v_new[:, :, ci] = vn
+        hh = exp_glast[:, :, ci][..., :, None] * hh + k_dec[:, :, ci].transpose(-1, -2) @ vn
+        hs[:, :, ci + 1] = hh
+
+    o_chunks = (qc * gamma) @ hs[:, :, :-1] + a_qk @ v_new
+    o = _from_chunks(o_chunks)
+
+    return ChunkwiseForwardCW(
+        o=o,
+        q=qc,
+        k=kc,
+        v=vc,
+        b=bc,
+        w_gate=wc,
+        g2=g2,
+        g_last=g_last,
+        gamma=gamma,
+        T=t_mat,
+        u=u,
+        wy=wy,
+        v_new=v_new,
+        h=hs,
+        A_qk=a_qk,
+        h_list=list(hs.unbind(2)),
+        v_new_list=list(v_new.unbind(2)),
+        wy_list=list(wy.unbind(2)),
+        u_list=list(u.unbind(2)),
+        leaves=(),
+        chunk_len=chunk_len,
+        scale=s,
+        decay_rel=decay_rel,
+    )
+
+
+@dataclass
+class ChunkwiseBackwardCW:
+    """Channel-wise final grads + per-kernel intermediates, all autograd-derived."""
+
+    dq: Tensor
+    dk: Tensor
+    dv: Tensor
+    dg: Tensor
+    db: Tensor
+    dw: Tensor
+    dh0: Tensor | None
+    dh: Tensor
+    dh0_state: Tensor
+    dv2: Tensor
+    dv_local: Tensor
+    dwy: Tensor
+    dk2: Tensor
+    dv_final: Tensor
+    db_wy: Tensor
+    dw_wy: Tensor
+    dg2: Tensor
+
+
+def chunkwise_backward_cw(fwd: ChunkwiseForwardCW, do: Tensor) -> ChunkwiseBackwardCW:
+    """Channel-wise backward intermediates from a :class:`ChunkwiseForwardCW`, via autograd."""
+    if fwd.skip_erase:
+        raise ValueError("chunkwise_backward_cw needs the full graph; rebuild without skip_erase")
+    o = fwd.o
+    leaves = fwd.leaves
+
+    grads = torch.autograd.grad(o, leaves, do, retain_graph=True, allow_unused=True)
+    dq, dk, dv, dg, db, dw = grads[0], grads[1], grads[2], grads[3], grads[4], grads[5]
+    dh0_leaf = grads[6] if len(leaves) > 6 else None
+
+    dh_states = torch.autograd.grad(o, fwd.h_list[1:], do, retain_graph=True, allow_unused=True)
+    dh_filled = [d if d is not None else torch.zeros_like(fwd.h_list[0]) for d in dh_states]
+    dh = torch.stack(dh_filled, dim=2)  # [B,H,NT,d_k,d_v]
+    dh0_state = torch.autograd.grad(o, fwd.h_list[0], do, retain_graph=True)[0]
+    dv2_states = torch.autograd.grad(o, fwd.v_new_list, do, retain_graph=True)
+    dv2 = torch.stack(dv2_states, dim=2)  # [B,H,NT,C,d_v]
+
+    do_c = _to_chunks(do, fwd.chunk_len)  # [B,H,NT,C,d_v]
+    dv_local = fwd.A_qk.transpose(-1, -2) @ do_c  # [B,H,NT,C,d_v]
+
+    dwy_states = torch.autograd.grad(o, fwd.wy_list, do, retain_graph=True)
+    dwy = torch.stack(dwy_states, dim=2)  # [B,H,NT,C,d_k]
+
+    dk2, dv_final, db_wy, dw_wy, dg2 = _b1_submap_vjp_cw(fwd, dv2, dwy)
+
+    return ChunkwiseBackwardCW(
+        dq=dq,
+        dk=dk,
+        dv=dv,
+        dg=dg,
+        db=db,
+        dw=dw,
+        dh0=dh0_leaf,
+        dh=dh,
+        dh0_state=dh0_state,
+        dv2=dv2,
+        dv_local=dv_local,
+        dwy=dwy,
+        dk2=dk2,
+        dv_final=dv_final,
+        db_wy=db_wy,
+        dw_wy=dw_wy,
+        dg2=dg2,
+    )
+
+
+def _b1_submap_vjp_cw(
+    fwd: ChunkwiseForwardCW, du: Tensor, dwy: Tensor
+) -> tuple[Tensor, Tensor, Tensor, Tensor, Tensor]:
+    """VJP of the channel-wise WY sub-map (k, v, b, w, g) -> (u, wy) per chunk."""
+    b, h, nt, c, _ = fwd.k.shape
+    dtype, dev = fwd.k.dtype, fwd.k.device
+    eye = torch.eye(c, dtype=dtype, device=dev)
+    strict_lower = torch.tril(torch.ones(c, c, dtype=torch.bool, device=dev), -1)
+
+    dk2 = torch.zeros_like(fwd.k)
+    dv_final = torch.zeros_like(fwd.v)
+    db_wy = torch.zeros_like(fwd.b)
+    dw_wy = torch.zeros_like(fwd.w_gate)
+    dg2 = torch.zeros_like(fwd.b)
+
+    # raw per-token channel-wise g recovered from the within-chunk cumsum (key axis).
+    g_tok_all = torch.diff(
+        fwd.g2 / RCP_LN2,
+        dim=-2,
+        prepend=torch.zeros(b, h, nt, 1, fwd.b.shape[-1], dtype=dtype, device=dev),
+    )
+
+    for ci in range(nt):
+        k_lf = fwd.k[:, :, ci].detach().clone().requires_grad_(True)
+        v_lf = fwd.v[:, :, ci].detach().clone().requires_grad_(True)
+        b_lf = fwd.b[:, :, ci].detach().clone().requires_grad_(True)
+        w_lf = fwd.w_gate[:, :, ci].detach().clone().requires_grad_(True)
+        g_lf = g_tok_all[:, :, ci].detach().clone().requires_grad_(True)
+
+        g2_c = torch.cumsum(g_lf, dim=-2) * RCP_LN2
+        gamma_c = torch.exp2(g2_c)
+        decay_rel = masked_decay_rel(g2_c)
+        bk = b_lf * k_lf
+        m = torch.einsum("...id,...sd,...isd->...is", bk, k_lf, decay_rel)
+        m = torch.where(strict_lower, m, torch.zeros_like(m))
+        t_mat = torch.linalg.solve_triangular(eye + m, eye, upper=False, unitriangular=True)
+        u_c = t_mat @ (w_lf * v_lf)
+        wy_c = t_mat @ (bk * gamma_c)
+
+        gk, gv, gb, gw, gg = torch.autograd.grad(
+            (u_c, wy_c), (k_lf, v_lf, b_lf, w_lf, g_lf), (du[:, :, ci], dwy[:, :, ci])
+        )
+        dk2[:, :, ci] = gk
+        dv_final[:, :, ci] = gv
+        db_wy[:, :, ci] = gb
+        dw_wy[:, :, ci] = gw
+        dg2[:, :, ci] = gg
+
+    return dk2, dv_final, db_wy, dw_wy, dg2
+
+
+@dataclass
+class MicroGateBundleCW:
+    """One channel-wise kernel's micro-gate payload: ``inputs`` to feed, ``expected`` to check."""
+
+    name: str
+    inputs: dict[str, Tensor]
+    expected: dict[str, Tensor]
+    meta: dict[str, float | int]
+
+
+def build_microgate_bundles_cw(
+    q: Tensor,
+    k: Tensor,
+    v: Tensor,
+    g: Tensor,
+    b: Tensor,
+    w: Tensor,
+    do: Tensor,
+    *,
+    chunk_len: int = 64,
+    scale: float | None = None,
+    initial_state: Tensor | None = None,
+    use_qk_l2norm: bool = False,
+) -> dict[str, MicroGateBundleCW]:
+    """Build the channel-wise K#1 and K#2 micro-gate bundles from one pass."""
+    fwd = chunkwise_forward_cw(
+        q,
+        k,
+        v,
+        g,
+        b,
+        w,
+        chunk_len=chunk_len,
+        scale=scale,
+        initial_state=initial_state,
+        use_qk_l2norm=use_qk_l2norm,
+    )
+    bwd = chunkwise_backward_cw(fwd, do)
+    do_c = _to_chunks(do, chunk_len)
+    h0 = fwd.h_list[0].detach()
+    dht = torch.zeros_like(h0)
+
+    k1 = MicroGateBundleCW(
+        name="k1_reverse_state_scan_cw",
+        inputs={
+            "q": fwd.q.detach(),
+            "k": fwd.k.detach(),
+            "wy": fwd.wy.detach(),
+            "g2": fwd.g2.detach(),
+            "g_last": fwd.g_last.detach(),
+            "do": do_c.detach(),
+            "dv_local": bwd.dv_local.detach(),
+            "h0": h0,
+            "dht": dht,
+        },
+        expected={
+            "dh": bwd.dh.detach(),
+            "dh0": bwd.dh0_state.detach(),
+            "dv2": bwd.dv2.detach(),
+        },
+        meta={"scale": fwd.scale, "chunk_len": fwd.chunk_len},
+    )
+
+    k2 = MicroGateBundleCW(
+        name="k2_wy_triangular_vjp_cw",
+        inputs={
+            "k": fwd.k.detach(),
+            "v": fwd.v.detach(),
+            "b": fwd.b.detach(),
+            "w": fwd.w_gate.detach(),
+            "g2": fwd.g2.detach(),
+            "T": fwd.T.detach(),
+            "dwy": bwd.dwy.detach(),
+            "du": bwd.dv2.detach(),
+        },
+        expected={
+            "dk2": bwd.dk2.detach(),
+            "dv": bwd.dv_final.detach(),
+            "db": bwd.db_wy.detach(),
+            "dw": bwd.dw_wy.detach(),
+            "dg2": bwd.dg2.detach(),
+        },
+        meta={"scale": fwd.scale, "chunk_len": fwd.chunk_len},
+    )
+    return {"k1": k1, "k2": k2}

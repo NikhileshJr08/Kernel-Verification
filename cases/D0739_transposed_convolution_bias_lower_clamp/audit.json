@@ -1,0 +1,68 @@
+{
+  "elapsed_s": 8.9,
+  "final_speedup": 0.8455598455598455,
+  "gates": {
+    "CMP-01": {
+      "reason": "",
+      "skipped": 1,
+      "status": "pass"
+    },
+    "CMP-03": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "EXC-01": {
+      "reason": "scattered_nan: NaN mask mismatch",
+      "skipped": 0,
+      "status": "fail"
+    },
+    "EXC-02": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "ORD-01": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "ORD-02": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "ORD-03": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "PRC-01": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "PRC-02": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "RES-01": {
+      "reason": "",
+      "skipped": 1,
+      "status": "pass"
+    }
+  },
+  "id": "739",
+  "multi_output": false,
+  "native_shape": [
+    128,
+    3,
+    32,
+    32
+  ],
+  "op_class": "conv",
+  "output_aliasing": false,
+  "primary_idx": 0,
+  "status": "gated"
+}

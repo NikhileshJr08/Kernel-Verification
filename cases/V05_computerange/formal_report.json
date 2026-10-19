@@ -1,0 +1,186 @@
+[
+  {
+    "result_file": "vendor/volta/results/2026-08-12/1786508012-4186474-solve.json",
+    "argv": [
+      "./target/release/volta-bench",
+      "solve",
+      "all",
+      "--sample",
+      "1"
+    ],
+    "record": {
+      "category": "Data Race Detection",
+      "detail": "race-check benchmark: no VC to solve; its verdict comes from `volta-bench generate`",
+      "name": "ComputeRange (pre-fix)",
+      "passed": true,
+      "status": "SKIP"
+    }
+  },
+  {
+    "result_file": "vendor/volta/results/2026-08-12/1786508012-4186474-solve.json",
+    "argv": [
+      "./target/release/volta-bench",
+      "solve",
+      "all",
+      "--sample",
+      "1"
+    ],
+    "record": {
+      "category": "Data Race Detection",
+      "detail": "race-check benchmark: no VC to solve; its verdict comes from `volta-bench generate`",
+      "name": "ComputeRange (post-fix)",
+      "passed": true,
+      "status": "SKIP"
+    }
+  },
+  {
+    "result_file": "vendor/volta/results/2026-08-12/1786517836-4187483-solve.json",
+    "argv": [
+      "./target/release/volta-bench",
+      "solve",
+      "all",
+      "--sample",
+      "1",
+      "--backend",
+      "z3",
+      "--z3-timeout",
+      "600"
+    ],
+    "record": {
+      "category": "Data Race Detection",
+      "detail": "race-check benchmark: no VC to solve; its verdict comes from `volta-bench generate`",
+      "name": "ComputeRange (pre-fix)",
+      "passed": true,
+      "status": "SKIP"
+    }
+  },
+  {
+    "result_file": "vendor/volta/results/2026-08-12/1786517836-4187483-solve.json",
+    "argv": [
+      "./target/release/volta-bench",
+      "solve",
+      "all",
+      "--sample",
+      "1",
+      "--backend",
+      "z3",
+      "--z3-timeout",
+      "600"
+    ],
+    "record": {
+      "category": "Data Race Detection",
+      "detail": "race-check benchmark: no VC to solve; its verdict comes from `volta-bench generate`",
+      "name": "ComputeRange (post-fix)",
+      "passed": true,
+      "status": "SKIP"
+    }
+  },
+  {
+    "result_file": "vendor/volta/results/2026-08-12/1786472956-3932981-generate.json",
+    "argv": [
+      "./target/release/volta-bench",
+      "generate",
+      "all"
+    ],
+    "record": {
+      "block_syncs": 0,
+      "category": "Data Race Detection",
+      "detail": "data race on Shared[0x0]: read by t1 at pc:42 conflicts with write by t0 at pc:43",
+      "dump_path": null,
+      "dump_write_secs": null,
+      "elements_total": 0,
+      "instructions": 0,
+      "name": "ComputeRange (pre-fix)",
+      "passed": true,
+      "status": "RACE",
+      "vc_gen_cv": 0.012179540105415138,
+      "vc_gen_iters_secs": [
+        0.000990207,
+        0.000959475,
+        0.000952945,
+        0.000961386,
+        0.000953875,
+        0.000954445,
+        0.000952225,
+        0.000949935,
+        0.000953655,
+        0.000955875
+      ],
+      "vc_gen_mean_secs": 0.0009584022999999999,
+      "vc_gen_median_secs": 0.0009541599999999999,
+      "vc_gen_min_secs": 0.000949935,
+      "warp_syncs": 0
+    }
+  },
+  {
+    "result_file": "vendor/volta/results/2026-08-12/1786472956-3932981-generate.json",
+    "argv": [
+      "./target/release/volta-bench",
+      "generate",
+      "all"
+    ],
+    "record": {
+      "block_syncs": 960,
+      "category": "Data Race Detection",
+      "detail": "race-free",
+      "dump_path": null,
+      "dump_write_secs": null,
+      "elements_total": 0,
+      "instructions": 15678,
+      "name": "ComputeRange (post-fix)",
+      "passed": true,
+      "status": "OK",
+      "vc_gen_cv": 0.0051500934527965265,
+      "vc_gen_iters_secs": [
+        0.001362591,
+        0.0013524,
+        0.001371691,
+        0.00134941,
+        0.00135541,
+        0.001350489,
+        0.00135467,
+        0.001349809,
+        0.0013525,
+        0.00135917
+      ],
+      "vc_gen_mean_secs": 0.0013558139999999999,
+      "vc_gen_median_secs": 0.001353585,
+      "vc_gen_min_secs": 0.00134941,
+      "warp_syncs": 0
+    }
+  },
+  {
+    "result_file": "vendor/volta/results/2026-08-12/1786507709-4102380-solve.json",
+    "argv": [
+      "./target/release/volta-bench",
+      "--recycle-terms",
+      "0",
+      "solve",
+      "all"
+    ],
+    "record": {
+      "category": "Data Race Detection",
+      "detail": "race-check benchmark: no VC to solve; its verdict comes from `volta-bench generate`",
+      "name": "ComputeRange (pre-fix)",
+      "passed": true,
+      "status": "SKIP"
+    }
+  },
+  {
+    "result_file": "vendor/volta/results/2026-08-12/1786507709-4102380-solve.json",
+    "argv": [
+      "./target/release/volta-bench",
+      "--recycle-terms",
+      "0",
+      "solve",
+      "all"
+    ],
+    "record": {
+      "category": "Data Race Detection",
+      "detail": "race-check benchmark: no VC to solve; its verdict comes from `volta-bench generate`",
+      "name": "ComputeRange (post-fix)",
+      "passed": true,
+      "status": "SKIP"
+    }
+  }
+]

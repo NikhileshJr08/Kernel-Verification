@@ -1,0 +1,70 @@
+{
+  "id": "D1088_softmax_logsumexp_tanh",
+  "title": "Softmax, logsumexp, tanh",
+  "family": "softmax",
+  "evidence_tier": "numerical_pass_then_adversarial_failure",
+  "language": "Triton/PyTorch",
+  "candidate": "cases/D1088_softmax_logsumexp_tanh/candidate.py",
+  "reference": "cases/D1088_softmax_logsumexp_tanh/reference.py",
+  "failure": "Masked softmax lanes become zero probabilities; exp(0)=1 then contributes to the next sum. Candidate omits masking that sum.",
+  "failure_category": "Padding participates in second reduction",
+  "contract": "real_arithmetic_equivalence",
+  "uuid": 1088,
+  "round": 5,
+  "native_shape": [
+    32,
+    10,
+    32,
+    32
+  ],
+  "primary_input": 0,
+  "expected": "adversarial_contract_failure",
+  "numeric_pass_evidence": "cases/D1088_softmax_logsumexp_tanh/numerical_pass.json",
+  "failure_evidence": "cases/D1088_softmax_logsumexp_tanh/audit.json",
+  "production_incident": false,
+  "formally_disproved_upstream": false,
+  "local_gpu_rerun": "not_run_no_cuda_device",
+  "upstream_sources": [
+    "https://huggingface.co/datasets/hkust-nlp/drkernel-coldstart-8k/tree/cba0ef0",
+    "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/audit_rows.jsonl.gz",
+    "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/kernelbench_actual_rows.jsonl",
+    "https://arxiv.org/html/2608.12700v2"
+  ],
+  "reported_failed_gates": {
+    "CMP-01": {
+      "reason": "random[0]: max_err=1.441e-02 > atol=2.725e-04 (scaled); random[1]: max_err=1.441e-02 > atol=2.725e-04 (scaled); random[2]: max_err=1.441e-02 > atol=2.725e-04 (scaled)",
+      "skipped": 0,
+      "status": "fail"
+    },
+    "CMP-03": {
+      "reason": "shape=(16, 10, 32, 32): max_err=1.441e-02 > atol=2.725e-04; shape=(64, 10, 32, 32): max_err=1.441e-02 > atol=2.725e-04; shape=(32, 10, 32, 64): max_err=1.441e-02 > atol=2.725e-04",
+      "skipped": 0,
+      "status": "fail"
+    },
+    "EXC-02": {
+      "reason": "subnormal non-zero values disagree: max_err=1.441e-02",
+      "skipped": 0,
+      "status": "fail"
+    },
+    "ORD-01": {
+      "reason": "max_err=1.440e-02 > atol=2.725e-04",
+      "skipped": 0,
+      "status": "fail"
+    },
+    "ORD-03": {
+      "reason": "not within atol=1.0e-03/rtol=1.0e-03: max_err=1.441e-02 (reduction order differs)",
+      "skipped": 0,
+      "status": "fail"
+    },
+    "PRC-01": {
+      "reason": "torch.float16: max_err=1.416e-02 > atol=1.000e-03",
+      "skipped": 1,
+      "status": "fail"
+    }
+  },
+  "caveat": "Published adversarial testing result, not an SMT proof or a documented production incident. Final and best round are both 5, avoiding a last-vs-best extraction ambiguity. Upstream ID join supplies the pass/fail provenance; locally extracted candidate hashes are recorded, but the audit does not publish per-row candidate hashes.",
+  "sha256": {
+    "candidate": "e3a8cf51f18d8f7c718fa5da84671d637e2cad48a6c8771c09b549460fba0929",
+    "reference": "13c9ec918cf755346addb5dce1d4d8b56dbf76ea3c646bc9b8fcfd3e8a8da584"
+  }
+}

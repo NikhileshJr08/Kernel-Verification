@@ -1,0 +1,67 @@
+{
+  "elapsed_s": 5.8,
+  "final_speedup": 0.648888888888889,
+  "gates": {
+    "CMP-01": {
+      "reason": "large_1e6: max_err=1.556e-02 > atol=1.609e-05 (scaled)",
+      "skipped": 0,
+      "status": "fail"
+    },
+    "CMP-03": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "EXC-01": {
+      "reason": "scattered_pos_inf: NaN mask mismatch; scattered_pos_inf: -Inf mask mismatch (sign flip?); scattered_neg_inf: NaN mask mismatch",
+      "skipped": 0,
+      "status": "fail"
+    },
+    "EXC-02": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "ORD-01": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "ORD-02": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "ORD-03": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "PRC-01": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "PRC-02": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "RES-01": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    }
+  },
+  "id": "278",
+  "multi_output": false,
+  "native_shape": [
+    3,
+    5,
+    10
+  ],
+  "op_class": "softmax",
+  "output_aliasing": false,
+  "primary_idx": 0,
+  "status": "gated"
+}

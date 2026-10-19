@@ -1,0 +1,63 @@
+{
+  "id": "D0798_linear_then_cumulative_sum",
+  "title": "Linear then cumulative sum",
+  "family": "scan",
+  "evidence_tier": "numerical_pass_then_adversarial_failure",
+  "language": "Triton/PyTorch",
+  "candidate": "cases/D0798_linear_then_cumulative_sum/candidate.py",
+  "reference": "cases/D0798_linear_then_cumulative_sum/reference.py",
+  "failure": "Audit reports finite errors above its derived tolerance and non-finite-mask disagreements.",
+  "failure_category": "Precision and non-finite behavior",
+  "contract": "floating_point_error_and_special_values",
+  "uuid": 798,
+  "round": 5,
+  "native_shape": [
+    16,
+    128
+  ],
+  "primary_input": 0,
+  "expected": "adversarial_contract_failure",
+  "numeric_pass_evidence": "cases/D0798_linear_then_cumulative_sum/numerical_pass.json",
+  "failure_evidence": "cases/D0798_linear_then_cumulative_sum/audit.json",
+  "production_incident": false,
+  "formally_disproved_upstream": false,
+  "local_gpu_rerun": "not_run_no_cuda_device",
+  "upstream_sources": [
+    "https://huggingface.co/datasets/hkust-nlp/drkernel-coldstart-8k/tree/cba0ef0",
+    "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/audit_rows.jsonl.gz",
+    "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/kernelbench_actual_rows.jsonl",
+    "https://arxiv.org/html/2608.12700v2"
+  ],
+  "reported_failed_gates": {
+    "CMP-01": {
+      "reason": "random[0]: max_err=1.477e-02 > atol=3.419e-04 (scaled); random[1]: max_err=1.218e-02 > atol=2.934e-04 (scaled); random[2]: max_err=1.172e-02 > atol=2.469e-04 (scaled)",
+      "skipped": 1,
+      "status": "fail"
+    },
+    "CMP-03": {
+      "reason": "shape=(8, 128): max_err=9.561e-03 > atol=1.814e-04; shape=(32, 128): max_err=1.110e-02 > atol=2.371e-04",
+      "skipped": 2,
+      "status": "fail"
+    },
+    "EXC-01": {
+      "reason": "scattered_pos_inf: NaN mask mismatch; scattered_pos_inf: -Inf mask mismatch (sign flip?); scattered_neg_inf: NaN mask mismatch",
+      "skipped": 0,
+      "status": "fail"
+    },
+    "EXC-02": {
+      "reason": "subnormal non-zero values disagree: max_err=1.768e-04",
+      "skipped": 0,
+      "status": "fail"
+    },
+    "ORD-01": {
+      "reason": "max_err=9.540e-03 > atol=2.178e-04",
+      "skipped": 0,
+      "status": "fail"
+    }
+  },
+  "caveat": "Published adversarial testing result, not an SMT proof or a documented production incident. Final and best round are both 5, avoiding a last-vs-best extraction ambiguity. Upstream ID join supplies the pass/fail provenance; locally extracted candidate hashes are recorded, but the audit does not publish per-row candidate hashes.",
+  "sha256": {
+    "candidate": "bf2eac8cc1946300c478fd943fd9faad9af0106dd7f2d49406ffa5f2f4d1c978",
+    "reference": "4d416839c028e5ff13672892339424b35e1be4d7f9d9e0f4ff8b187c8dda63b8"
+  }
+}

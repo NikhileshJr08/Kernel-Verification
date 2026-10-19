@@ -1,0 +1,8 @@
+{
+  "cases": 20,
+  "reference_candidate_files": 40,
+  "formal_race_reports": 8,
+  "numerical_pass_and_audit_failure_pairs": 12,
+  "gpu_executed": false,
+  "status": "integrity_pass"
+}

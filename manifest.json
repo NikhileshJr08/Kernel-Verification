@@ -1,0 +1,896 @@
+{
+  "schema_version": 1,
+  "case_count": 20,
+  "cases": [
+    {
+      "id": "V01_reduction_5",
+      "title": "Harris reduction Red-5",
+      "family": "reduction",
+      "evidence_tier": "formal_race_report",
+      "language": "CUDA/PTX",
+      "candidate": "cases/V01_reduction_5/candidate.ptx",
+      "reference": "cases/V01_reduction_5/reference.ptx",
+      "source_candidate": "cases/V01_reduction_5/candidate.cu",
+      "source_reference": "cases/V01_reduction_5/reference.cu",
+      "failure": "Unsynchronized shared-memory accesses in the warp-reduction tail.",
+      "contract": "data_race_freedom",
+      "numeric_pass_evidence": "Tutorial provenance; no individual historical numerical-test log recovered.",
+      "production_incident": false,
+      "expected": "data_race",
+      "launch": {
+        "block": [
+          8,
+          1,
+          1
+        ],
+        "grid": [
+          1,
+          1,
+          1
+        ],
+        "dynamic_shared_bytes": 2048,
+        "input_elements": 12
+      },
+      "baseline_selector": "Red-5 (racy)",
+      "upstream_sources": [
+        "https://arxiv.org/html/2511.12638v3#S6.SS1.SSS1",
+        "https://doi.org/10.5281/zenodo.21529230"
+      ],
+      "caveat": "Original Zenodo PTX/CUDA use BLOCKSIZE=8. Current Rust benchmark expects later BLOCKSIZE=128 PTX, so replay uses direct CLI at eight threads. Published reports are historical bug-family evidence, without per-file hash binding. Historical timings from the 128-thread recompilation must not be attached to these bytes. Integer reduction, not an LLM-generated floating-point ML kernel. Uninitialized shared-memory reads may coexist with the race.",
+      "failure_evidence": "cases/V01_reduction_5/formal_report.json",
+      "sha256": {
+        "candidate": "f3c3318624cea515bd53febaf985631be5deaa1918686390a758a0879aa27c77",
+        "reference": "b92de15a0df889419650a2e63f31e9f79c48ca96c6b3a5510b5c60b02035b799"
+      }
+    },
+    {
+      "id": "V02_reduction_6",
+      "title": "Harris reduction Red-6",
+      "family": "reduction",
+      "evidence_tier": "formal_race_report",
+      "language": "CUDA/PTX",
+      "candidate": "cases/V02_reduction_6/candidate.ptx",
+      "reference": "cases/V02_reduction_6/reference.ptx",
+      "source_candidate": "cases/V02_reduction_6/candidate.cu",
+      "source_reference": "cases/V02_reduction_6/reference.cu",
+      "failure": "Unsynchronized shared-memory accesses in the warp-reduction tail.",
+      "contract": "data_race_freedom",
+      "numeric_pass_evidence": "Tutorial provenance; no individual historical numerical-test log recovered.",
+      "production_incident": false,
+      "expected": "data_race",
+      "launch": {
+        "block": [
+          8,
+          1,
+          1
+        ],
+        "grid": [
+          1,
+          1,
+          1
+        ],
+        "dynamic_shared_bytes": 2048,
+        "input_elements": 8
+      },
+      "baseline_selector": "Red-6 (racy)",
+      "upstream_sources": [
+        "https://arxiv.org/html/2511.12638v3#S6.SS1.SSS1",
+        "https://doi.org/10.5281/zenodo.21529230"
+      ],
+      "caveat": "Original Zenodo PTX/CUDA use BLOCKSIZE=8. Current Rust benchmark expects later BLOCKSIZE=128 PTX, so replay uses direct CLI at eight threads. Published reports are historical bug-family evidence, without per-file hash binding. Historical timings from the 128-thread recompilation must not be attached to these bytes. Integer reduction, not an LLM-generated floating-point ML kernel. Uninitialized shared-memory reads may coexist with the race.",
+      "failure_evidence": "cases/V02_reduction_6/formal_report.json",
+      "sha256": {
+        "candidate": "814aa76871d3ee54eaab095e96cbd3f5ce7df70f7c182a2ef21662090649603b",
+        "reference": "b92de15a0df889419650a2e63f31e9f79c48ca96c6b3a5510b5c60b02035b799"
+      }
+    },
+    {
+      "id": "V03_reduction_7",
+      "title": "Harris reduction Red-7",
+      "family": "reduction",
+      "evidence_tier": "formal_race_report",
+      "language": "CUDA/PTX",
+      "candidate": "cases/V03_reduction_7/candidate.ptx",
+      "reference": "cases/V03_reduction_7/reference.ptx",
+      "source_candidate": "cases/V03_reduction_7/candidate.cu",
+      "source_reference": "cases/V03_reduction_7/reference.cu",
+      "failure": "Unsynchronized shared-memory accesses in the warp-reduction tail.",
+      "contract": "data_race_freedom",
+      "numeric_pass_evidence": "Tutorial provenance; no individual historical numerical-test log recovered.",
+      "production_incident": false,
+      "expected": "data_race",
+      "launch": {
+        "block": [
+          8,
+          1,
+          1
+        ],
+        "grid": [
+          1,
+          1,
+          1
+        ],
+        "dynamic_shared_bytes": 2048,
+        "input_elements": 8
+      },
+      "baseline_selector": "Red-7 (racy)",
+      "upstream_sources": [
+        "https://arxiv.org/html/2511.12638v3#S6.SS1.SSS1",
+        "https://doi.org/10.5281/zenodo.21529230"
+      ],
+      "caveat": "Original Zenodo PTX/CUDA use BLOCKSIZE=8. Current Rust benchmark expects later BLOCKSIZE=128 PTX, so replay uses direct CLI at eight threads. Published reports are historical bug-family evidence, without per-file hash binding. Historical timings from the 128-thread recompilation must not be attached to these bytes. Integer reduction, not an LLM-generated floating-point ML kernel. Uninitialized shared-memory reads may coexist with the race.",
+      "failure_evidence": "cases/V03_reduction_7/formal_report.json",
+      "sha256": {
+        "candidate": "d91a6ecdafd0af3c2ce664aafc7091bbbdf063e7521842928cab78275420b180",
+        "reference": "b92de15a0df889419650a2e63f31e9f79c48ca96c6b3a5510b5c60b02035b799"
+      }
+    },
+    {
+      "id": "V04_bucketpositions",
+      "title": "OpenMM BucketPositions",
+      "family": "concurrency_control",
+      "evidence_tier": "formal_race_report",
+      "language": "CUDA/PTX",
+      "candidate": "cases/V04_bucketpositions/candidate.ptx",
+      "reference": "cases/V04_bucketpositions/reference.ptx",
+      "source_candidate": "cases/V04_bucketpositions/candidate.cu",
+      "source_reference": "cases/V04_bucketpositions/reference.cu",
+      "failure": "Missing barrier across scan passes.",
+      "contract": "data_race_freedom",
+      "numeric_pass_evidence": "Real upstream bug-fix provenance and published formal race detection; no individual historical numerical-test pass log recovered.",
+      "production_incident": false,
+      "expected": "data_race_pre_fix_and_race_free_post_fix",
+      "baseline_selector": "BucketPositions (pre-fix)",
+      "upstream_fix": "9abaa587c",
+      "upstream_sources": [
+        "https://arxiv.org/html/2511.12638v3#S6.SS4",
+        "https://doi.org/10.5281/zenodo.21529230",
+        "https://github.com/openmm/openmm/commit/9abaa587c"
+      ],
+      "caveat": "Non-ML molecular simulation; useful concurrency control.",
+      "launch_config_source": "vendor/volta/crates/volta_bench/src/benchmarks/races.rs",
+      "failure_evidence": "cases/V04_bucketpositions/formal_report.json",
+      "sha256": {
+        "candidate": "8c55e41b10f4ab1c54733c7a221d36fb02e3bdaa304dd87773b10da149bacb6f",
+        "reference": "409bce3151578f3993859c5142d456a23bac675122c07ea6c6b2e537e6a59c9b"
+      }
+    },
+    {
+      "id": "V05_computerange",
+      "title": "OpenMM ComputeRange",
+      "family": "concurrency_control",
+      "evidence_tier": "formal_race_report",
+      "language": "CUDA/PTX",
+      "candidate": "cases/V05_computerange/candidate.ptx",
+      "reference": "cases/V05_computerange/reference.ptx",
+      "source_candidate": "cases/V05_computerange/candidate.cu",
+      "source_reference": "cases/V05_computerange/reference.cu",
+      "failure": "Missing barrier between min-result reads and max-phase writes.",
+      "contract": "data_race_freedom",
+      "numeric_pass_evidence": "Real upstream bug-fix provenance and published formal race detection; no individual historical numerical-test pass log recovered.",
+      "production_incident": false,
+      "expected": "data_race_pre_fix_and_race_free_post_fix",
+      "baseline_selector": "ComputeRange (pre-fix)",
+      "upstream_fix": "65caf22b4",
+      "upstream_sources": [
+        "https://arxiv.org/html/2511.12638v3#S6.SS4",
+        "https://doi.org/10.5281/zenodo.21529230",
+        "https://github.com/openmm/openmm/commit/65caf22b4"
+      ],
+      "caveat": "Non-ML molecular simulation; useful concurrency control.",
+      "launch_config_source": "vendor/volta/crates/volta_bench/src/benchmarks/races.rs",
+      "failure_evidence": "cases/V05_computerange/formal_report.json",
+      "sha256": {
+        "candidate": "ef499d381f0119693acd20e6b05c972820b7cb2d53e0caedf68d5b568c4dc3a1",
+        "reference": "729c147c437bfd96f5dfb19fa5a7ea7de81faa5d3b4e203b317583288880f67a"
+      }
+    },
+    {
+      "id": "V06_reducevalue",
+      "title": "OpenMM ReduceValue",
+      "family": "concurrency_control",
+      "evidence_tier": "formal_race_report",
+      "language": "CUDA/PTX",
+      "candidate": "cases/V06_reducevalue/candidate.ptx",
+      "reference": "cases/V06_reducevalue/reference.ptx",
+      "source_candidate": "cases/V06_reducevalue/candidate.cu",
+      "source_reference": "cases/V06_reducevalue/reference.cu",
+      "failure": "Shared reduction buffer reused before all readers finish.",
+      "contract": "data_race_freedom",
+      "numeric_pass_evidence": "Real upstream bug-fix provenance and published formal race detection; no individual historical numerical-test pass log recovered.",
+      "production_incident": false,
+      "expected": "data_race_pre_fix_and_race_free_post_fix",
+      "baseline_selector": "ReduceValue (pre-fix)",
+      "upstream_fix": "de666e305",
+      "upstream_sources": [
+        "https://arxiv.org/html/2511.12638v3#S6.SS4",
+        "https://doi.org/10.5281/zenodo.21529230",
+        "https://github.com/openmm/openmm/commit/de666e305"
+      ],
+      "caveat": "Non-ML molecular simulation; useful concurrency control.",
+      "launch_config_source": "vendor/volta/crates/volta_bench/src/benchmarks/races.rs",
+      "failure_evidence": "cases/V06_reducevalue/formal_report.json",
+      "sha256": {
+        "candidate": "cf120dfd7cf91d9953e2fa818c2dc34b39b98105fe78e54594d63bd6a720e30e",
+        "reference": "f519a814742c017147644f9cf08830e8196123d5a01da8cdbc3816eb3bfc9a88"
+      }
+    },
+    {
+      "id": "V07_layernorm",
+      "title": "Megatron-LM LayerNorm",
+      "family": "normalization",
+      "evidence_tier": "formal_race_report",
+      "language": "CUDA/PTX",
+      "candidate": "cases/V07_layernorm/candidate.ptx",
+      "reference": "cases/V07_layernorm/reference.ptx",
+      "source_candidate": "cases/V07_layernorm/candidate.cu",
+      "source_reference": "cases/V07_layernorm/reference.cu",
+      "failure": "Missing barrier before shared mean/inverse-standard-deviation broadcast.",
+      "contract": "data_race_freedom",
+      "numeric_pass_evidence": "Real upstream bug-fix provenance and published formal race detection; no individual historical numerical-test pass log recovered.",
+      "production_incident": false,
+      "expected": "data_race_pre_fix_and_race_free_post_fix",
+      "baseline_selector": "LayerNorm (pre-fix)",
+      "upstream_fix": "4831071c9",
+      "upstream_sources": [
+        "https://arxiv.org/html/2511.12638v3#S6.SS4",
+        "https://doi.org/10.5281/zenodo.21529230",
+        "https://github.com/NVIDIA/Megatron-LM/commit/4831071c9"
+      ],
+      "caveat": "Specialized artifact; use one warp, not the nominal geometry in the CUDA header.",
+      "launch_config_source": "vendor/volta/crates/volta_bench/src/benchmarks/races.rs",
+      "failure_evidence": "cases/V07_layernorm/formal_report.json",
+      "sha256": {
+        "candidate": "fa6c342db3f92bda7812dd32f211059369ae2d5cc987bfc28f73b4e26b629732",
+        "reference": "4a99798f56a149507a5e8d1edc8ab2f5c9bb00c4889fc9d9c3002f6c5c34cf90"
+      }
+    },
+    {
+      "id": "V08_gradinput",
+      "title": "Megatron-LM GradInput",
+      "family": "normalization",
+      "evidence_tier": "formal_race_report",
+      "language": "CUDA/PTX",
+      "candidate": "cases/V08_gradinput/candidate.ptx",
+      "reference": "cases/V08_gradinput/reference.ptx",
+      "source_candidate": "cases/V08_gradinput/candidate.cu",
+      "source_reference": "cases/V08_gradinput/reference.cu",
+      "failure": "Shared reduction indices collide across threadIdx.y.",
+      "contract": "data_race_freedom",
+      "numeric_pass_evidence": "Real upstream bug-fix provenance and published formal race detection; no individual historical numerical-test pass log recovered.",
+      "production_incident": false,
+      "expected": "data_race_pre_fix_and_race_free_post_fix",
+      "baseline_selector": "GradInput (pre-fix)",
+      "upstream_fix": "f1295380c",
+      "upstream_sources": [
+        "https://arxiv.org/html/2511.12638v3#S6.SS4",
+        "https://doi.org/10.5281/zenodo.21529230",
+        "https://github.com/NVIDIA/Megatron-LM/commit/f1295380c"
+      ],
+      "caveat": "The fixed artifact also changes launch geometry from 32x4 to 32x1; compare kernel plus launch configuration.",
+      "launch_config_source": "vendor/volta/crates/volta_bench/src/benchmarks/races.rs",
+      "failure_evidence": "cases/V08_gradinput/formal_report.json",
+      "sha256": {
+        "candidate": "6749c40a0bd8a97909d79a9d4b762405729dc04515a0601ffdde8430fd619c61",
+        "reference": "f5a1f3d8326a5e5302114f301ceabf8e6934a8f94b6d9a368696fa4c306f51f1"
+      }
+    },
+    {
+      "id": "D0064_relu_then_minimum",
+      "title": "ReLU then minimum",
+      "family": "matmul",
+      "evidence_tier": "numerical_pass_then_adversarial_failure",
+      "language": "Triton/PyTorch",
+      "candidate": "cases/D0064_relu_then_minimum/candidate.py",
+      "reference": "cases/D0064_relu_then_minimum/reference.py",
+      "failure": "relu/min fused kernel; audit reports a NaN-mask disagreement.",
+      "failure_category": "NaN propagation",
+      "contract": "ieee_special_values",
+      "uuid": 64,
+      "round": 5,
+      "native_shape": [
+        64,
+        100
+      ],
+      "primary_input": 0,
+      "expected": "adversarial_contract_failure",
+      "numeric_pass_evidence": "cases/D0064_relu_then_minimum/numerical_pass.json",
+      "failure_evidence": "cases/D0064_relu_then_minimum/audit.json",
+      "production_incident": false,
+      "formally_disproved_upstream": false,
+      "local_gpu_rerun": "not_run_no_cuda_device",
+      "upstream_sources": [
+        "https://huggingface.co/datasets/hkust-nlp/drkernel-coldstart-8k/tree/cba0ef0",
+        "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/audit_rows.jsonl.gz",
+        "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/kernelbench_actual_rows.jsonl",
+        "https://arxiv.org/html/2608.12700v2"
+      ],
+      "reported_failed_gates": {
+        "EXC-01": {
+          "reason": "scattered_nan: NaN mask mismatch",
+          "skipped": 0,
+          "status": "fail"
+        }
+      },
+      "caveat": "Published adversarial testing result, not an SMT proof or a documented production incident. Final and best round are both 5, avoiding a last-vs-best extraction ambiguity. Upstream ID join supplies the pass/fail provenance; locally extracted candidate hashes are recorded, but the audit does not publish per-row candidate hashes.",
+      "sha256": {
+        "candidate": "853e775d74d620a13ddfcea9a109e5cd72bee80596ed80ed87a4284f2eb6f0e1",
+        "reference": "18930a733eb2368cce9a722efacf1df1e8a56c7ecb474d2202b36f7f5dee8395"
+      }
+    },
+    {
+      "id": "D0201_sigmoid_then_global_minimum",
+      "title": "Sigmoid then global minimum",
+      "family": "reduction",
+      "evidence_tier": "numerical_pass_then_adversarial_failure",
+      "language": "Triton/PyTorch",
+      "candidate": "cases/D0201_sigmoid_then_global_minimum/candidate.py",
+      "reference": "cases/D0201_sigmoid_then_global_minimum/reference.py",
+      "failure": "Min-reduction handling of NaNs differs from the reference.",
+      "failure_category": "NaN propagation",
+      "contract": "ieee_special_values",
+      "uuid": 201,
+      "round": 5,
+      "native_shape": [
+        10,
+        5
+      ],
+      "primary_input": 0,
+      "expected": "adversarial_contract_failure",
+      "numeric_pass_evidence": "cases/D0201_sigmoid_then_global_minimum/numerical_pass.json",
+      "failure_evidence": "cases/D0201_sigmoid_then_global_minimum/audit.json",
+      "production_incident": false,
+      "formally_disproved_upstream": false,
+      "local_gpu_rerun": "not_run_no_cuda_device",
+      "upstream_sources": [
+        "https://huggingface.co/datasets/hkust-nlp/drkernel-coldstart-8k/tree/cba0ef0",
+        "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/audit_rows.jsonl.gz",
+        "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/kernelbench_actual_rows.jsonl",
+        "https://arxiv.org/html/2608.12700v2"
+      ],
+      "reported_failed_gates": {
+        "EXC-01": {
+          "reason": "scattered_nan: NaN mask mismatch",
+          "skipped": 0,
+          "status": "fail"
+        },
+        "PRC-01": {
+          "reason": "torch.float16: exception \u2014 at 9:8:\ndef _sigmoid_min_stage1_kernel(x_ptr, n_elements, partial_ptr, BLOCK_SIZE: tl.constexpr):\n    pid = tl.program_id(0)\n    offs = pid * BLOCK_SIZE + tl.arange(0, BLOCK_SIZE)\n    mask = offs < n_elements\n\n    # Load input; masked OOB lanes get 0.0\n    x = tl.load(x_pt...",
+          "skipped": 0,
+          "status": "fail"
+        },
+        "PRC-02": {
+          "reason": "exception during execution: at 9:8:\ndef _sigmoid_min_stage1_kernel(x_ptr, n_elements, partial_ptr, BLOCK_SIZE: tl.constexpr):\n    pid = tl.program_id(0)\n    offs = pid * BLOCK_SIZE + tl.arange(0, BLOCK_SIZE)\n    mask = offs < n_elements\n\n    # Load input; masked OOB lanes get 0.0\n    x = tl.load(x_p...",
+          "skipped": 0,
+          "status": "fail"
+        }
+      },
+      "caveat": "Published adversarial testing result, not an SMT proof or a documented production incident. Final and best round are both 5, avoiding a last-vs-best extraction ambiguity. Upstream ID join supplies the pass/fail provenance; locally extracted candidate hashes are recorded, but the audit does not publish per-row candidate hashes.",
+      "sha256": {
+        "candidate": "8e76237d043c19b7b99c0e38f8a42b3ed7f6e885b84a3a58f7713cf0e91bf7b6",
+        "reference": "c75a0dc18ddac3bc649758120e2cce311f9800564bca1e8024118f99b771d870"
+      }
+    },
+    {
+      "id": "D0278_mean_then_log_softmax",
+      "title": "Mean then log-softmax",
+      "family": "softmax",
+      "evidence_tier": "numerical_pass_then_adversarial_failure",
+      "language": "Triton/PyTorch",
+      "candidate": "cases/D0278_mean_then_log_softmax/candidate.py",
+      "reference": "cases/D0278_mean_then_log_softmax/reference.py",
+      "failure": "Streaming log-softmax audit reports finite large-input error and non-finite-mask differences.",
+      "failure_category": "Large logits and infinities",
+      "contract": "floating_point_error_and_special_values",
+      "uuid": 278,
+      "round": 5,
+      "native_shape": [
+        3,
+        5,
+        10
+      ],
+      "primary_input": 0,
+      "expected": "adversarial_contract_failure",
+      "numeric_pass_evidence": "cases/D0278_mean_then_log_softmax/numerical_pass.json",
+      "failure_evidence": "cases/D0278_mean_then_log_softmax/audit.json",
+      "production_incident": false,
+      "formally_disproved_upstream": false,
+      "local_gpu_rerun": "not_run_no_cuda_device",
+      "upstream_sources": [
+        "https://huggingface.co/datasets/hkust-nlp/drkernel-coldstart-8k/tree/cba0ef0",
+        "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/audit_rows.jsonl.gz",
+        "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/kernelbench_actual_rows.jsonl",
+        "https://arxiv.org/html/2608.12700v2"
+      ],
+      "reported_failed_gates": {
+        "CMP-01": {
+          "reason": "large_1e6: max_err=1.556e-02 > atol=1.609e-05 (scaled)",
+          "skipped": 0,
+          "status": "fail"
+        },
+        "EXC-01": {
+          "reason": "scattered_pos_inf: NaN mask mismatch; scattered_pos_inf: -Inf mask mismatch (sign flip?); scattered_neg_inf: NaN mask mismatch",
+          "skipped": 0,
+          "status": "fail"
+        }
+      },
+      "caveat": "Published adversarial testing result, not an SMT proof or a documented production incident. Final and best round are both 5, avoiding a last-vs-best extraction ambiguity. Upstream ID join supplies the pass/fail provenance; locally extracted candidate hashes are recorded, but the audit does not publish per-row candidate hashes.",
+      "sha256": {
+        "candidate": "c62b737e799e9bd0a53fb3682a586a9834d739d221700d608908600c7fa03cd1",
+        "reference": "3543509614519d49893bf37341abb45a7cf67fe1be4ca392a88ff252182a53d4"
+      }
+    },
+    {
+      "id": "D0416_layernorm_then_tanh",
+      "title": "LayerNorm then tanh",
+      "family": "norm",
+      "evidence_tier": "numerical_pass_then_adversarial_failure",
+      "language": "Triton/PyTorch",
+      "candidate": "cases/D0416_layernorm_then_tanh/candidate.py",
+      "reference": "cases/D0416_layernorm_then_tanh/reference.py",
+      "failure": "Candidate computes E[x^2]-E[x]^2 in FP32; audit reports NaN on large finite input.",
+      "failure_category": "Unstable variance",
+      "contract": "floating_point_error",
+      "uuid": 416,
+      "round": 5,
+      "native_shape": [
+        64,
+        128
+      ],
+      "primary_input": 0,
+      "expected": "adversarial_contract_failure",
+      "numeric_pass_evidence": "cases/D0416_layernorm_then_tanh/numerical_pass.json",
+      "failure_evidence": "cases/D0416_layernorm_then_tanh/audit.json",
+      "production_incident": false,
+      "formally_disproved_upstream": false,
+      "local_gpu_rerun": "not_run_no_cuda_device",
+      "upstream_sources": [
+        "https://huggingface.co/datasets/hkust-nlp/drkernel-coldstart-8k/tree/cba0ef0",
+        "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/audit_rows.jsonl.gz",
+        "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/kernelbench_actual_rows.jsonl",
+        "https://arxiv.org/html/2608.12700v2"
+      ],
+      "reported_failed_gates": {
+        "CMP-01": {
+          "reason": "large_1e6: max_err=nan > atol=4.308e-05 (scaled)",
+          "skipped": 1,
+          "status": "fail"
+        },
+        "EXC-02": {
+          "reason": "flush-to-zero behaviour disagrees with reference",
+          "skipped": 0,
+          "status": "fail"
+        }
+      },
+      "caveat": "Published adversarial testing result, not an SMT proof or a documented production incident. Final and best round are both 5, avoiding a last-vs-best extraction ambiguity. Upstream ID join supplies the pass/fail provenance; locally extracted candidate hashes are recorded, but the audit does not publish per-row candidate hashes.",
+      "sha256": {
+        "candidate": "a10c59fc202e452662d5a8736468c4e8fcb39c536232a68d98ffbb90b79b0f74",
+        "reference": "8e7259d7f87b8337310ced953a14eeacd3049af68006cfee4609e0207139c7b7"
+      }
+    },
+    {
+      "id": "D0463_groupnorm_then_subtract_0_5",
+      "title": "GroupNorm then subtract 0.5",
+      "family": "norm",
+      "evidence_tier": "numerical_pass_then_adversarial_failure",
+      "language": "Triton/PyTorch",
+      "candidate": "cases/D0463_groupnorm_then_subtract_0_5/candidate.py",
+      "reference": "cases/D0463_groupnorm_then_subtract_0_5/reference.py",
+      "failure": "Candidate computes E[x^2]-E[x]^2 in FP32; audit reports NaN on large finite input.",
+      "failure_category": "Unstable variance",
+      "contract": "floating_point_error",
+      "uuid": 463,
+      "round": 5,
+      "native_shape": [
+        16,
+        3,
+        224,
+        224
+      ],
+      "primary_input": 0,
+      "expected": "adversarial_contract_failure",
+      "numeric_pass_evidence": "cases/D0463_groupnorm_then_subtract_0_5/numerical_pass.json",
+      "failure_evidence": "cases/D0463_groupnorm_then_subtract_0_5/audit.json",
+      "production_incident": false,
+      "formally_disproved_upstream": false,
+      "local_gpu_rerun": "not_run_no_cuda_device",
+      "upstream_sources": [
+        "https://huggingface.co/datasets/hkust-nlp/drkernel-coldstart-8k/tree/cba0ef0",
+        "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/audit_rows.jsonl.gz",
+        "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/kernelbench_actual_rows.jsonl",
+        "https://arxiv.org/html/2608.12700v2"
+      ],
+      "reported_failed_gates": {
+        "CMP-01": {
+          "reason": "large_1e6: max_err=nan > atol=6.047e-03 (scaled)",
+          "skipped": 1,
+          "status": "fail"
+        }
+      },
+      "caveat": "Published adversarial testing result, not an SMT proof or a documented production incident. Final and best round are both 5, avoiding a last-vs-best extraction ambiguity. Upstream ID join supplies the pass/fail provenance; locally extracted candidate hashes are recorded, but the audit does not publish per-row candidate hashes.",
+      "sha256": {
+        "candidate": "1f34029fbdc849a9e4ff87ebd0d92fa5b43aa31dff309e5cc2033bd86b38d2e6",
+        "reference": "e46385603f7658ac42e2b6a1ac227d8568ac32146686371a0aac3806f548e861"
+      }
+    },
+    {
+      "id": "D0739_transposed_convolution_bias_lower_clamp",
+      "title": "Transposed convolution, bias, lower clamp",
+      "family": "conv",
+      "evidence_tier": "numerical_pass_then_adversarial_failure",
+      "language": "Triton/PyTorch",
+      "candidate": "cases/D0739_transposed_convolution_bias_lower_clamp/candidate.py",
+      "reference": "cases/D0739_transposed_convolution_bias_lower_clamp/reference.py",
+      "failure": "Fused clamp uses tl.maximum; audit reports a NaN-mask disagreement.",
+      "failure_category": "NaN propagation",
+      "contract": "ieee_special_values",
+      "uuid": 739,
+      "round": 5,
+      "native_shape": [
+        128,
+        3,
+        32,
+        32
+      ],
+      "primary_input": 0,
+      "expected": "adversarial_contract_failure",
+      "numeric_pass_evidence": "cases/D0739_transposed_convolution_bias_lower_clamp/numerical_pass.json",
+      "failure_evidence": "cases/D0739_transposed_convolution_bias_lower_clamp/audit.json",
+      "production_incident": false,
+      "formally_disproved_upstream": false,
+      "local_gpu_rerun": "not_run_no_cuda_device",
+      "upstream_sources": [
+        "https://huggingface.co/datasets/hkust-nlp/drkernel-coldstart-8k/tree/cba0ef0",
+        "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/audit_rows.jsonl.gz",
+        "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/kernelbench_actual_rows.jsonl",
+        "https://arxiv.org/html/2608.12700v2"
+      ],
+      "reported_failed_gates": {
+        "EXC-01": {
+          "reason": "scattered_nan: NaN mask mismatch",
+          "skipped": 0,
+          "status": "fail"
+        }
+      },
+      "caveat": "Published adversarial testing result, not an SMT proof or a documented production incident. Final and best round are both 5, avoiding a last-vs-best extraction ambiguity. Upstream ID join supplies the pass/fail provenance; locally extracted candidate hashes are recorded, but the audit does not publish per-row candidate hashes.",
+      "sha256": {
+        "candidate": "c477390e51019b03abaf191bb50487cd75b5e01825b87c84fd9d91423ca66431",
+        "reference": "07c0629967e952eca28ee1eb433dba747a8d56017a061f9aa09c6fd2c8e190fb"
+      }
+    },
+    {
+      "id": "D0798_linear_then_cumulative_sum",
+      "title": "Linear then cumulative sum",
+      "family": "scan",
+      "evidence_tier": "numerical_pass_then_adversarial_failure",
+      "language": "Triton/PyTorch",
+      "candidate": "cases/D0798_linear_then_cumulative_sum/candidate.py",
+      "reference": "cases/D0798_linear_then_cumulative_sum/reference.py",
+      "failure": "Audit reports finite errors above its derived tolerance and non-finite-mask disagreements.",
+      "failure_category": "Precision and non-finite behavior",
+      "contract": "floating_point_error_and_special_values",
+      "uuid": 798,
+      "round": 5,
+      "native_shape": [
+        16,
+        128
+      ],
+      "primary_input": 0,
+      "expected": "adversarial_contract_failure",
+      "numeric_pass_evidence": "cases/D0798_linear_then_cumulative_sum/numerical_pass.json",
+      "failure_evidence": "cases/D0798_linear_then_cumulative_sum/audit.json",
+      "production_incident": false,
+      "formally_disproved_upstream": false,
+      "local_gpu_rerun": "not_run_no_cuda_device",
+      "upstream_sources": [
+        "https://huggingface.co/datasets/hkust-nlp/drkernel-coldstart-8k/tree/cba0ef0",
+        "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/audit_rows.jsonl.gz",
+        "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/kernelbench_actual_rows.jsonl",
+        "https://arxiv.org/html/2608.12700v2"
+      ],
+      "reported_failed_gates": {
+        "CMP-01": {
+          "reason": "random[0]: max_err=1.477e-02 > atol=3.419e-04 (scaled); random[1]: max_err=1.218e-02 > atol=2.934e-04 (scaled); random[2]: max_err=1.172e-02 > atol=2.469e-04 (scaled)",
+          "skipped": 1,
+          "status": "fail"
+        },
+        "CMP-03": {
+          "reason": "shape=(8, 128): max_err=9.561e-03 > atol=1.814e-04; shape=(32, 128): max_err=1.110e-02 > atol=2.371e-04",
+          "skipped": 2,
+          "status": "fail"
+        },
+        "EXC-01": {
+          "reason": "scattered_pos_inf: NaN mask mismatch; scattered_pos_inf: -Inf mask mismatch (sign flip?); scattered_neg_inf: NaN mask mismatch",
+          "skipped": 0,
+          "status": "fail"
+        },
+        "EXC-02": {
+          "reason": "subnormal non-zero values disagree: max_err=1.768e-04",
+          "skipped": 0,
+          "status": "fail"
+        },
+        "ORD-01": {
+          "reason": "max_err=9.540e-03 > atol=2.178e-04",
+          "skipped": 0,
+          "status": "fail"
+        }
+      },
+      "caveat": "Published adversarial testing result, not an SMT proof or a documented production incident. Final and best round are both 5, avoiding a last-vs-best extraction ambiguity. Upstream ID join supplies the pass/fail provenance; locally extracted candidate hashes are recorded, but the audit does not publish per-row candidate hashes.",
+      "sha256": {
+        "candidate": "bf2eac8cc1946300c478fd943fd9faad9af0106dd7f2d49406ffa5f2f4d1c978",
+        "reference": "4d416839c028e5ff13672892339424b35e1be4d7f9d9e0f4ff8b187c8dda63b8"
+      }
+    },
+    {
+      "id": "D0883_triplet_margin_loss_then_mean",
+      "title": "Triplet-margin loss then mean",
+      "family": "reduction",
+      "evidence_tier": "numerical_pass_then_adversarial_failure",
+      "language": "Triton/PyTorch",
+      "candidate": "cases/D0883_triplet_margin_loss_then_mean/candidate.py",
+      "reference": "cases/D0883_triplet_margin_loss_then_mean/reference.py",
+      "failure": "Audit reports large-input error and NaN/Inf-mask disagreements.",
+      "failure_category": "Large-input cancellation and special values",
+      "contract": "floating_point_error_and_special_values",
+      "uuid": 883,
+      "round": 5,
+      "native_shape": [
+        16,
+        5
+      ],
+      "primary_input": 0,
+      "expected": "adversarial_contract_failure",
+      "numeric_pass_evidence": "cases/D0883_triplet_margin_loss_then_mean/numerical_pass.json",
+      "failure_evidence": "cases/D0883_triplet_margin_loss_then_mean/audit.json",
+      "production_incident": false,
+      "formally_disproved_upstream": false,
+      "local_gpu_rerun": "not_run_no_cuda_device",
+      "upstream_sources": [
+        "https://huggingface.co/datasets/hkust-nlp/drkernel-coldstart-8k/tree/cba0ef0",
+        "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/audit_rows.jsonl.gz",
+        "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/kernelbench_actual_rows.jsonl",
+        "https://arxiv.org/html/2608.12700v2"
+      ],
+      "reported_failed_gates": {
+        "CMP-01": {
+          "reason": "large_1e6: max_err=1.562e-02 > atol=1.078e-05 (scaled)",
+          "skipped": 1,
+          "status": "fail"
+        },
+        "EXC-01": {
+          "reason": "scattered_nan: NaN mask mismatch; scattered_pos_inf: NaN mask mismatch; scattered_neg_inf: NaN mask mismatch",
+          "skipped": 0,
+          "status": "fail"
+        }
+      },
+      "caveat": "Published adversarial testing result, not an SMT proof or a documented production incident. Final and best round are both 5, avoiding a last-vs-best extraction ambiguity. Upstream ID join supplies the pass/fail provenance; locally extracted candidate hashes are recorded, but the audit does not publish per-row candidate hashes.",
+      "sha256": {
+        "candidate": "04d9aed9093f70fd972790faeb919b2fb7eadc2ac052849af4a561d7bab127c6",
+        "reference": "5f7cb52348425141cb6afe2a4d7151d82b6fc9908eee5c15df12c14a942255e9"
+      }
+    },
+    {
+      "id": "D0967_adaptive_average_pool_max_pool_division",
+      "title": "Adaptive average pool, max pool, division",
+      "family": "reduction",
+      "evidence_tier": "numerical_pass_then_adversarial_failure",
+      "language": "Triton/PyTorch",
+      "candidate": "cases/D0967_adaptive_average_pool_max_pool_division/candidate.py",
+      "reference": "cases/D0967_adaptive_average_pool_max_pool_division/reference.py",
+      "failure": "Unordered floating-point atomic additions produce differing outputs across runs. This is a contract choice: nondeterminism alone need not violate a tolerance-based API.",
+      "failure_category": "Atomic nondeterminism",
+      "contract": "determinism",
+      "uuid": 967,
+      "round": 5,
+      "native_shape": [
+        16,
+        3,
+        64,
+        64
+      ],
+      "primary_input": 0,
+      "expected": "adversarial_contract_failure",
+      "numeric_pass_evidence": "cases/D0967_adaptive_average_pool_max_pool_division/numerical_pass.json",
+      "failure_evidence": "cases/D0967_adaptive_average_pool_max_pool_division/audit.json",
+      "production_incident": false,
+      "formally_disproved_upstream": false,
+      "local_gpu_rerun": "not_run_no_cuda_device",
+      "upstream_sources": [
+        "https://huggingface.co/datasets/hkust-nlp/drkernel-coldstart-8k/tree/cba0ef0",
+        "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/audit_rows.jsonl.gz",
+        "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/kernelbench_actual_rows.jsonl",
+        "https://arxiv.org/html/2608.12700v2"
+      ],
+      "reported_failed_gates": {
+        "EXC-02": {
+          "reason": "flush-to-zero behaviour disagrees with reference",
+          "skipped": 0,
+          "status": "fail"
+        },
+        "ORD-02": {
+          "reason": "run 0 and run 1 differ (non-deterministic)",
+          "skipped": 0,
+          "status": "fail"
+        }
+      },
+      "caveat": "Published adversarial testing result, not an SMT proof or a documented production incident. Final and best round are both 5, avoiding a last-vs-best extraction ambiguity. Upstream ID join supplies the pass/fail provenance; locally extracted candidate hashes are recorded, but the audit does not publish per-row candidate hashes.",
+      "sha256": {
+        "candidate": "ec60d59a024249844440d3c5adea12affb4f2f6ba8cd8ecc458e5f592136bef1",
+        "reference": "57da5b2b7082659ee97f31716858f97f8b430da5604fb0e6a1cae09857b4f5ea"
+      }
+    },
+    {
+      "id": "D1088_softmax_logsumexp_tanh",
+      "title": "Softmax, logsumexp, tanh",
+      "family": "softmax",
+      "evidence_tier": "numerical_pass_then_adversarial_failure",
+      "language": "Triton/PyTorch",
+      "candidate": "cases/D1088_softmax_logsumexp_tanh/candidate.py",
+      "reference": "cases/D1088_softmax_logsumexp_tanh/reference.py",
+      "failure": "Masked softmax lanes become zero probabilities; exp(0)=1 then contributes to the next sum. Candidate omits masking that sum.",
+      "failure_category": "Padding participates in second reduction",
+      "contract": "real_arithmetic_equivalence",
+      "uuid": 1088,
+      "round": 5,
+      "native_shape": [
+        32,
+        10,
+        32,
+        32
+      ],
+      "primary_input": 0,
+      "expected": "adversarial_contract_failure",
+      "numeric_pass_evidence": "cases/D1088_softmax_logsumexp_tanh/numerical_pass.json",
+      "failure_evidence": "cases/D1088_softmax_logsumexp_tanh/audit.json",
+      "production_incident": false,
+      "formally_disproved_upstream": false,
+      "local_gpu_rerun": "not_run_no_cuda_device",
+      "upstream_sources": [
+        "https://huggingface.co/datasets/hkust-nlp/drkernel-coldstart-8k/tree/cba0ef0",
+        "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/audit_rows.jsonl.gz",
+        "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/kernelbench_actual_rows.jsonl",
+        "https://arxiv.org/html/2608.12700v2"
+      ],
+      "reported_failed_gates": {
+        "CMP-01": {
+          "reason": "random[0]: max_err=1.441e-02 > atol=2.725e-04 (scaled); random[1]: max_err=1.441e-02 > atol=2.725e-04 (scaled); random[2]: max_err=1.441e-02 > atol=2.725e-04 (scaled)",
+          "skipped": 0,
+          "status": "fail"
+        },
+        "CMP-03": {
+          "reason": "shape=(16, 10, 32, 32): max_err=1.441e-02 > atol=2.725e-04; shape=(64, 10, 32, 32): max_err=1.441e-02 > atol=2.725e-04; shape=(32, 10, 32, 64): max_err=1.441e-02 > atol=2.725e-04",
+          "skipped": 0,
+          "status": "fail"
+        },
+        "EXC-02": {
+          "reason": "subnormal non-zero values disagree: max_err=1.441e-02",
+          "skipped": 0,
+          "status": "fail"
+        },
+        "ORD-01": {
+          "reason": "max_err=1.440e-02 > atol=2.725e-04",
+          "skipped": 0,
+          "status": "fail"
+        },
+        "ORD-03": {
+          "reason": "not within atol=1.0e-03/rtol=1.0e-03: max_err=1.441e-02 (reduction order differs)",
+          "skipped": 0,
+          "status": "fail"
+        },
+        "PRC-01": {
+          "reason": "torch.float16: max_err=1.416e-02 > atol=1.000e-03",
+          "skipped": 1,
+          "status": "fail"
+        }
+      },
+      "caveat": "Published adversarial testing result, not an SMT proof or a documented production incident. Final and best round are both 5, avoiding a last-vs-best extraction ambiguity. Upstream ID join supplies the pass/fail provenance; locally extracted candidate hashes are recorded, but the audit does not publish per-row candidate hashes.",
+      "sha256": {
+        "candidate": "e3a8cf51f18d8f7c718fa5da84671d637e2cad48a6c8771c09b549460fba0929",
+        "reference": "13c9ec918cf755346addb5dce1d4d8b56dbf76ea3c646bc9b8fcfd3e8a8da584"
+      }
+    },
+    {
+      "id": "D1100_relu_groupnorm_division",
+      "title": "ReLU, GroupNorm, division",
+      "family": "norm",
+      "evidence_tier": "numerical_pass_then_adversarial_failure",
+      "language": "Triton/PyTorch",
+      "candidate": "cases/D1100_relu_groupnorm_division/candidate.py",
+      "reference": "cases/D1100_relu_groupnorm_division/reference.py",
+      "failure": "Audit reports large-input normalization error and non-finite-mask disagreement.",
+      "failure_category": "Unstable variance and special values",
+      "contract": "floating_point_error_and_special_values",
+      "uuid": 1100,
+      "round": 5,
+      "native_shape": [
+        128,
+        3,
+        32,
+        32
+      ],
+      "primary_input": 0,
+      "expected": "adversarial_contract_failure",
+      "numeric_pass_evidence": "cases/D1100_relu_groupnorm_division/numerical_pass.json",
+      "failure_evidence": "cases/D1100_relu_groupnorm_division/audit.json",
+      "production_incident": false,
+      "formally_disproved_upstream": false,
+      "local_gpu_rerun": "not_run_no_cuda_device",
+      "upstream_sources": [
+        "https://huggingface.co/datasets/hkust-nlp/drkernel-coldstart-8k/tree/cba0ef0",
+        "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/audit_rows.jsonl.gz",
+        "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/kernelbench_actual_rows.jsonl",
+        "https://arxiv.org/html/2608.12700v2"
+      ],
+      "reported_failed_gates": {
+        "CMP-01": {
+          "reason": "large_1e6: max_err=4.343e+00 > atol=1.296e-03 (scaled)",
+          "skipped": 1,
+          "status": "fail"
+        },
+        "EXC-01": {
+          "reason": "scattered_nan: NaN mask mismatch; scattered_pos_inf: NaN mask mismatch; scattered_pos_inf: -Inf mask mismatch (sign flip?)",
+          "skipped": 0,
+          "status": "fail"
+        }
+      },
+      "caveat": "Published adversarial testing result, not an SMT proof or a documented production incident. Final and best round are both 5, avoiding a last-vs-best extraction ambiguity. Upstream ID join supplies the pass/fail provenance; locally extracted candidate hashes are recorded, but the audit does not publish per-row candidate hashes.",
+      "sha256": {
+        "candidate": "29ab2ee5d7acb0b3eb828062287e1379a1cb9c87bfe3b510bdea0d96a05ded69",
+        "reference": "c3396482b997490ca2e3c051d083a288df421d21708646484b1e7b8488d2884c"
+      }
+    },
+    {
+      "id": "D1891_row_minimum_then_sum",
+      "title": "Row minimum then sum",
+      "family": "reduction",
+      "evidence_tier": "numerical_pass_then_adversarial_failure",
+      "language": "Triton/PyTorch",
+      "candidate": "cases/D1891_row_minimum_then_sum/candidate.py",
+      "reference": "cases/D1891_row_minimum_then_sum/reference.py",
+      "failure": "Unordered FP32 atomics in final reduction; audit also reports a NaN-mask disagreement.",
+      "failure_category": "Atomic nondeterminism and NaNs",
+      "contract": "determinism_and_special_values",
+      "uuid": 1891,
+      "round": 5,
+      "native_shape": [
+        16,
+        32
+      ],
+      "primary_input": 0,
+      "expected": "adversarial_contract_failure",
+      "numeric_pass_evidence": "cases/D1891_row_minimum_then_sum/numerical_pass.json",
+      "failure_evidence": "cases/D1891_row_minimum_then_sum/audit.json",
+      "production_incident": false,
+      "formally_disproved_upstream": false,
+      "local_gpu_rerun": "not_run_no_cuda_device",
+      "upstream_sources": [
+        "https://huggingface.co/datasets/hkust-nlp/drkernel-coldstart-8k/tree/cba0ef0",
+        "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/audit_rows.jsonl.gz",
+        "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/kernelbench_actual_rows.jsonl",
+        "https://arxiv.org/html/2608.12700v2"
+      ],
+      "reported_failed_gates": {
+        "EXC-01": {
+          "reason": "scattered_nan: NaN mask mismatch",
+          "skipped": 0,
+          "status": "fail"
+        },
+        "EXC-02": {
+          "reason": "flush-to-zero behaviour disagrees with reference",
+          "skipped": 0,
+          "status": "fail"
+        },
+        "ORD-02": {
+          "reason": "run 0 and run 4 differ (non-deterministic)",
+          "skipped": 0,
+          "status": "fail"
+        }
+      },
+      "caveat": "Published adversarial testing result, not an SMT proof or a documented production incident. Final and best round are both 5, avoiding a last-vs-best extraction ambiguity. Upstream ID join supplies the pass/fail provenance; locally extracted candidate hashes are recorded, but the audit does not publish per-row candidate hashes.",
+      "sha256": {
+        "candidate": "aa393eadfe755608ecd3ebfdc76d70644486c2ea65698ca8d5135b510aaee404",
+        "reference": "228d6dd7b50656dc50803332baa31e0f652d8e45068819f59706b17b4d2352fd"
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "volta_revision": "5d7530cc7fbef656c3fbeac22c6529441e4db70c",
+  "lethe_revision": "92330ed8130f00f6a1c66d7cc213c8ff7e4f5492",
+  "volta_artifact_url": "https://doi.org/10.5281/zenodo.21529230",
+  "volta_artifact_zip_sha256": "cefc518533d2838c5458a88f924df6c1f4954ac5b55affcccc42af0e0a41d4a6",
+  "drkernel_revision": "cba0ef0",
+  "drkernel_parquet_sha256": "4ed72a9f85c069aaec2daf65229c35d1b888762a455e115fe23f8eae2541097b",
+  "drkernel_parquet_bytes": 163236950
+}

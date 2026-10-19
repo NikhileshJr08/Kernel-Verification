@@ -1,0 +1,53 @@
+{
+  "id": "D0201_sigmoid_then_global_minimum",
+  "title": "Sigmoid then global minimum",
+  "family": "reduction",
+  "evidence_tier": "numerical_pass_then_adversarial_failure",
+  "language": "Triton/PyTorch",
+  "candidate": "cases/D0201_sigmoid_then_global_minimum/candidate.py",
+  "reference": "cases/D0201_sigmoid_then_global_minimum/reference.py",
+  "failure": "Min-reduction handling of NaNs differs from the reference.",
+  "failure_category": "NaN propagation",
+  "contract": "ieee_special_values",
+  "uuid": 201,
+  "round": 5,
+  "native_shape": [
+    10,
+    5
+  ],
+  "primary_input": 0,
+  "expected": "adversarial_contract_failure",
+  "numeric_pass_evidence": "cases/D0201_sigmoid_then_global_minimum/numerical_pass.json",
+  "failure_evidence": "cases/D0201_sigmoid_then_global_minimum/audit.json",
+  "production_incident": false,
+  "formally_disproved_upstream": false,
+  "local_gpu_rerun": "not_run_no_cuda_device",
+  "upstream_sources": [
+    "https://huggingface.co/datasets/hkust-nlp/drkernel-coldstart-8k/tree/cba0ef0",
+    "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/audit_rows.jsonl.gz",
+    "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/kernelbench_actual_rows.jsonl",
+    "https://arxiv.org/html/2608.12700v2"
+  ],
+  "reported_failed_gates": {
+    "EXC-01": {
+      "reason": "scattered_nan: NaN mask mismatch",
+      "skipped": 0,
+      "status": "fail"
+    },
+    "PRC-01": {
+      "reason": "torch.float16: exception \u2014 at 9:8:\ndef _sigmoid_min_stage1_kernel(x_ptr, n_elements, partial_ptr, BLOCK_SIZE: tl.constexpr):\n    pid = tl.program_id(0)\n    offs = pid * BLOCK_SIZE + tl.arange(0, BLOCK_SIZE)\n    mask = offs < n_elements\n\n    # Load input; masked OOB lanes get 0.0\n    x = tl.load(x_pt...",
+      "skipped": 0,
+      "status": "fail"
+    },
+    "PRC-02": {
+      "reason": "exception during execution: at 9:8:\ndef _sigmoid_min_stage1_kernel(x_ptr, n_elements, partial_ptr, BLOCK_SIZE: tl.constexpr):\n    pid = tl.program_id(0)\n    offs = pid * BLOCK_SIZE + tl.arange(0, BLOCK_SIZE)\n    mask = offs < n_elements\n\n    # Load input; masked OOB lanes get 0.0\n    x = tl.load(x_p...",
+      "skipped": 0,
+      "status": "fail"
+    }
+  },
+  "caveat": "Published adversarial testing result, not an SMT proof or a documented production incident. Final and best round are both 5, avoiding a last-vs-best extraction ambiguity. Upstream ID join supplies the pass/fail provenance; locally extracted candidate hashes are recorded, but the audit does not publish per-row candidate hashes.",
+  "sha256": {
+    "candidate": "8e76237d043c19b7b99c0e38f8a42b3ed7f6e885b84a3a58f7713cf0e91bf7b6",
+    "reference": "c75a0dc18ddac3bc649758120e2cce311f9800564bca1e8024118f99b771d870"
+  }
+}

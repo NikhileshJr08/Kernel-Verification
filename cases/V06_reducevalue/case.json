@@ -1,0 +1,30 @@
+{
+  "id": "V06_reducevalue",
+  "title": "OpenMM ReduceValue",
+  "family": "concurrency_control",
+  "evidence_tier": "formal_race_report",
+  "language": "CUDA/PTX",
+  "candidate": "cases/V06_reducevalue/candidate.ptx",
+  "reference": "cases/V06_reducevalue/reference.ptx",
+  "source_candidate": "cases/V06_reducevalue/candidate.cu",
+  "source_reference": "cases/V06_reducevalue/reference.cu",
+  "failure": "Shared reduction buffer reused before all readers finish.",
+  "contract": "data_race_freedom",
+  "numeric_pass_evidence": "Real upstream bug-fix provenance and published formal race detection; no individual historical numerical-test pass log recovered.",
+  "production_incident": false,
+  "expected": "data_race_pre_fix_and_race_free_post_fix",
+  "baseline_selector": "ReduceValue (pre-fix)",
+  "upstream_fix": "de666e305",
+  "upstream_sources": [
+    "https://arxiv.org/html/2511.12638v3#S6.SS4",
+    "https://doi.org/10.5281/zenodo.21529230",
+    "https://github.com/openmm/openmm/commit/de666e305"
+  ],
+  "caveat": "Non-ML molecular simulation; useful concurrency control.",
+  "launch_config_source": "vendor/volta/crates/volta_bench/src/benchmarks/races.rs",
+  "failure_evidence": "cases/V06_reducevalue/formal_report.json",
+  "sha256": {
+    "candidate": "cf120dfd7cf91d9953e2fa818c2dc34b39b98105fe78e54594d63bd6a720e30e",
+    "reference": "f519a814742c017147644f9cf08830e8196123d5a01da8cdbc3816eb3bfc9a88"
+  }
+}

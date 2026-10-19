@@ -1,0 +1,45 @@
+{
+  "id": "D0739_transposed_convolution_bias_lower_clamp",
+  "title": "Transposed convolution, bias, lower clamp",
+  "family": "conv",
+  "evidence_tier": "numerical_pass_then_adversarial_failure",
+  "language": "Triton/PyTorch",
+  "candidate": "cases/D0739_transposed_convolution_bias_lower_clamp/candidate.py",
+  "reference": "cases/D0739_transposed_convolution_bias_lower_clamp/reference.py",
+  "failure": "Fused clamp uses tl.maximum; audit reports a NaN-mask disagreement.",
+  "failure_category": "NaN propagation",
+  "contract": "ieee_special_values",
+  "uuid": 739,
+  "round": 5,
+  "native_shape": [
+    128,
+    3,
+    32,
+    32
+  ],
+  "primary_input": 0,
+  "expected": "adversarial_contract_failure",
+  "numeric_pass_evidence": "cases/D0739_transposed_convolution_bias_lower_clamp/numerical_pass.json",
+  "failure_evidence": "cases/D0739_transposed_convolution_bias_lower_clamp/audit.json",
+  "production_incident": false,
+  "formally_disproved_upstream": false,
+  "local_gpu_rerun": "not_run_no_cuda_device",
+  "upstream_sources": [
+    "https://huggingface.co/datasets/hkust-nlp/drkernel-coldstart-8k/tree/cba0ef0",
+    "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/audit_rows.jsonl.gz",
+    "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/kernelbench_actual_rows.jsonl",
+    "https://arxiv.org/html/2608.12700v2"
+  ],
+  "reported_failed_gates": {
+    "EXC-01": {
+      "reason": "scattered_nan: NaN mask mismatch",
+      "skipped": 0,
+      "status": "fail"
+    }
+  },
+  "caveat": "Published adversarial testing result, not an SMT proof or a documented production incident. Final and best round are both 5, avoiding a last-vs-best extraction ambiguity. Upstream ID join supplies the pass/fail provenance; locally extracted candidate hashes are recorded, but the audit does not publish per-row candidate hashes.",
+  "sha256": {
+    "candidate": "c477390e51019b03abaf191bb50487cd75b5e01825b87c84fd9d91423ca66431",
+    "reference": "07c0629967e952eca28ee1eb433dba747a8d56017a061f9aa09c6fd2c8e190fb"
+  }
+}

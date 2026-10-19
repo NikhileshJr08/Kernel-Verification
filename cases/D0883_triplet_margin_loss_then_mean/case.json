@@ -1,0 +1,48 @@
+{
+  "id": "D0883_triplet_margin_loss_then_mean",
+  "title": "Triplet-margin loss then mean",
+  "family": "reduction",
+  "evidence_tier": "numerical_pass_then_adversarial_failure",
+  "language": "Triton/PyTorch",
+  "candidate": "cases/D0883_triplet_margin_loss_then_mean/candidate.py",
+  "reference": "cases/D0883_triplet_margin_loss_then_mean/reference.py",
+  "failure": "Audit reports large-input error and NaN/Inf-mask disagreements.",
+  "failure_category": "Large-input cancellation and special values",
+  "contract": "floating_point_error_and_special_values",
+  "uuid": 883,
+  "round": 5,
+  "native_shape": [
+    16,
+    5
+  ],
+  "primary_input": 0,
+  "expected": "adversarial_contract_failure",
+  "numeric_pass_evidence": "cases/D0883_triplet_margin_loss_then_mean/numerical_pass.json",
+  "failure_evidence": "cases/D0883_triplet_margin_loss_then_mean/audit.json",
+  "production_incident": false,
+  "formally_disproved_upstream": false,
+  "local_gpu_rerun": "not_run_no_cuda_device",
+  "upstream_sources": [
+    "https://huggingface.co/datasets/hkust-nlp/drkernel-coldstart-8k/tree/cba0ef0",
+    "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/audit_rows.jsonl.gz",
+    "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/kernelbench_actual_rows.jsonl",
+    "https://arxiv.org/html/2608.12700v2"
+  ],
+  "reported_failed_gates": {
+    "CMP-01": {
+      "reason": "large_1e6: max_err=1.562e-02 > atol=1.078e-05 (scaled)",
+      "skipped": 1,
+      "status": "fail"
+    },
+    "EXC-01": {
+      "reason": "scattered_nan: NaN mask mismatch; scattered_pos_inf: NaN mask mismatch; scattered_neg_inf: NaN mask mismatch",
+      "skipped": 0,
+      "status": "fail"
+    }
+  },
+  "caveat": "Published adversarial testing result, not an SMT proof or a documented production incident. Final and best round are both 5, avoiding a last-vs-best extraction ambiguity. Upstream ID join supplies the pass/fail provenance; locally extracted candidate hashes are recorded, but the audit does not publish per-row candidate hashes.",
+  "sha256": {
+    "candidate": "04d9aed9093f70fd972790faeb919b2fb7eadc2ac052849af4a561d7bab127c6",
+    "reference": "5f7cb52348425141cb6afe2a4d7151d82b6fc9908eee5c15df12c14a942255e9"
+  }
+}

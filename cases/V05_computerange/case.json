@@ -1,0 +1,30 @@
+{
+  "id": "V05_computerange",
+  "title": "OpenMM ComputeRange",
+  "family": "concurrency_control",
+  "evidence_tier": "formal_race_report",
+  "language": "CUDA/PTX",
+  "candidate": "cases/V05_computerange/candidate.ptx",
+  "reference": "cases/V05_computerange/reference.ptx",
+  "source_candidate": "cases/V05_computerange/candidate.cu",
+  "source_reference": "cases/V05_computerange/reference.cu",
+  "failure": "Missing barrier between min-result reads and max-phase writes.",
+  "contract": "data_race_freedom",
+  "numeric_pass_evidence": "Real upstream bug-fix provenance and published formal race detection; no individual historical numerical-test pass log recovered.",
+  "production_incident": false,
+  "expected": "data_race_pre_fix_and_race_free_post_fix",
+  "baseline_selector": "ComputeRange (pre-fix)",
+  "upstream_fix": "65caf22b4",
+  "upstream_sources": [
+    "https://arxiv.org/html/2511.12638v3#S6.SS4",
+    "https://doi.org/10.5281/zenodo.21529230",
+    "https://github.com/openmm/openmm/commit/65caf22b4"
+  ],
+  "caveat": "Non-ML molecular simulation; useful concurrency control.",
+  "launch_config_source": "vendor/volta/crates/volta_bench/src/benchmarks/races.rs",
+  "failure_evidence": "cases/V05_computerange/formal_report.json",
+  "sha256": {
+    "candidate": "ef499d381f0119693acd20e6b05c972820b7cb2d53e0caedf68d5b568c4dc3a1",
+    "reference": "729c147c437bfd96f5dfb19fa5a7ea7de81faa5d3b4e203b317583288880f67a"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "status": "scalar_witnesses_pass",
+  "gpu_executed": false,
+  "scope": "scalar formulas only, not compiled GPU programs",
+  "results": [
+    {
+      "case": "D1088",
+      "kind": "source_derived_exact_real_formula",
+      "input": "all zero logits; C=10; BLOCK_C=16",
+      "reference": "0.9837583602379761932799644033249750849135219150080908522822908751904744",
+      "candidate": "0.9931450691934241813725846762013020262262721131999700219844050180109472",
+      "absolute_difference": "0.0093867089554479880926202728763269413127501981918791697021141428204728",
+      "passes_scalar_allclose_atol_rtol_1e_2": true
+    },
+    {
+      "case": "G01_missing_attention_clamp",
+      "reference": [
+        0.5,
+        0.5
+      ],
+      "candidate": [
+        0.7310585786300049,
+        0.2689414213699951
+      ]
+    },
+    {
+      "case": "G02_hardcoded_scaling",
+      "x": 0.75,
+      "scaling_factor": 1.0,
+      "reference": 0.75,
+      "candidate": 0.5
+    }
+  ]
+}

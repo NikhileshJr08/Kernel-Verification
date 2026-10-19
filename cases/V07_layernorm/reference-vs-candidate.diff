@@ -1,0 +1,68 @@
+--- reference.cu
++++ candidate.cu
+@@ -5,7 +5,7 @@
+ #include <cuda_runtime.h>
+ #include <cuda_fp16.h>
+ 
+-#define WARP_SHFL(var, srcLane) __shfl_sync(__activemask(), var, srcLane)
++#define WARP_SHFL(var, srcLane) __shfl_sync(0xffffffff, var, srcLane)
+ // Compile-time constants to avoid param-driven control flow during analysis
+ #define N1_ROWS 1
+ #define N2_COLS 1
+@@ -93,19 +93,13 @@
+       U curr = static_cast<U>(lvals[l]);
+       cuWelfordOnlineSum<U>(curr,mu,sigma2,count);
+     }
+-    // intra-warp reductions (safe for blockDim.x <= 32)
+-    // Use active mask and only combine with valid partner lanes.
+-    unsigned mask = __activemask();
+-    for (int l = 0; (1 << l) < blockDim.x && l < 5; ++l) {
+-      int srcLaneB = threadIdx.x + (1 << l);
+-      // All lanes participate in the shuffle with the same mask; values read
+-      // from an inactive source lane are undefined but ignored by the guard.
+-      U muB = __shfl_sync(mask, mu, srcLaneB);
+-      U countB = __shfl_sync(mask, count, srcLaneB);
+-      U sigma2B = __shfl_sync(mask, sigma2, srcLaneB);
+-      if (srcLaneB < blockDim.x) {
+-        cuChanOnlineSum<U>(muB,sigma2B,countB,mu,sigma2,count);
+-      }
++    // intra-warp reductions
++    for (int l = 0;  l <= 4;  ++l) {
++      int srcLaneB = (threadIdx.x+(1<<l))&31;
++      U muB = WARP_SHFL(mu, srcLaneB);
++      U countB = WARP_SHFL(count, srcLaneB);
++      U sigma2B = WARP_SHFL(sigma2, srcLaneB);
++      cuChanOnlineSum<U>(muB,sigma2B,countB,mu,sigma2,count);
+     }
+     // threadIdx.x == 0 has correct values for each warp
+     // inter-warp reductions
+@@ -163,7 +157,7 @@
+   ) 
+ {
+   __shared__ U* buf;
+-  // 1D-layout broadcast via shared memory (post: correct sync)
++  // 1D-layout broadcast via shared memory (pre: intentionally missing sync)
+   __shared__ U smu;
+   __shared__ U sinv;
+   // __requires(N2_COLS == 1024);
+@@ -181,7 +175,10 @@
+       smu = mu;
+       sinv = c_invvar;
+     }
+-    __syncthreads();
++    // Force all threads to read smu/sinv from shared without synchronization
++    // to trigger a shared-memory read-after-write race under 1D layout.
++    volatile U rmu = smu;
++    volatile U rinv = sinv;
+     const int numx = BLK_X * BLK_Y;
+     const int thrx = threadIdx.x + threadIdx.y * BLK_X;
+     if (HAS_GAMMA && HAS_BETA) {
+@@ -199,7 +196,7 @@
+       mean[i1] = mu;
+       invvar[i1] = c_invvar;
+     }
+-    __syncthreads(); // <- BUG
++    // __syncthreads(); // <- bug
+   }
+ }
+ 

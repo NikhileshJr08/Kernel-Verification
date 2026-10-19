@@ -1,0 +1,132 @@
+[
+  {
+    "result_file": "vendor/volta/results/2026-08-14/1786725310-1132535-generate.json",
+    "argv": [
+      "target/release/volta-bench",
+      "generate",
+      "category",
+      "reduction"
+    ],
+    "record": {
+      "block_syncs": 0,
+      "category": "Reduction",
+      "detail": "data race on Shared[0x4]: write by t1 at pc:31 conflicts with read by t0 at pc:49",
+      "dump_path": null,
+      "dump_write_secs": null,
+      "elements_total": 0,
+      "instructions": 0,
+      "name": "Red-6 (racy)",
+      "passed": true,
+      "status": "RACE",
+      "vc_gen_cv": 0.018200279152133188,
+      "vc_gen_iters_secs": [
+        0.000751674,
+        0.000730744,
+        0.000706433,
+        0.000718163,
+        0.000716964,
+        0.000721704,
+        0.000713013,
+        0.000720963,
+        0.000713194,
+        0.000708513
+      ],
+      "vc_gen_mean_secs": 0.0007201365000000001,
+      "vc_gen_median_secs": 0.0007175635,
+      "vc_gen_min_secs": 0.000706433,
+      "warp_syncs": 0
+    }
+  },
+  {
+    "result_file": "vendor/volta/results/2026-08-12/1786508012-4186474-solve.json",
+    "argv": [
+      "./target/release/volta-bench",
+      "solve",
+      "all",
+      "--sample",
+      "1"
+    ],
+    "record": {
+      "category": "Reduction",
+      "detail": "race-check benchmark: no VC to solve; its verdict comes from `volta-bench generate`",
+      "name": "Red-6 (racy)",
+      "passed": true,
+      "status": "SKIP"
+    }
+  },
+  {
+    "result_file": "vendor/volta/results/2026-08-12/1786517836-4187483-solve.json",
+    "argv": [
+      "./target/release/volta-bench",
+      "solve",
+      "all",
+      "--sample",
+      "1",
+      "--backend",
+      "z3",
+      "--z3-timeout",
+      "600"
+    ],
+    "record": {
+      "category": "Reduction",
+      "detail": "race-check benchmark: no VC to solve; its verdict comes from `volta-bench generate`",
+      "name": "Red-6 (racy)",
+      "passed": true,
+      "status": "SKIP"
+    }
+  },
+  {
+    "result_file": "vendor/volta/results/2026-08-12/1786472956-3932981-generate.json",
+    "argv": [
+      "./target/release/volta-bench",
+      "generate",
+      "all"
+    ],
+    "record": {
+      "block_syncs": 0,
+      "category": "Reduction",
+      "detail": "data race on Shared[0x4]: write by t1 at pc:24 conflicts with read by t0 at pc:30",
+      "dump_path": null,
+      "dump_write_secs": null,
+      "elements_total": 0,
+      "instructions": 0,
+      "name": "Red-6 (racy)",
+      "passed": true,
+      "status": "RACE",
+      "vc_gen_cv": 0.0461194327261122,
+      "vc_gen_iters_secs": [
+        8.9553e-05,
+        8.6393e-05,
+        8.5582e-05,
+        8.4403e-05,
+        9.6192e-05,
+        8.4863e-05,
+        8.3343e-05,
+        8.4273e-05,
+        8.3773e-05,
+        8.3392e-05
+      ],
+      "vc_gen_mean_secs": 8.61767e-05,
+      "vc_gen_median_secs": 8.4633e-05,
+      "vc_gen_min_secs": 8.3343e-05,
+      "warp_syncs": 0
+    }
+  },
+  {
+    "result_file": "vendor/volta/results/2026-08-12/1786507709-4102380-solve.json",
+    "argv": [
+      "./target/release/volta-bench",
+      "--recycle-terms",
+      "0",
+      "solve",
+      "all"
+    ],
+    "record": {
+      "category": "Reduction",
+      "detail": "race-check benchmark: no VC to solve; its verdict comes from `volta-bench generate`",
+      "name": "Red-6 (racy)",
+      "passed": true,
+      "status": "SKIP"
+    }
+  }
+]

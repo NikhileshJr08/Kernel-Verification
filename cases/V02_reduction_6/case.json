@@ -1,0 +1,41 @@
+{
+  "id": "V02_reduction_6",
+  "title": "Harris reduction Red-6",
+  "family": "reduction",
+  "evidence_tier": "formal_race_report",
+  "language": "CUDA/PTX",
+  "candidate": "cases/V02_reduction_6/candidate.ptx",
+  "reference": "cases/V02_reduction_6/reference.ptx",
+  "source_candidate": "cases/V02_reduction_6/candidate.cu",
+  "source_reference": "cases/V02_reduction_6/reference.cu",
+  "failure": "Unsynchronized shared-memory accesses in the warp-reduction tail.",
+  "contract": "data_race_freedom",
+  "numeric_pass_evidence": "Tutorial provenance; no individual historical numerical-test log recovered.",
+  "production_incident": false,
+  "expected": "data_race",
+  "launch": {
+    "block": [
+      8,
+      1,
+      1
+    ],
+    "grid": [
+      1,
+      1,
+      1
+    ],
+    "dynamic_shared_bytes": 2048,
+    "input_elements": 8
+  },
+  "baseline_selector": "Red-6 (racy)",
+  "upstream_sources": [
+    "https://arxiv.org/html/2511.12638v3#S6.SS1.SSS1",
+    "https://doi.org/10.5281/zenodo.21529230"
+  ],
+  "caveat": "Original Zenodo PTX/CUDA use BLOCKSIZE=8. Current Rust benchmark expects later BLOCKSIZE=128 PTX, so replay uses direct CLI at eight threads. Published reports are historical bug-family evidence, without per-file hash binding. Historical timings from the 128-thread recompilation must not be attached to these bytes. Integer reduction, not an LLM-generated floating-point ML kernel. Uninitialized shared-memory reads may coexist with the race.",
+  "failure_evidence": "cases/V02_reduction_6/formal_report.json",
+  "sha256": {
+    "candidate": "814aa76871d3ee54eaab095e96cbd3f5ce7df70f7c182a2ef21662090649603b",
+    "reference": "b92de15a0df889419650a2e63f31e9f79c48ca96c6b3a5510b5c60b02035b799"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "elapsed_s": 8.8,
+  "final_speedup": 0.8941311852704258,
+  "gates": {
+    "CMP-01": {
+      "reason": "large_1e6: max_err=nan > atol=6.047e-03 (scaled)",
+      "skipped": 1,
+      "status": "fail"
+    },
+    "CMP-03": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "EXC-01": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "EXC-02": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "ORD-01": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "ORD-02": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "ORD-03": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "PRC-01": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "PRC-02": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "RES-01": {
+      "reason": "",
+      "skipped": 1,
+      "status": "pass"
+    }
+  },
+  "id": "463",
+  "multi_output": false,
+  "native_shape": [
+    16,
+    3,
+    224,
+    224
+  ],
+  "op_class": "norm",
+  "output_aliasing": false,
+  "primary_idx": 0,
+  "status": "gated"
+}

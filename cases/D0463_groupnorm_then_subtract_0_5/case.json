@@ -1,0 +1,45 @@
+{
+  "id": "D0463_groupnorm_then_subtract_0_5",
+  "title": "GroupNorm then subtract 0.5",
+  "family": "norm",
+  "evidence_tier": "numerical_pass_then_adversarial_failure",
+  "language": "Triton/PyTorch",
+  "candidate": "cases/D0463_groupnorm_then_subtract_0_5/candidate.py",
+  "reference": "cases/D0463_groupnorm_then_subtract_0_5/reference.py",
+  "failure": "Candidate computes E[x^2]-E[x]^2 in FP32; audit reports NaN on large finite input.",
+  "failure_category": "Unstable variance",
+  "contract": "floating_point_error",
+  "uuid": 463,
+  "round": 5,
+  "native_shape": [
+    16,
+    3,
+    224,
+    224
+  ],
+  "primary_input": 0,
+  "expected": "adversarial_contract_failure",
+  "numeric_pass_evidence": "cases/D0463_groupnorm_then_subtract_0_5/numerical_pass.json",
+  "failure_evidence": "cases/D0463_groupnorm_then_subtract_0_5/audit.json",
+  "production_incident": false,
+  "formally_disproved_upstream": false,
+  "local_gpu_rerun": "not_run_no_cuda_device",
+  "upstream_sources": [
+    "https://huggingface.co/datasets/hkust-nlp/drkernel-coldstart-8k/tree/cba0ef0",
+    "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/audit_rows.jsonl.gz",
+    "https://github.com/RishiShah99/lethe/blob/92330ed8130f00f6a1c66d7cc213c8ff7e4f5492/results/kernelbench_actual_rows.jsonl",
+    "https://arxiv.org/html/2608.12700v2"
+  ],
+  "reported_failed_gates": {
+    "CMP-01": {
+      "reason": "large_1e6: max_err=nan > atol=6.047e-03 (scaled)",
+      "skipped": 1,
+      "status": "fail"
+    }
+  },
+  "caveat": "Published adversarial testing result, not an SMT proof or a documented production incident. Final and best round are both 5, avoiding a last-vs-best extraction ambiguity. Upstream ID join supplies the pass/fail provenance; locally extracted candidate hashes are recorded, but the audit does not publish per-row candidate hashes.",
+  "sha256": {
+    "candidate": "1f34029fbdc849a9e4ff87ebd0d92fa5b43aa31dff309e5cc2033bd86b38d2e6",
+    "reference": "e46385603f7658ac42e2b6a1ac227d8568ac32146686371a0aac3806f548e861"
+  }
+}

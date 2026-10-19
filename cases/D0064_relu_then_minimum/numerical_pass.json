@@ -1,0 +1,9 @@
+{
+  "their_correct": true,
+  "compiled": true,
+  "reason": "{'hardware': 'NVIDIA B200', 'device': 'cuda:0', 'correctness_trials': '(5 / 5)'}",
+  "status": "checked",
+  "id": "64",
+  "op_class": "matmul",
+  "final_speedup": 0.5847750865051903
+}

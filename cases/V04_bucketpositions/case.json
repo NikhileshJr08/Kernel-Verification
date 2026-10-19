@@ -1,0 +1,30 @@
+{
+  "id": "V04_bucketpositions",
+  "title": "OpenMM BucketPositions",
+  "family": "concurrency_control",
+  "evidence_tier": "formal_race_report",
+  "language": "CUDA/PTX",
+  "candidate": "cases/V04_bucketpositions/candidate.ptx",
+  "reference": "cases/V04_bucketpositions/reference.ptx",
+  "source_candidate": "cases/V04_bucketpositions/candidate.cu",
+  "source_reference": "cases/V04_bucketpositions/reference.cu",
+  "failure": "Missing barrier across scan passes.",
+  "contract": "data_race_freedom",
+  "numeric_pass_evidence": "Real upstream bug-fix provenance and published formal race detection; no individual historical numerical-test pass log recovered.",
+  "production_incident": false,
+  "expected": "data_race_pre_fix_and_race_free_post_fix",
+  "baseline_selector": "BucketPositions (pre-fix)",
+  "upstream_fix": "9abaa587c",
+  "upstream_sources": [
+    "https://arxiv.org/html/2511.12638v3#S6.SS4",
+    "https://doi.org/10.5281/zenodo.21529230",
+    "https://github.com/openmm/openmm/commit/9abaa587c"
+  ],
+  "caveat": "Non-ML molecular simulation; useful concurrency control.",
+  "launch_config_source": "vendor/volta/crates/volta_bench/src/benchmarks/races.rs",
+  "failure_evidence": "cases/V04_bucketpositions/formal_report.json",
+  "sha256": {
+    "candidate": "8c55e41b10f4ab1c54733c7a221d36fb02e3bdaa304dd87773b10da149bacb6f",
+    "reference": "409bce3151578f3993859c5142d456a23bac675122c07ea6c6b2e537e6a59c9b"
+  }
+}

@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.venv/
+vendor/volta/target/
+results/*-local.json
+results/volta-local/

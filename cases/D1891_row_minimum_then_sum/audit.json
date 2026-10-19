@@ -1,0 +1,66 @@
+{
+  "elapsed_s": 9.8,
+  "final_speedup": 0.6457990115321253,
+  "gates": {
+    "CMP-01": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "CMP-03": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "EXC-01": {
+      "reason": "scattered_nan: NaN mask mismatch",
+      "skipped": 0,
+      "status": "fail"
+    },
+    "EXC-02": {
+      "reason": "flush-to-zero behaviour disagrees with reference",
+      "skipped": 0,
+      "status": "fail"
+    },
+    "ORD-01": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "ORD-02": {
+      "reason": "run 0 and run 4 differ (non-deterministic)",
+      "skipped": 0,
+      "status": "fail"
+    },
+    "ORD-03": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "PRC-01": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "PRC-02": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "RES-01": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    }
+  },
+  "id": "1891",
+  "multi_output": false,
+  "native_shape": [
+    16,
+    32
+  ],
+  "op_class": "reduction",
+  "output_aliasing": false,
+  "primary_idx": 0,
+  "status": "gated"
+}

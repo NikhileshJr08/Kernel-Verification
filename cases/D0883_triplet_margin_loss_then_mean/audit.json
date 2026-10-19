@@ -1,0 +1,66 @@
+{
+  "elapsed_s": 6.4,
+  "final_speedup": 8.666666666666668,
+  "gates": {
+    "CMP-01": {
+      "reason": "large_1e6: max_err=1.562e-02 > atol=1.078e-05 (scaled)",
+      "skipped": 1,
+      "status": "fail"
+    },
+    "CMP-03": {
+      "reason": "shape=(8, 5): exception \u2014 [ref-inapplicable] RuntimeError: The size of tensor a (8) must match the size of tensor b (16) at non-singleton dimension 0",
+      "skipped": 3,
+      "status": "na"
+    },
+    "EXC-01": {
+      "reason": "scattered_nan: NaN mask mismatch; scattered_pos_inf: NaN mask mismatch; scattered_neg_inf: NaN mask mismatch",
+      "skipped": 0,
+      "status": "fail"
+    },
+    "EXC-02": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "ORD-01": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "ORD-02": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "ORD-03": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "PRC-01": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "PRC-02": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "RES-01": {
+      "reason": "",
+      "skipped": 1,
+      "status": "pass"
+    }
+  },
+  "id": "883",
+  "multi_output": false,
+  "native_shape": [
+    16,
+    5
+  ],
+  "op_class": "reduction",
+  "output_aliasing": false,
+  "primary_idx": 0,
+  "status": "gated"
+}

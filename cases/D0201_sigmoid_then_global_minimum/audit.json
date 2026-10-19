@@ -1,0 +1,66 @@
+{
+  "elapsed_s": 9.7,
+  "final_speedup": 0.45971563981042657,
+  "gates": {
+    "CMP-01": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "CMP-03": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "EXC-01": {
+      "reason": "scattered_nan: NaN mask mismatch",
+      "skipped": 0,
+      "status": "fail"
+    },
+    "EXC-02": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "ORD-01": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "ORD-02": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "ORD-03": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "PRC-01": {
+      "reason": "torch.float16: exception \u2014 at 9:8:\ndef _sigmoid_min_stage1_kernel(x_ptr, n_elements, partial_ptr, BLOCK_SIZE: tl.constexpr):\n    pid = tl.program_id(0)\n    offs = pid * BLOCK_SIZE + tl.arange(0, BLOCK_SIZE)\n    mask = offs < n_elements\n\n    # Load input; masked OOB lanes get 0.0\n    x = tl.load(x_pt...",
+      "skipped": 0,
+      "status": "fail"
+    },
+    "PRC-02": {
+      "reason": "exception during execution: at 9:8:\ndef _sigmoid_min_stage1_kernel(x_ptr, n_elements, partial_ptr, BLOCK_SIZE: tl.constexpr):\n    pid = tl.program_id(0)\n    offs = pid * BLOCK_SIZE + tl.arange(0, BLOCK_SIZE)\n    mask = offs < n_elements\n\n    # Load input; masked OOB lanes get 0.0\n    x = tl.load(x_p...",
+      "skipped": 0,
+      "status": "fail"
+    },
+    "RES-01": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    }
+  },
+  "id": "201",
+  "multi_output": false,
+  "native_shape": [
+    10,
+    5
+  ],
+  "op_class": "reduction",
+  "output_aliasing": false,
+  "primary_idx": 0,
+  "status": "gated"
+}

@@ -1,0 +1,9 @@
+{
+  "status": "environment_or_worker_error",
+  "error": "ModuleNotFoundError: No module named 'torch'",
+  "worker_exit_code": 2,
+  "case": "D1088_softmax_logsumexp_tanh",
+  "wall_seconds_including_startup": 0.028099848000010752,
+  "device": "cuda:0",
+  "candidate_sha256": "e3a8cf51f18d8f7c718fa5da84671d637e2cad48a6c8771c09b549460fba0929"
+}

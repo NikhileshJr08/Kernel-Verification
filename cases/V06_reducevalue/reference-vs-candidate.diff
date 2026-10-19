@@ -1,0 +1,11 @@
+--- reference.cu
++++ candidate.cu
+@@ -18,7 +18,7 @@
+  */
+ __device__ float reduceValue(float value, volatile float* temp) {
+     const int thread = threadIdx.x;
+-    __syncthreads(); // <-- uncomment to trigger BUG
++    //__syncthreads(); // <-- bug
+     temp[thread] = value;
+     __syncthreads();
+     for (uint step = 1; step < 32; step *= 2) {

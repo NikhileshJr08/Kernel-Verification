@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Kernel verification experiment result",
+  "type": "object",
+  "required": ["case_id", "method", "contract", "outcome", "reference_sha256", "candidate_sha256", "environment", "timings_seconds"],
+  "properties": {
+    "case_id": {"type": "string"},
+    "method": {"type": "string"},
+    "contract": {"type": "string"},
+    "outcome": {"enum": ["equivalent", "counterexample", "race", "memory_error", "unknown", "timeout", "unsupported", "tool_error"]},
+    "reference_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "candidate_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "environment": {"type": "object"},
+    "input_domain": {"type": "object"},
+    "witness_path": {"type": ["string", "null"]},
+    "timings_seconds": {
+      "type": "object",
+      "required": ["total"],
+      "properties": {
+        "parse_lower": {"type": "number", "minimum": 0},
+        "symbolic_execute": {"type": "number", "minimum": 0},
+        "vc_construct": {"type": "number", "minimum": 0},
+        "solve": {"type": "number", "minimum": 0},
+        "total": {"type": "number", "minimum": 0}
+      }
+    },
+    "peak_memory_bytes": {"type": "integer", "minimum": 0}
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "V08_gradinput",
+  "title": "Megatron-LM GradInput",
+  "family": "normalization",
+  "evidence_tier": "formal_race_report",
+  "language": "CUDA/PTX",
+  "candidate": "cases/V08_gradinput/candidate.ptx",
+  "reference": "cases/V08_gradinput/reference.ptx",
+  "source_candidate": "cases/V08_gradinput/candidate.cu",
+  "source_reference": "cases/V08_gradinput/reference.cu",
+  "failure": "Shared reduction indices collide across threadIdx.y.",
+  "contract": "data_race_freedom",
+  "numeric_pass_evidence": "Real upstream bug-fix provenance and published formal race detection; no individual historical numerical-test pass log recovered.",
+  "production_incident": false,
+  "expected": "data_race_pre_fix_and_race_free_post_fix",
+  "baseline_selector": "GradInput (pre-fix)",
+  "upstream_fix": "f1295380c",
+  "upstream_sources": [
+    "https://arxiv.org/html/2511.12638v3#S6.SS4",
+    "https://doi.org/10.5281/zenodo.21529230",
+    "https://github.com/NVIDIA/Megatron-LM/commit/f1295380c"
+  ],
+  "caveat": "The fixed artifact also changes launch geometry from 32x4 to 32x1; compare kernel plus launch configuration.",
+  "launch_config_source": "vendor/volta/crates/volta_bench/src/benchmarks/races.rs",
+  "failure_evidence": "cases/V08_gradinput/formal_report.json",
+  "sha256": {
+    "candidate": "6749c40a0bd8a97909d79a9d4b762405729dc04515a0601ffdde8430fd619c61",
+    "reference": "f5a1f3d8326a5e5302114f301ceabf8e6934a8f94b6d9a368696fa4c306f51f1"
+  }
+}

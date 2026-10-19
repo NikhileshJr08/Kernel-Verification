@@ -1,0 +1,66 @@
+{
+  "elapsed_s": 10.6,
+  "final_speedup": 8.293515358361775,
+  "gates": {
+    "CMP-01": {
+      "reason": "large_1e6: max_err=nan > atol=4.308e-05 (scaled)",
+      "skipped": 1,
+      "status": "fail"
+    },
+    "CMP-03": {
+      "reason": "",
+      "skipped": 2,
+      "status": "pass"
+    },
+    "EXC-01": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "EXC-02": {
+      "reason": "flush-to-zero behaviour disagrees with reference",
+      "skipped": 0,
+      "status": "fail"
+    },
+    "ORD-01": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "ORD-02": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "ORD-03": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "PRC-01": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "PRC-02": {
+      "reason": "",
+      "skipped": 0,
+      "status": "pass"
+    },
+    "RES-01": {
+      "reason": "",
+      "skipped": 1,
+      "status": "pass"
+    }
+  },
+  "id": "416",
+  "multi_output": false,
+  "native_shape": [
+    64,
+    128
+  ],
+  "op_class": "norm",
+  "output_aliasing": false,
+  "primary_idx": 0,
+  "status": "gated"
+}
