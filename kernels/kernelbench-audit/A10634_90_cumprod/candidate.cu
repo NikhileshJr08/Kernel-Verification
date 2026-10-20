@@ -1,0 +1,1 @@
+../../../research/extensions/kernelbench-audit/cases/A10634_90_cumprod/candidate.cu

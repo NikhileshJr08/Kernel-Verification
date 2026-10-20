@@ -1,0 +1,1 @@
+../../../research/extensions/kernelbench-audit/cases/A03492_26_GELU_/candidate.cu

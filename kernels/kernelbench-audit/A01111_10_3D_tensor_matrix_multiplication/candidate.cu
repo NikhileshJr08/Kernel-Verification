@@ -1,0 +1,1 @@
+../../../research/extensions/kernelbench-audit/cases/A01111_10_3D_tensor_matrix_multiplication/candidate.cu

@@ -1,0 +1,1 @@
+../../../research/extensions/kernelbench-audit/cases/A08670_72_conv_transposed_3D_asymmetric_input_asymmetric_kernel___strided_padded_grouped_/candidate.cu

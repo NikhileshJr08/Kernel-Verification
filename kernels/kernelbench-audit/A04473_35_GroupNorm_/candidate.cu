@@ -1,0 +1,1 @@
+../../../research/extensions/kernelbench-audit/cases/A04473_35_GroupNorm_/candidate.cu

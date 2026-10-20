@@ -1,0 +1,1 @@
+../../../research/extensions/megatron/M01_layernorm/post/layer_norm_cuda_kernel.cu

@@ -1,0 +1,1 @@
+../../../research/extensions/kernelbench-audit/cases/A04259_33_BatchNorm/candidate.cu

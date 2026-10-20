@@ -1,0 +1,1 @@
+../../../research/extensions/kernelbench-audit/cases/A00609_6_Matmul_with_large_K_dimension_/candidate.cu

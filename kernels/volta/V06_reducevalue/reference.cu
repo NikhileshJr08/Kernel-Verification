@@ -1,0 +1,1 @@
+../../../research/cases/V06_reducevalue/reference.cu

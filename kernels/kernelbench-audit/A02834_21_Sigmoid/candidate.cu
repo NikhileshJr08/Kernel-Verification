@@ -1,0 +1,1 @@
+../../../research/extensions/kernelbench-audit/cases/A02834_21_Sigmoid/candidate.cu

@@ -1,0 +1,1 @@
+../../../research/cases/V07_layernorm/candidate.cu

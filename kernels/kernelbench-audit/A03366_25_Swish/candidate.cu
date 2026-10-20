@@ -1,0 +1,1 @@
+../../../research/extensions/kernelbench-audit/cases/A03366_25_Swish/candidate.cu

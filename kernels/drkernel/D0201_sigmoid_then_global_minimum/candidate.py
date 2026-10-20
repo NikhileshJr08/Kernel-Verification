@@ -1,0 +1,1 @@
+../../../research/cases/D0201_sigmoid_then_global_minimum/candidate.py

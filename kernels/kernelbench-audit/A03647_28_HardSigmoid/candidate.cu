@@ -1,0 +1,1 @@
+../../../research/extensions/kernelbench-audit/cases/A03647_28_HardSigmoid/candidate.cu

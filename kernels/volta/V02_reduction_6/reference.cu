@@ -1,0 +1,1 @@
+../../../research/cases/V02_reduction_6/reference.cu

@@ -1,0 +1,1 @@
+../../../research/extensions/kernelbench-audit/cases/A02681_20_LeakyReLU/candidate.cu

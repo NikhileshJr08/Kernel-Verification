@@ -1,0 +1,1 @@
+../../../research/extensions/kernelbench-audit/cases/A02203_16_Matmul_with_transposed_A/candidate.cu

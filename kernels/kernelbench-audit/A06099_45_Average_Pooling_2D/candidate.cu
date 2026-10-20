@@ -1,0 +1,1 @@
+../../../research/extensions/kernelbench-audit/cases/A06099_45_Average_Pooling_2D/candidate.cu

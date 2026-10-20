@@ -1,0 +1,1 @@
+../../../research/extensions/kernelbench-audit/cases/A01404_12_Matmul_with_diagonal_matrices_/candidate.cu

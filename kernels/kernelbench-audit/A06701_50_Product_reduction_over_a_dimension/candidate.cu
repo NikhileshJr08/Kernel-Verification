@@ -1,0 +1,1 @@
+../../../research/extensions/kernelbench-audit/cases/A06701_50_Product_reduction_over_a_dimension/candidate.cu

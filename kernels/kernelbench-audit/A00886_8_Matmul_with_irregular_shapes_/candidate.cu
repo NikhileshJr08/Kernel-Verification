@@ -1,0 +1,1 @@
+../../../research/extensions/kernelbench-audit/cases/A00886_8_Matmul_with_irregular_shapes_/candidate.cu

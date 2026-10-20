@@ -1,0 +1,1 @@
+../../../research/extensions/kernelbench-audit/cases/A07111_53_Min_reduction_over_a_dimension/reference.py

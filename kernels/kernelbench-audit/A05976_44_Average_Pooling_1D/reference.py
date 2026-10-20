@@ -1,0 +1,1 @@
+../../../research/extensions/kernelbench-audit/cases/A05976_44_Average_Pooling_1D/reference.py

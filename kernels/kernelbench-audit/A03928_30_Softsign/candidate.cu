@@ -1,0 +1,1 @@
+../../../research/extensions/kernelbench-audit/cases/A03928_30_Softsign/candidate.cu

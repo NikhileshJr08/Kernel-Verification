@@ -1,0 +1,1 @@
+../../../research/extensions/kernelbench-audit/cases/A03604_27_SELU_/candidate.cu

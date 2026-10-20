@@ -1,0 +1,1 @@
+../../../research/extensions/kernelbench-audit/cases/A02472_18_Matmul_with_transposed_both/reference.py

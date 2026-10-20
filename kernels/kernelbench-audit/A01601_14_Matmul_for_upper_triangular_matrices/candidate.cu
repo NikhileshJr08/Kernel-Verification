@@ -1,0 +1,1 @@
+../../../research/extensions/kernelbench-audit/cases/A01601_14_Matmul_for_upper_triangular_matrices/candidate.cu

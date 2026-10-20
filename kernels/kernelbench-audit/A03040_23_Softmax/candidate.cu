@@ -1,0 +1,1 @@
+../../../research/extensions/kernelbench-audit/cases/A03040_23_Softmax/candidate.cu

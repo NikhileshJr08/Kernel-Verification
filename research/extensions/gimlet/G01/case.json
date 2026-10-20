@@ -1,0 +1,15 @@
+{
+  "id": "G01",
+  "collection": "gimlet",
+  "status": "article_adapted_attention_example_only_original_pair_unidentified",
+  "candidate": null,
+  "reference": null,
+  "source": "https://gimletlabs.ai/blog/formally-verifying-ai-generated-kernels",
+  "reconstruction": {
+    "kind": "newly_written_blog_semantics_reconstruction",
+    "reference": "extensions/gimlet/G01/reference.py",
+    "candidate": "extensions/gimlet/G01/candidate.py",
+    "runner": "extensions/gimlet/G01/run.py",
+    "original_artifact": false
+  }
+}

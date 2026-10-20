@@ -1,0 +1,1 @@
+../../../research/extensions/kernelbench-audit/cases/A04149_32_HardTanh/candidate.cu

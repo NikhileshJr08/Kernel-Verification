@@ -1,0 +1,1 @@
+../../../research/extensions/kernelbench-audit/cases/A03153_24_LogSoftmax/candidate.cu

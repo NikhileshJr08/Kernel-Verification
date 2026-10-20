@@ -1,0 +1,1 @@
+../../../research/extensions/kernelbench-audit/cases/A03001_22_Tanh/reference.py

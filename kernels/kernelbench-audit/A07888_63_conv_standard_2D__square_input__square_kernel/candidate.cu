@@ -1,0 +1,1 @@
+../../../research/extensions/kernelbench-audit/cases/A07888_63_conv_standard_2D__square_input__square_kernel/candidate.cu

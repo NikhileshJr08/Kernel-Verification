@@ -1,0 +1,1 @@
+../../../research/extensions/kernelbench-audit/cases/A06418_47_Sum_reduction_over_a_dimension/candidate.cu

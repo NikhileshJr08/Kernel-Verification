@@ -1,0 +1,1 @@
+../../../research/extensions/kernelbench-audit/cases/A05073_40_LayerNorm/candidate.cu

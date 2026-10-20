@@ -1,0 +1,1 @@
+../../../research/extensions/kernelbench-audit/cases/A04782_37_FrobeniusNorm_/candidate.cu

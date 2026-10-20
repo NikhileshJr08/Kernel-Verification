@@ -1,0 +1,1 @@
+../../../research/extensions/kernelbench-audit/cases/A04586_36_RMSNorm_/candidate.cu

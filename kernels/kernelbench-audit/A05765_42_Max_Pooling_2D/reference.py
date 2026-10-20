@@ -1,0 +1,1 @@
+../../../research/extensions/kernelbench-audit/cases/A05765_42_Max_Pooling_2D/reference.py
